@@ -168,7 +168,7 @@ async function activate(entry: SlideEntry, card: HTMLElement): Promise<void> {
   setBusy(true);
   setCardState(card, "inserting");
   try {
-    const out = await svc.insert(entry, prefs.formatting());
+    const out = await svc.insert(entry, prefs.formatting(), prefs.keepLayout());
     if (!out) return;
     setCardState(card, "done");
     onInserted(out);
@@ -465,6 +465,40 @@ function openMenu(): void {
       "Importiert den Bibliotheks-Master in die Präsentation"
     )
   );
+  const keep = prefs.keepLayout();
+  m.append(
+    el(
+      "button",
+      {
+        class: `menu-item menu-check${keep ? " is-checked" : ""}`,
+        type: "button",
+        role: "menuitemcheckbox",
+        "aria-checked": String(keep),
+        disabled: fmt !== "UseDestinationTheme",
+        title:
+          "Bei fremden Mastern verschiebt PowerPoint Titel- und Textplatzhalter auf das Ziel-Layout. Diese Option stellt Position und Größe aus der Vorlage wieder her und verkleinert zu langen Text.",
+        onclick: () => {
+          prefs.setKeepLayout(!keep);
+          closeMenu();
+          toast(
+            "info",
+            !keep
+              ? "Platzhalter behalten Position und Größe der Vorlage."
+              : "Platzhalter folgen dem Layout der Zielpräsentation.",
+            "",
+            2600
+          );
+        },
+      },
+      el("span", { class: "check-box", html: keep ? ICON.check : "" }),
+      el(
+        "span",
+        { class: "menu-text" },
+        el("span", {}, "Platzhalter-Layout der Vorlage schützen"),
+        el("span", { class: "menu-hint" }, "Titel & Text bleiben an ihrer Position (empfohlen)")
+      )
+    )
+  );
   if (svc && svc.lib.templates.length) {
     m.append(
       el("div", { class: "menu-sep" }),
@@ -662,8 +696,14 @@ Office.onReady((info) => {
         runId = null;
       }
       if (runId && state.svc) {
+        let mode: unknown = "full";
+        try {
+          mode = Office.context.document.settings.get("slidelib.selftest.mode") || "full";
+        } catch {
+          mode = "full";
+        }
         void import(/* webpackChunkName: "selftest" */ "./selftest").then((m) =>
-          m.runSelftest(String(runId), state.svc!, { activate, toast })
+          m.runSelftest(String(runId), state.svc!, { activate, toast }, String(mode))
         );
       }
     }

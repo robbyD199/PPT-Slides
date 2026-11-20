@@ -27,6 +27,13 @@ export const prefs = {
   setFormatting(f: Formatting) {
     write("slidelib.formatting", f);
   },
+  /** restore the template placeholder layout after inserting with the destination theme */
+  keepLayout(): boolean {
+    return read<boolean>("slidelib.keepLayout", true) !== false;
+  },
+  setKeepLayout(v: boolean) {
+    write("slidelib.keepLayout", v);
+  },
   recent(): string[] {
     const r = read<string[]>("slidelib.recent", []);
     return Array.isArray(r) ? r.filter((x) => typeof x === "string") : [];

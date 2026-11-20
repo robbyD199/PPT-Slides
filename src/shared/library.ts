@@ -43,6 +43,7 @@ export function parseLibrary(data: unknown): Library {
       thumb: String(s.thumb ?? ""),
       preview: String(s.preview ?? s.thumb ?? ""),
       file: s.file,
+      placeholders: Array.isArray(s.placeholders) ? s.placeholders : [],
       hash: String(s.hash ?? ""),
       lint: s.lint && typeof s.lint === "object" ? s.lint : { level: "ok", warnings: [] },
     };

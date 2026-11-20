@@ -29,3 +29,33 @@ describe("newIdsAfterInsert", () => {
     expect(newIdsAfterInsert(["1#a", "2#b"], ["1#a", "9#z", "2#b"])).toEqual(["9#z"]);
   });
 });
+
+import { geometryDiffers, matchPlaceholders } from "../src/shared/insert";
+import type { PlaceholderBox } from "../src/shared/types";
+
+describe("template placeholder layout", () => {
+  const boxes: PlaceholderBox[] = [
+    { name: "Title 1", type: "title", idx: null, box: [43.7, 28, 872.6, 57.6], size: 24 },
+    { name: "Text Placeholder 2", type: "body", idx: "17", box: [600, 8, 315, 10], size: 9 },
+    { name: "Text Placeholder 2", type: "body", idx: "18", box: [43, 492, 573, 32], size: 9 },
+  ];
+
+  it("pairs shapes by name, repeated names in order", () => {
+    const pairs = matchPlaceholders(["Picture 3", "Title 1", "Text Placeholder 2", "Text Placeholder 2"], boxes);
+    expect(pairs.map(([i, b]) => [i, b.idx])).toEqual([
+      [1, null],
+      [2, "17"],
+      [3, "18"],
+    ]);
+  });
+
+  it("ignores shapes without template placeholder", () => {
+    expect(matchPlaceholders(["Rectangle 5"], boxes)).toEqual([]);
+  });
+
+  it("detects geometry differences above 0.75 pt", () => {
+    expect(geometryDiffers({ left: 43.7, top: 28, width: 872.6, height: 57.6 }, boxes[0].box)).toBe(false);
+    expect(geometryDiffers({ left: 44, top: 28.5, width: 872.6, height: 57.6 }, boxes[0].box)).toBe(false);
+    expect(geometryDiffers({ left: 60, top: 40, width: 800, height: 90 }, boxes[0].box)).toBe(true);
+  });
+});

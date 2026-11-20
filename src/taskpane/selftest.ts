@@ -52,11 +52,69 @@ async function post(payload: unknown): Promise<void> {
   });
 }
 
-export async function runSelftest(
+/**
+ * Edge cases on an EMPTY presentation: insert into 0 slides (-> slide 1), then a second slide
+ * (-> after the selected new slide), then one slide with "keep source formatting".
+ */
+async function runEmptyDeckTest(
   runId: string,
   svc: SlideLibraryService,
   ui: UiHooks
 ): Promise<void> {
+  const doc = (Office.context.document && Office.context.document.url) || "";
+  const extra: Record<string, unknown> = {};
+  try {
+    extra.initialSlideCount = (await slideIds()).length;
+    const first = svc.lib.slides.find((s) => s.kind === "slide")!;
+    const a = await svc.insert(first, "UseDestinationTheme");
+    extra.emptyInsert = {
+      position: a?.position,
+      newSlideIds: a?.newSlideIds,
+      total: (await slideIds()).length,
+      ok: a?.position === 1,
+    };
+    const layout = svc.lib.slides.find((s) => s.kind === "layout")!;
+    const b = await svc.insert(layout, "UseDestinationTheme");
+    extra.secondInsert = {
+      position: b?.position,
+      newSlideIds: b?.newSlideIds,
+      ok: b?.position === 2,
+    };
+    const keep = svc.lib.slides.find((s) => s.kind === "slide" && s.category === "charts") ?? first;
+    const c = await svc.insert(keep, "KeepSourceFormatting");
+    extra.keepSource = {
+      key: keep.key,
+      position: c?.position,
+      newSlideIds: c?.newSlideIds,
+      ms: c?.ms,
+    };
+  } catch (e) {
+    extra.fatal = describeError(e);
+  }
+  const finalSlideIds = await slideIds().catch(() => []);
+  await post({ runId, mode: "empty", document: doc, extra, finalSlideIds, done: true });
+  ui.toast("success", `Selbsttest ${runId} (leere Präsentation) abgeschlossen`, "", 6000);
+}
+
+export async function runSelftest(
+  runId: string,
+  svc: SlideLibraryService,
+  ui: UiHooks,
+  mode = "full"
+): Promise<void> {
+  // Count starts per document session: a reload of the pane (e.g. by Office) restarts the test.
+  const guardKey = `slidelib.selftest.starts.${runId}`;
+  let starts = 1;
+  try {
+    starts = Number(sessionStorage.getItem(guardKey) || "0") + 1;
+    sessionStorage.setItem(guardKey, String(starts));
+  } catch {
+    starts = 1;
+  }
+  // let PowerPoint finish loading the document and the pane before the first insert
+  await new Promise((r) => setTimeout(r, 3000));
+  await post({ runId, event: "start", starts, mode, at: new Date().toISOString() });
+  if (mode === "empty") return runEmptyDeckTest(runId, svc, ui);
   const started = new Date().toISOString();
   const doc = (Office.context.document && Office.context.document.url) || "";
   const results: Record<string, unknown>[] = [];
@@ -84,6 +142,8 @@ export async function runSelftest(
           expectedPosition: 2,
           selectedAfter: sel,
           selectedOk: sel.length === 1 && sel[0] === out.newSlideIds[0],
+          placeholdersFixed: out.placeholdersFixed,
+          placeholdersError: out.placeholdersError,
         });
       } catch (e) {
         results.push({

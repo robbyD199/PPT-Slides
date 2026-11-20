@@ -392,3 +392,30 @@
     transform: none;
   }
 }
+
+.check-box {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: 1.5px solid var(--border-strong);
+  color: #fff;
+}
+.menu-check.is-checked .check-box {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+.check-box svg {
+  width: 11px;
+  height: 11px;
+}
+.menu-item:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.subhead-more {
+  margin-top: 18px;
+}

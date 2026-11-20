@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "Folienbibliothek",
   "updated": "2026-11-20T01:27:58.435Z",
-  "built": "2026-11-20T01:50:43.337Z",
+  "built": "2026-11-20T02:36:05.256Z",
   "build": "3b629875e1",
   "source": {
     "file": "Library.pptx",
@@ -364,6 +364,34 @@
       "thumb": "thumbs/2147473501.png",
       "preview": "previews/2147473501.png",
       "file": "slides/2147473501.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "ctrTitle",
+          "idx": null,
+          "box": [
+            27,
+            352,
+            570,
+            48
+          ],
+          "size": 32,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 2",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            27,
+            400,
+            570,
+            48
+          ],
+          "size": 32,
+          "multiLevel": false
+        }
+      ],
       "hash": "dda9c5e2be70914b",
       "lint": {
         "level": "ok",
@@ -407,6 +435,112 @@
       "thumb": "thumbs/2147473459.png",
       "preview": "previews/2147473459.png",
       "file": "slides/2147473459.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            670,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Content Placeholder 2",
+          "type": "body",
+          "idx": "1",
+          "box": [
+            314.4,
+            129,
+            586.4,
+            282
+          ],
+          "size": 14,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "a9853130cb16be0d",
       "lint": {
         "level": "ok",
@@ -443,6 +577,99 @@
       "thumb": "thumbs/2147473403.png",
       "preview": "previews/2147473403.png",
       "file": "slides/2147473403.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 3",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "3ff6e83cd5eeae59",
       "lint": {
         "level": "info",
@@ -484,6 +711,99 @@
       "thumb": "thumbs/2147473430.png",
       "preview": "previews/2147473430.png",
       "file": "slides/2147473430.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 3",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "d4a82890fd0ec15e",
       "lint": {
         "level": "info",
@@ -523,6 +843,112 @@
       "thumb": "thumbs/2147473457.png",
       "preview": "previews/2147473457.png",
       "file": "slides/2147473457.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Content Placeholder 2",
+          "type": "body",
+          "idx": "1",
+          "box": [
+            43.7,
+            154,
+            872.6,
+            338
+          ],
+          "size": 14,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "ce5619bfaa97c96a",
       "lint": {
         "level": "ok",
@@ -561,6 +987,99 @@
       "thumb": "thumbs/2147473468.png",
       "preview": "previews/2147473468.png",
       "file": "slides/2147473468.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "36caa463a83adf76",
       "lint": {
         "level": "ok",
@@ -599,6 +1118,112 @@
       "thumb": "thumbs/2147473473.png",
       "preview": "previews/2147473473.png",
       "file": "slides/2147473473.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 7",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "0610532f8df1da74",
       "lint": {
         "level": "ok",
@@ -636,6 +1261,112 @@
       "thumb": "thumbs/2147473489.png",
       "preview": "previews/2147473489.png",
       "file": "slides/2147473489.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 2",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "a9c6692b0ac7871f",
       "lint": {
         "level": "warn",
@@ -679,6 +1410,99 @@
       "thumb": "thumbs/2147473490.png",
       "preview": "previews/2147473490.png",
       "file": "slides/2147473490.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "4ff08ef30ca5a09e",
       "lint": {
         "level": "warn",
@@ -720,6 +1544,112 @@
       "thumb": "thumbs/2147473491.png",
       "preview": "previews/2147473491.png",
       "file": "slides/2147473491.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 2",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "23b998ca9cf64642",
       "lint": {
         "level": "warn",
@@ -763,6 +1693,112 @@
       "thumb": "thumbs/2147473442.png",
       "preview": "previews/2147473442.png",
       "file": "slides/2147473442.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 6",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 3",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 17",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "3e2e6262a70a43c8",
       "lint": {
         "level": "warn",
@@ -805,6 +1841,99 @@
       "thumb": "thumbs/2147473479.png",
       "preview": "previews/2147473479.png",
       "file": "slides/2147473479.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "3b4587d05bfac639",
       "lint": {
         "level": "ok",
@@ -846,6 +1975,99 @@
       "thumb": "thumbs/2147473480.png",
       "preview": "previews/2147473480.png",
       "file": "slides/2147473480.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 31",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 34",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 35",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 36",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "adff070f20aa9096",
       "lint": {
         "level": "ok",
@@ -889,6 +2111,99 @@
       "thumb": "thumbs/2147473460.png",
       "preview": "previews/2147473460.png",
       "file": "slides/2147473460.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "2f15b9b923ed08c3",
       "lint": {
         "level": "ok",
@@ -925,6 +2240,99 @@
       "thumb": "thumbs/2147473461.png",
       "preview": "previews/2147473461.png",
       "file": "slides/2147473461.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "89daf4e0e0ad1b4e",
       "lint": {
         "level": "ok",
@@ -961,6 +2369,99 @@
       "thumb": "thumbs/2147473462.png",
       "preview": "previews/2147473462.png",
       "file": "slides/2147473462.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "d7cc2c92fdc822d7",
       "lint": {
         "level": "ok",
@@ -997,6 +2498,99 @@
       "thumb": "thumbs/2147473463.png",
       "preview": "previews/2147473463.png",
       "file": "slides/2147473463.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "33c2dfd1958845bf",
       "lint": {
         "level": "ok",
@@ -1033,6 +2627,99 @@
       "thumb": "thumbs/2147473464.png",
       "preview": "previews/2147473464.png",
       "file": "slides/2147473464.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "a2862d79ea9f0e8b",
       "lint": {
         "level": "ok",
@@ -1069,6 +2756,99 @@
       "thumb": "thumbs/2147473465.png",
       "preview": "previews/2147473465.png",
       "file": "slides/2147473465.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "a6d0f396a39c8705",
       "lint": {
         "level": "ok",
@@ -1106,6 +2886,99 @@
       "thumb": "thumbs/2147473466.png",
       "preview": "previews/2147473466.png",
       "file": "slides/2147473466.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 23",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "1b5f23039f7e1458",
       "lint": {
         "level": "ok",
@@ -1145,6 +3018,112 @@
       "thumb": "thumbs/2147473475.png",
       "preview": "previews/2147473475.png",
       "file": "slides/2147473475.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 26",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 28",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 29",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 30",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "1f14d0c3f30d5a7d",
       "lint": {
         "level": "ok",
@@ -1183,6 +3162,112 @@
       "thumb": "thumbs/2147473474.png",
       "preview": "previews/2147473474.png",
       "file": "slides/2147473474.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            750,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 34",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 35",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 36",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 37",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 38",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "4d360305f1d9d49c",
       "lint": {
         "level": "ok",
@@ -1221,6 +3306,112 @@
       "thumb": "thumbs/2147473476.png",
       "preview": "previews/2147473476.png",
       "file": "slides/2147473476.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            750,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 34",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 35",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 36",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 37",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 38",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "ac8be96b158965c3",
       "lint": {
         "level": "ok",
@@ -1257,6 +3448,112 @@
       "thumb": "thumbs/2147473478.png",
       "preview": "previews/2147473478.png",
       "file": "slides/2147473478.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            750,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 34",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 35",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 36",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 37",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 38",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "7b968c1f157aeeec",
       "lint": {
         "level": "ok",
@@ -1293,6 +3590,112 @@
       "thumb": "thumbs/2147473477.png",
       "preview": "previews/2147473477.png",
       "file": "slides/2147473477.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 32",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 30",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 31",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 34",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 35",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 36",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "b39a26aad7c255d6",
       "lint": {
         "level": "ok",
@@ -1336,6 +3739,99 @@
       "thumb": "thumbs/2147473455.png",
       "preview": "previews/2147473455.png",
       "file": "slides/2147473455.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 28",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 29",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 31",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 34",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "57f0644438a282d1",
       "lint": {
         "level": "ok",
@@ -1376,6 +3872,99 @@
       "thumb": "thumbs/2147473469.png",
       "preview": "previews/2147473469.png",
       "file": "slides/2147473469.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 29",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 30",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 31",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 34",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "cd1d1855c5c62428",
       "lint": {
         "level": "info",
@@ -1417,6 +4006,99 @@
       "thumb": "thumbs/2147473471.png",
       "preview": "previews/2147473471.png",
       "file": "slides/2147473471.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 34",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": null,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 35",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 36",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 37",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 38",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 39",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "65f3a8c99afd2d40",
       "lint": {
         "level": "info",
@@ -1460,6 +4142,99 @@
       "thumb": "thumbs/2147473487.png",
       "preview": "previews/2147473487.png",
       "file": "slides/2147473487.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 18",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 19",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "e1cd2fa3aad9ea85",
       "lint": {
         "level": "warn",
@@ -1506,6 +4281,99 @@
       "thumb": "thumbs/2147473488.png",
       "preview": "previews/2147473488.png",
       "file": "slides/2147473488.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 17",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "f1b63476149dbf82",
       "lint": {
         "level": "warn",
@@ -1553,6 +4421,112 @@
       "thumb": "thumbs/2147473447.png",
       "preview": "previews/2147473447.png",
       "file": "slides/2147473447.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 17",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 18",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 19",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 20",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "da9daa7f7c7e9cfc",
       "lint": {
         "level": "info",
@@ -1595,6 +4569,112 @@
       "thumb": "thumbs/2147473448.png",
       "preview": "previews/2147473448.png",
       "file": "slides/2147473448.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 2",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "3cafe85a4144074b",
       "lint": {
         "level": "warn",
@@ -1638,6 +4718,99 @@
       "thumb": "thumbs/2147473467.png",
       "preview": "previews/2147473467.png",
       "file": "slides/2147473467.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 17",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 18",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 19",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 20",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "cff373689ef9241b",
       "lint": {
         "level": "warn",
@@ -1682,6 +4855,112 @@
       "thumb": "thumbs/2147473494.png",
       "preview": "previews/2147473494.png",
       "file": "slides/2147473494.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 28",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 30",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "cd8452328935f6d3",
       "lint": {
         "level": "warn",
@@ -1729,6 +5008,112 @@
       "thumb": "thumbs/2147473495.png",
       "preview": "previews/2147473495.png",
       "file": "slides/2147473495.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 19",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 18",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "ddcd7b27b8008c4f",
       "lint": {
         "level": "warn",
@@ -1773,6 +5158,112 @@
       "thumb": "thumbs/2147473496.png",
       "preview": "previews/2147473496.png",
       "file": "slides/2147473496.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 19",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "6e3be3c4faa9fe80",
       "lint": {
         "level": "warn",
@@ -1820,6 +5311,112 @@
       "thumb": "thumbs/2147473497.png",
       "preview": "previews/2147473497.png",
       "file": "slides/2147473497.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 24",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "60ad9d2ffbbff2b3",
       "lint": {
         "level": "warn",
@@ -1865,6 +5462,99 @@
       "thumb": "thumbs/2147473493.png",
       "preview": "previews/2147473493.png",
       "file": "slides/2147473493.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "bad5e6321c04878a",
       "lint": {
         "level": "warn",
@@ -1908,6 +5598,99 @@
       "thumb": "thumbs/2147473470.png",
       "preview": "previews/2147473470.png",
       "file": "slides/2147473470.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": null,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "cae69a23a7cd06fc",
       "lint": {
         "level": "warn",
@@ -1953,6 +5736,99 @@
       "thumb": "thumbs/2147473498.png",
       "preview": "previews/2147473498.png",
       "file": "slides/2147473498.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 22",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "c5977f5e67f3f8fc",
       "lint": {
         "level": "warn",
@@ -1995,6 +5871,112 @@
       "thumb": "thumbs/2147473438.png",
       "preview": "previews/2147473438.png",
       "file": "slides/2147473438.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 19",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 20",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 2",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 4",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "6401692dab60774a",
       "lint": {
         "level": "warn",
@@ -2048,6 +6030,99 @@
       "thumb": "thumbs/2147473481.png",
       "preview": "previews/2147473481.png",
       "file": "slides/2147473481.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 25",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 26",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 28",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 29",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "3cb3fb93f348ffed",
       "lint": {
         "level": "ok",
@@ -2095,6 +6170,99 @@
       "thumb": "thumbs/2147473492.png",
       "preview": "previews/2147473492.png",
       "file": "slides/2147473492.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 17",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 18",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 19",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 20",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "1218eb04a4658b39",
       "lint": {
         "level": "warn",
@@ -2140,6 +6308,99 @@
       "thumb": "thumbs/2147473444.png",
       "preview": "previews/2147473444.png",
       "file": "slides/2147473444.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "72891795ab18a692",
       "lint": {
         "level": "warn",
@@ -2183,6 +6444,99 @@
       "thumb": "thumbs/2147473445.png",
       "preview": "previews/2147473445.png",
       "file": "slides/2147473445.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "fbb6c80837b9a675",
       "lint": {
         "level": "warn",
@@ -2227,6 +6581,99 @@
       "thumb": "thumbs/2147473446.png",
       "preview": "previews/2147473446.png",
       "file": "slides/2147473446.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 56",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 54",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 57",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 59",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "574b0d6bd80fe269",
       "lint": {
         "level": "warn",
@@ -2276,6 +6723,99 @@
       "thumb": "thumbs/2147473449.png",
       "preview": "previews/2147473449.png",
       "file": "slides/2147473449.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 4",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "2b870a7eb1f7c732",
       "lint": {
         "level": "warn",
@@ -2324,6 +6864,112 @@
       "thumb": "thumbs/2147473454.png",
       "preview": "previews/2147473454.png",
       "file": "slides/2147473454.pptx",
+      "placeholders": [
+        {
+          "name": "Title 3",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 1",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 2",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 4",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "eb707b63a4885a14",
       "lint": {
         "level": "warn",
@@ -2368,6 +7014,99 @@
       "thumb": "thumbs/2147473450.png",
       "preview": "previews/2147473450.png",
       "file": "slides/2147473450.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 24",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 27",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 28",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 29",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "c219b559d5eacd06",
       "lint": {
         "level": "warn",
@@ -2415,6 +7154,112 @@
       "thumb": "thumbs/2147473451.png",
       "preview": "previews/2147473451.png",
       "file": "slides/2147473451.pptx",
+      "placeholders": [
+        {
+          "name": "Title 3",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 4",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 18",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 19",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 20",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 21",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "b85e7efbbb7604bc",
       "lint": {
         "level": "warn",
@@ -2460,6 +7305,112 @@
       "thumb": "thumbs/2147473452.png",
       "preview": "previews/2147473452.png",
       "file": "slides/2147473452.pptx",
+      "placeholders": [
+        {
+          "name": "Title 11",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 2",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 31",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 32",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 33",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "137032a6e4e5ccfc",
       "lint": {
         "level": "warn",
@@ -2502,6 +7453,112 @@
       "thumb": "thumbs/2147473453.png",
       "preview": "previews/2147473453.png",
       "file": "slides/2147473453.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 4",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 7",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "6265940dae562590",
       "lint": {
         "level": "warn",
@@ -2551,6 +7608,99 @@
       "thumb": "thumbs/2147473482.png",
       "preview": "previews/2147473482.png",
       "file": "slides/2147473482.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 12",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 13",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 14",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 15",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 16",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "1dcc74a205bba6b0",
       "lint": {
         "level": "ok",
@@ -2591,6 +7741,112 @@
       "thumb": "thumbs/2147473505.png",
       "preview": "previews/2147473505.png",
       "file": "slides/2147473505.pptx",
+      "placeholders": [
+        {
+          "name": "Title 1",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ],
+          "size": 24,
+          "multiLevel": false
+        },
+        {
+          "name": "Subtitle 7",
+          "type": "subTitle",
+          "idx": "1",
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ],
+          "size": 18,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 5",
+          "type": "body",
+          "idx": "17",
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 6",
+          "type": "body",
+          "idx": "18",
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ],
+          "size": 9,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 8",
+          "type": "body",
+          "idx": "21",
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 9",
+          "type": "body",
+          "idx": "22",
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 10",
+          "type": "body",
+          "idx": "23",
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        },
+        {
+          "name": "Text Placeholder 11",
+          "type": "body",
+          "idx": "24",
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ],
+          "size": 10,
+          "multiLevel": false
+        }
+      ],
       "hash": "2d6f630e15567b82",
       "lint": {
         "level": "ok",

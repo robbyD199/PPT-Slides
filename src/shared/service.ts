@@ -17,6 +17,8 @@ export interface Capabilities {
   canInsert: boolean;
   canSelect: boolean;
   canCreate: boolean;
+  /** PowerPointApi 1.4: move/resize shapes (restore template placeholder layout) */
+  canShapes: boolean;
 }
 
 export function detectCapabilities(): Capabilities {
@@ -24,6 +26,7 @@ export function detectCapabilities(): Capabilities {
     canInsert: isSetSupported("PowerPointApi", "1.2"),
     canSelect: isSetSupported("PowerPointApi", "1.5"),
     canCreate: isSetSupported("PowerPointApi", "1.1"),
+    canShapes: isSetSupported("PowerPointApi", "1.4"),
   };
 }
 
@@ -106,7 +109,11 @@ export class SlideLibraryService {
   }
 
   /** Inserts one slide. Returns null if another insert is still running (double click guard). */
-  async insert(entry: SlideEntry, formatting: Formatting): Promise<InsertOutcome | null> {
+  async insert(
+    entry: SlideEntry,
+    formatting: Formatting,
+    keepTemplateLayout = true
+  ): Promise<InsertOutcome | null> {
     if (this.busy) return null;
     if (!this.caps.canInsert) throw new UserError(MSG.reqInsertMissing);
     this.busy = true;
@@ -121,6 +128,13 @@ export class SlideLibraryService {
           formatting,
           sourceSlideId: source,
           canSelect: this.caps.canSelect,
+          placeholders:
+            keepTemplateLayout &&
+            this.caps.canShapes &&
+            formatting === "UseDestinationTheme" &&
+            entry.kind === "slide"
+              ? entry.placeholders
+              : undefined,
         });
       } catch (e) {
         throw new UserError(MSG.insertFailed, describeError(e));

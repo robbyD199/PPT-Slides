@@ -1,4 +1,4 @@
-import type { Formatting } from "./types";
+import type { Formatting, PlaceholderBox } from "./types";
 
 /**
  * Where to insert: directly after the selected slide (the last one in presentation order if
@@ -23,6 +23,46 @@ export interface InsertOptions {
   sourceSlideId?: string;
   /** PowerPointApi 1.5 available (read/set selection) */
   canSelect: boolean;
+  /**
+   * Template placeholder geometry to restore after the insert (PowerPointApi 1.4). With
+   * "use destination theme" PowerPoint moves placeholders to the destination layout's position and
+   * size; restoring the template geometry (+ shrink text on overflow) keeps the slide's composition
+   * while fonts and colors still come from the destination theme.
+   */
+  placeholders?: PlaceholderBox[];
+}
+
+const TEXT_PLACEHOLDERS = ["title", "ctrTitle", "subTitle", "body"];
+
+/** Pairs shapes with template placeholder boxes by name (n-th occurrence of a name ↔ n-th box). */
+export function matchPlaceholders(
+  shapeNames: string[],
+  boxes: PlaceholderBox[]
+): Array<[number, PlaceholderBox]> {
+  const used = new Map<string, number>();
+  const pairs: Array<[number, PlaceholderBox]> = [];
+  shapeNames.forEach((name, i) => {
+    const candidates = boxes.filter((b) => b.name === name);
+    if (!candidates.length) return;
+    const n = used.get(name) ?? 0;
+    used.set(name, n + 1);
+    if (candidates[n]) pairs.push([i, candidates[n]]);
+  });
+  return pairs;
+}
+
+/** True if a shape's geometry differs noticeably from the template box (points). */
+export function geometryDiffers(
+  shape: { left: number; top: number; width: number; height: number },
+  box: number[]
+): boolean {
+  const [l, t, w, h] = box;
+  return (
+    Math.abs(shape.left - l) > 0.75 ||
+    Math.abs(shape.top - t) > 0.75 ||
+    Math.abs(shape.width - w) > 0.75 ||
+    Math.abs(shape.height - h) > 0.75
+  );
 }
 
 export interface InsertResult {
@@ -35,6 +75,10 @@ export interface InsertResult {
   selected: boolean;
   /** true if inserted at the end because nothing was selected */
   atEnd: boolean;
+  /** number of placeholders moved back to the template geometry */
+  placeholdersFixed: number;
+  /** error text if restoring the placeholder layout failed (diagnostics) */
+  placeholdersError?: string;
 }
 
 export async function insertSlide(base64: string, opts: InsertOptions): Promise<InsertResult> {
@@ -64,6 +108,67 @@ export async function insertSlide(base64: string, opts: InsertOptions): Promise<
     await context.sync();
     const after = afterColl.items.map((s) => s.id);
     const newSlideIds = newIdsAfterInsert(before, after);
+
+    let placeholdersFixed = 0;
+    let placeholdersError: string | undefined;
+    if (opts.placeholders && opts.placeholders.length && newSlideIds.length) {
+      try {
+        const shapes = context.presentation.slides.getItem(newSlideIds[0]).shapes;
+        shapes.load("items/name,items/left,items/top,items/width,items/height");
+        await context.sync();
+        const pairs = matchPlaceholders(
+          shapes.items.map((s) => s.name),
+          opts.placeholders
+        );
+        if (!pairs.length) {
+          placeholdersError = `keine Platzhalter gefunden (${shapes.items.length} Formen)`;
+        }
+        const fonts: Array<[PowerPoint.Shape, PlaceholderBox, PowerPoint.ShapeFont]> = [];
+        const fixed = new Set<number>();
+        for (const [i, ph] of pairs) {
+          const sh = shapes.items[i];
+          if (geometryDiffers(sh, ph.box)) {
+            sh.left = ph.box[0];
+            sh.top = ph.box[1];
+            sh.width = ph.box[2];
+            sh.height = ph.box[3];
+            fixed.add(i);
+          }
+          // the destination master text size (e.g. 36-54 pt titles) breaks the composition:
+          // check the size and use the template's; font face and color stay those of the destination
+          if (
+            TEXT_PLACEHOLDERS.includes(ph.type) &&
+            ph.size &&
+            (ph.type !== "body" || !ph.multiLevel)
+          ) {
+            const font = sh.textFrame.textRange.font;
+            font.load("size");
+            fonts.push([sh, ph, font]);
+          }
+        }
+        await context.sync();
+        for (const [sh, ph, font] of fonts) {
+          if (
+            font.size !== null &&
+            font.size !== undefined &&
+            Math.abs(font.size - (ph.size as number)) > 0.4
+          ) {
+            font.size = ph.size as number;
+            fixed.add(shapes.items.indexOf(sh));
+          }
+          if (fixed.has(shapes.items.indexOf(sh))) {
+            // long titles/texts shrink instead of running into the content below
+            sh.textFrame.autoSizeSetting = "AutoSizeTextToFitShape";
+          }
+        }
+        placeholdersFixed = fixed.size;
+        if (placeholdersFixed) await context.sync();
+      } catch (e) {
+        // geometry restore is best effort - the slide itself is inserted
+        placeholdersError = e instanceof Error ? e.message : String(e);
+      }
+    }
+
     let selected = false;
     if (opts.canSelect && newSlideIds.length) {
       try {
@@ -80,6 +185,8 @@ export async function insertSlide(base64: string, opts: InsertOptions): Promise<
       targetSlideId,
       selected,
       atEnd: !selectedIds.length,
+      placeholdersFixed,
+      placeholdersError,
     };
   });
 }

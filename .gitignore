@@ -14,6 +14,9 @@ coverage/
 test-results/*
 !test-results/report.md
 !test-results/.gitkeep
+!test-results/screens/
+test-results/screens/*
+!test-results/screens/compare-*.jpg
 
 # personal agent instructions stay local (repo is public)
 claude.md

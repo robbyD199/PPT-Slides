@@ -6,6 +6,18 @@ export interface LintInfo {
   infos?: string[];
 }
 
+/** Geometry of a placeholder in the template (points): [left, top, width, height]. */
+export interface PlaceholderBox {
+  name: string;
+  type: string;
+  idx: string | null;
+  box: [number, number, number, number];
+  /** effective level-1 font size in the template (pt) */
+  size?: number | null;
+  /** true if the placeholder text uses several outline levels */
+  multiLevel?: boolean;
+}
+
 export interface SlideEntry {
   /** "<slideId>#<creationId>" for library slides, "layout:<name>" for empty layouts */
   key: string;
@@ -25,6 +37,8 @@ export interface SlideEntry {
   thumb: string;
   preview: string;
   file: string;
+  /** template placeholder geometry (library slides only) */
+  placeholders?: PlaceholderBox[];
   hash: string;
   lint: LintInfo;
 }

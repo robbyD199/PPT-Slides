@@ -80,7 +80,7 @@ export function openSearchDialog(opts: DialogHostOptions): void {
               const entry = svc.lib.slides.find((s) => s.key === msg.key);
               if (!entry)
                 throw new UserError(MSG.insertFailed, "Folie nicht in der Bibliothek gefunden.");
-              const out = await svc.insert(entry, prefs.formatting());
+              const out = await svc.insert(entry, prefs.formatting(), prefs.keepLayout());
               if (!out) {
                 reply({ type: "result", ok: false, message: MSG.busy, key: msg.key });
                 return;

@@ -167,6 +167,7 @@ async function buildTemplates(basePptx, outDir) {
       thumb: `thumbs/${s.slideId}.png`,
       preview: `previews/${s.slideId}.png`,
       file: `slides/${s.slideId}.pptx`,
+      placeholders: s.placeholders || [],
       hash: s.hash,
       lint: lintSummary(s.lint, signalHex),
     };

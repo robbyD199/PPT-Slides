@@ -34,6 +34,19 @@ function selftestMiddleware(app) {
   });
 }
 
+/**
+ * HTTPS options for the dev server. Default: Office dev certificates (office-addin-dev-certs,
+ * installs a local CA once - Windows asks for confirmation). For the automated self test
+ * (SLIDELIB_SELFSIGNED=1) a throw-away self-signed certificate is generated instead, so no
+ * certificate has to be installed; the test PowerPoint instance then ignores certificate errors.
+ */
+async function httpsServerOptions(env, options) {
+  if (env.WEBPACK_BUILD) return undefined;
+  if (options.https !== undefined) return options.https;
+  if (process.env.SLIDELIB_SELFSIGNED === "1") return undefined;
+  return getHttpsOptions();
+}
+
 module.exports = async (env, options) => {
   const dev = options.mode === "development";
   const config = {
@@ -112,9 +125,11 @@ module.exports = async (env, options) => {
       static: false,
       server: {
         type: "https",
-        options: env.WEBPACK_BUILD || options.https !== undefined ? options.https : await getHttpsOptions(),
+        options: await httpsServerOptions(env, options),
       },
       port: process.env.npm_package_config_dev_server_port || 3000,
+      // Self test: no live reload / HMR client in the pane, a rebuild must not restart a running test.
+      ...(process.env.SLIDELIB_SELFSIGNED === "1" ? { hot: false, liveReload: false, client: false } : {}),
       setupMiddlewares: (middlewares, devServer) => {
         selftestMiddleware(devServer.app);
         return middlewares;
