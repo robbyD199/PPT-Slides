@@ -1,4 +1,4 @@
-import type { Formatting } from "./types";
+import type { FormattingPref } from "./types";
 
 /** Small per-user preferences in localStorage (shared by task pane, dialog host and ribbon command). */
 function read<T>(key: string, fallback: T): T {
@@ -20,16 +20,14 @@ function write(key: string, value: unknown): void {
 
 export const prefs = {
   /**
-   * Default: keep the library's master and color set ("Format der Vorlage beibehalten").
+   * Default "Auto": own master in decks based on the template, library master + colors elsewhere.
    * Stored under a new key (v2) so an older explicit choice does not override the new default.
    */
-  formatting(): Formatting {
-    return read<Formatting>("slidelib.formatting.v2", "KeepSourceFormatting") ===
-      "UseDestinationTheme"
-      ? "UseDestinationTheme"
-      : "KeepSourceFormatting";
+  formatting(): FormattingPref {
+    const v = read<FormattingPref>("slidelib.formatting.v2", "Auto");
+    return v === "UseDestinationTheme" || v === "KeepSourceFormatting" ? v : "Auto";
   },
-  setFormatting(f: Formatting) {
+  setFormatting(f: FormattingPref) {
     write("slidelib.formatting.v2", f);
   },
   /** restore the template placeholder layout after inserting with the destination theme */

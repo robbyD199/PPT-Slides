@@ -104,8 +104,10 @@ async function runEmptyDeckTest(
 async function runKeepSourceTest(
   runId: string,
   svc: SlideLibraryService,
-  ui: UiHooks
+  ui: UiHooks,
+  mode = "keep"
 ): Promise<void> {
+  const pref = mode === "auto" ? "Auto" : "KeepSourceFormatting";
   const doc = (Office.context.document && Office.context.document.url) || "";
   const results: Record<string, unknown>[] = [];
   const first = (await slideIds())[0];
@@ -116,8 +118,9 @@ async function runKeepSourceTest(
   for (const entry of entries) {
     try {
       if (first) await selectSlide(first);
-      const out = await svc.insert(entry, "KeepSourceFormatting");
+      const out = await svc.insert(entry, pref);
       results.push({
+        formatting: out?.formatting,
         key: entry.key,
         title: entry.title,
         ok: !!out,
@@ -129,7 +132,7 @@ async function runKeepSourceTest(
       results.push({ key: entry.key, title: entry.title, ok: false, error: describeError(e) });
     }
   }
-  await post({ runId, mode: "keep", document: doc, results, done: true });
+  await post({ runId, mode, document: doc, results, done: true });
   ui.toast("success", `Selbsttest ${runId} (Vorlagenformat) abgeschlossen`, "", 6000);
 }
 
@@ -152,7 +155,7 @@ export async function runSelftest(
   await new Promise((r) => setTimeout(r, 3000));
   await post({ runId, event: "start", starts, mode, at: new Date().toISOString() });
   if (mode === "empty") return runEmptyDeckTest(runId, svc, ui);
-  if (mode === "keep") return runKeepSourceTest(runId, svc, ui);
+  if (mode === "keep" || mode === "auto") return runKeepSourceTest(runId, svc, ui, mode);
   const started = new Date().toISOString();
   const doc = (Office.context.document && Office.context.document.url) || "";
   const results: Record<string, unknown>[] = [];

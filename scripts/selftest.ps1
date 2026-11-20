@@ -83,7 +83,10 @@ $runs = @(
   @{ name = 'empty'; mode = 'empty' },
   # default mode (keep source formatting): repeated inserts must not add a master per slide
   @{ name = 'keep-vorlage'; target = 'vorlage-rothschild'; mode = 'keep' },
-  @{ name = 'keep-fremd'; target = 'custom'; mode = 'keep' }
+  @{ name = 'keep-fremd'; target = 'custom'; mode = 'keep' },
+  # default 'Automatisch': own deck -> own master (no second master), foreign deck -> library master
+  @{ name = 'auto-vorlage'; target = 'vorlage-rothschild'; mode = 'auto' },
+  @{ name = 'auto-fremd'; target = 'custom'; mode = 'auto' }
 )
 if ($Only) { $runs = @($runs | Where-Object { ($Only -split ',') -contains $_.name }) }
 $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--ignore-certificate-errors'
@@ -104,7 +107,7 @@ foreach ($r in $runs) {
     Start-Sleep 3
   }
   Start-Sleep 2
-  $verify = switch ($r.mode) { 'empty' { 'verify-empty.ps1' } 'keep' { 'verify-keep.ps1' } default { 'verify-deck.ps1' } }
+  $verify = switch ($r.mode) { 'empty' { 'verify-empty.ps1' } 'keep' { 'verify-keep.ps1' } 'auto' { 'verify-keep.ps1' } default { 'verify-deck.ps1' } }
   $vArgs = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', (Join-Path $PSScriptRoot "selftest\$verify"),
     '-DeckPath', $deck, '-ResultJson', $resultFile, '-TargetJson', (Join-Path $out "target-$tgt.json"),
     '-SaveAs', (Join-Path $out "result-$($r.name).pptx"), '-Quit')

@@ -89,3 +89,6 @@ export interface Group {
 }
 
 export type Formatting = "UseDestinationTheme" | "KeepSourceFormatting";
+
+/** User preference: "Auto" decides per presentation (see resolveFormatting). */
+export type FormattingPref = Formatting | "Auto";

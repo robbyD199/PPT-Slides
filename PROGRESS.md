@@ -93,3 +93,7 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
   jetzt einmalig den Hinweis auf „Format der Vorlage beibehalten“ / „Neue Präsentation aus Vorlage“.
 - Nicht automatisch prüfbar: Texte innerhalb von Diagrammen (z. B. weiße Datenbeschriftungen auf hellen BCG-Quadranten #29)
   und Logos (UBS/Marlboro: dunkles HSG-Logo auf schwarzem Deckblatt-Hintergrund, Akzent 1 = Schwarz).
+
+## Änderung 20.11.2026: Standard-Einfügemodus "Automatisch"
+- Wunsch: Master und Farbcode der Bibliothek ohne Umstellen im Menü. Test zeigte: "Immer Vorlagenformat" fügt in Decks auf Basis der eigenen Vorlage einen **zweiten Master** (JP-Morgan-Farben) hinzu.
+- Daher Standard **Automatisch**: eigenes Deck -> eigener Master im Deck-Farbset (Designs 1 -> 1), fremdes/leeres Deck -> Bibliotheks-Master + Farben (Designs 1 -> 2, alle eingefügten Folien teilen **einen** Master; kein Master je Folie). Selbsttest uto-vorlage, uto-fremd, keep-* in 	est-results/report.md.

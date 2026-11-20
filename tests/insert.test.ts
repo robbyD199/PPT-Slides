@@ -72,3 +72,20 @@ describe("hasLibraryMaster", () => {
     expect(hasLibraryMaster([], lib)).toBe(false);
   });
 });
+
+import { resolveFormatting } from "../src/shared/insert";
+
+describe("resolveFormatting (Auto default)", () => {
+  const lib = ["Title Slide", "Title and Content", "Title Only", "Title and Subtitle"];
+  it("uses the deck's own master when it is the library master", () => {
+    expect(resolveFormatting("Auto", [lib], lib)).toBe("UseDestinationTheme");
+  });
+  it("brings the library master into foreign or unknown decks", () => {
+    expect(resolveFormatting("Auto", [["Title Slide", "Blank"]], lib)).toBe("KeepSourceFormatting");
+    expect(resolveFormatting("Auto", null, lib)).toBe("KeepSourceFormatting");
+  });
+  it("respects explicit choices", () => {
+    expect(resolveFormatting("UseDestinationTheme", [["Blank"]], lib)).toBe("UseDestinationTheme");
+    expect(resolveFormatting("KeepSourceFormatting", [lib], lib)).toBe("KeepSourceFormatting");
+  });
+});

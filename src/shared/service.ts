@@ -1,8 +1,15 @@
 import { assetUrl, parseLibrary, sourceSlideId, LibraryError } from "./library";
-import { insertSlide, type InsertResult, isSetSupported, createPresentation } from "./insert";
+import {
+  insertSlide,
+  type InsertResult,
+  isSetSupported,
+  createPresentation,
+  destinationLayouts,
+  resolveFormatting,
+} from "./insert";
 import { arrayBufferToBase64 } from "./base64";
 import { describeError, MSG } from "./messages";
-import type { Formatting, Library, SlideEntry, TemplateInfo } from "./types";
+import type { Formatting, FormattingPref, Library, SlideEntry, TemplateInfo } from "./types";
 
 export class UserError extends Error {
   constructor(
@@ -55,6 +62,8 @@ export async function loadLibrary(base?: string): Promise<Library> {
 
 export interface InsertOutcome extends InsertResult {
   entry: SlideEntry;
+  /** formatting actually used (after resolving "Auto") */
+  formatting: Formatting;
   ms: number;
   fetchMs: number;
 }
@@ -103,6 +112,14 @@ export class SlideLibraryService {
     return p;
   }
 
+  /** Layout names of the library master (the "Grundlayouts"). */
+  libraryLayoutNames(): string[] {
+    return this.lib.slides
+      .filter((s) => s.kind === "layout")
+      .map((s) => s.layout ?? "")
+      .filter(Boolean);
+  }
+
   /** Starts downloading a slide in the background (e.g. on hover). */
   prefetch(entry: SlideEntry): void {
     this.base64(this.fileFor(entry).path).catch(() => undefined);
@@ -111,7 +128,7 @@ export class SlideLibraryService {
   /** Inserts one slide. Returns null if another insert is still running (double click guard). */
   async insert(
     entry: SlideEntry,
-    formatting: Formatting,
+    pref: FormattingPref,
     keepTemplateLayout = true
   ): Promise<InsertOutcome | null> {
     if (this.busy) return null;
@@ -119,6 +136,10 @@ export class SlideLibraryService {
     this.busy = true;
     const t0 = performance.now();
     try {
+      const formatting: Formatting =
+        pref === "Auto"
+          ? resolveFormatting(pref, await destinationLayouts(), this.libraryLayoutNames())
+          : pref;
       const { path, source } = this.fileFor(entry);
       const b64 = await this.base64(path);
       const t1 = performance.now();
@@ -144,6 +165,7 @@ export class SlideLibraryService {
       return {
         ...result,
         entry,
+        formatting,
         ms: Math.round(performance.now() - t0),
         fetchMs: Math.round(t1 - t0),
       };

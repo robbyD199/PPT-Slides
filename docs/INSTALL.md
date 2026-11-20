@@ -28,9 +28,11 @@ Diese Variante muss nach Office-Updates manchmal wiederholt werden; die Registry
 - Suchfeld oben: deutsch/englisch, z. B. „bar chart“, „Säulendiagramm“, „company overview“, „Wasserfall“, „Gantt“.
 - `⤢` oder Menüband **Folie suchen**: großes Suchfenster mit Vorschau. `↑↓←→` auswählen, `Enter` einfügen, `Esc` schließen.
 - Menü `⋯`:
-  - *Design der Zielpräsentation* (Standard): Folie übernimmt Master, Farben und Schriften der geöffneten Präsentation.
-  - *Platzhalter-Layout der Vorlage schützen* (Standard an): Bei fremden Mastern bleiben Titel/Text an der Position und in der Größe der Vorlage.
-  - *Format der Vorlage beibehalten*: importiert stattdessen den Master der Bibliothek.
+  - *Automatisch* (Standard): In Präsentationen auf Basis deiner Vorlage wird dein Master im Farbset des Decks verwendet
+    (kein zweiter Master); in fremden oder leeren Präsentationen bringt die Folie Master und Farben der Bibliothek mit.
+  - *Immer Master & Farben der Bibliothek*: importiert immer den Bibliotheks-Master (in eigenen Decks als zweiter Master).
+  - *An Präsentation anpassen*: Folie übernimmt Master, Farben und Schriften der geöffneten Präsentation.
+  - *Platzhalter-Layout der Vorlage schützen* (Standard an): Beim Anpassen an fremde Master bleiben Titel/Text an Position und Größe der Vorlage.
   - *Neue Präsentation aus Vorlage*: öffnet eine neue Präsentation mit dem Master der Vorlage in einem der 5 Farbsets.
 - Gelbes Dreieck auf einer Vorschau: Die Folie enthält feste Farben/Schriften (Theme-Lint) und passt sich nicht vollständig an.
 

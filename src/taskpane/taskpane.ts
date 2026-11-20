@@ -14,7 +14,7 @@ import { describeError, MSG } from "../shared/messages";
 import { prefs } from "../shared/prefs";
 import { openSearchDialog } from "../shared/dialogHost";
 import { destinationLayouts, hasLibraryMaster } from "../shared/insert";
-import type { Formatting, Group, Library, SlideEntry } from "../shared/types";
+import type { FormattingPref, Group, Library, SlideEntry } from "../shared/types";
 
 declare const __SELFTEST__: boolean;
 
@@ -458,7 +458,7 @@ function openMenu(): void {
   const m = $("menu");
   m.innerHTML = "";
   const fmt = prefs.formatting();
-  const radio = (value: Formatting, label: string, hint: string) =>
+  const radio = (value: FormattingPref, label: string, hint: string) =>
     el(
       "button",
       {
@@ -473,7 +473,9 @@ function openMenu(): void {
             "info",
             value === "UseDestinationTheme"
               ? "Folien passen sich an Master und Farben der Präsentation an."
-              : "Folien behalten Master und Farben der Bibliothek.",
+              : value === "Auto"
+                ? "Automatisch: eigener Master im Deck-Farbset, sonst Master & Farben der Bibliothek."
+                : "Folien behalten immer Master und Farben der Bibliothek.",
             "",
             2600
           );
@@ -490,9 +492,14 @@ function openMenu(): void {
   m.append(
     el("div", { class: "menu-label" }, "Beim Einfügen"),
     radio(
+      "Auto",
+      "Automatisch (Standard)",
+      "Eigene Decks: dein Master im Farbset des Decks · fremde/leere: Master & Farben der Bibliothek"
+    ),
+    radio(
       "KeepSourceFormatting",
-      "Master & Farben der Bibliothek (Standard)",
-      "Folie sieht aus wie in der Vorlage; der Bibliotheks-Master wird mitgebracht"
+      "Immer Master & Farben der Bibliothek",
+      "Bringt den Bibliotheks-Master mit (in eigenen Decks als zweiter Master)"
     ),
     radio(
       "UseDestinationTheme",
@@ -509,7 +516,7 @@ function openMenu(): void {
         type: "button",
         role: "menuitemcheckbox",
         "aria-checked": String(keep),
-        disabled: fmt !== "UseDestinationTheme",
+        disabled: fmt === "KeepSourceFormatting",
         title:
           "Bei fremden Mastern verschiebt PowerPoint Titel- und Textplatzhalter auf das Ziel-Layout. Diese Option stellt Position und Größe aus der Vorlage wieder her und verkleinert zu langen Text.",
         onclick: () => {

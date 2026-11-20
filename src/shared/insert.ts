@@ -1,4 +1,4 @@
-import type { Formatting, PlaceholderBox } from "./types";
+import type { Formatting, FormattingPref, PlaceholderBox } from "./types";
 
 /**
  * Where to insert: directly after the selected slide (the last one in presentation order if
@@ -198,6 +198,21 @@ export async function insertSlide(base64: string, opts: InsertOptions): Promise<
 export function hasLibraryMaster(masters: string[][], libraryLayouts: string[]): boolean {
   if (!libraryLayouts.length) return true;
   return masters.some((layouts) => libraryLayouts.every((name) => layouts.includes(name)));
+}
+
+/**
+ * "Auto": decks based on the own master keep it (destination theme = same master, deck's color set,
+ * no second master); foreign or empty decks get the library master and colors (keep source formatting).
+ */
+export function resolveFormatting(
+  pref: FormattingPref,
+  masters: string[][] | null,
+  libraryLayouts: string[]
+): Formatting {
+  if (pref !== "Auto") return pref;
+  return masters && hasLibraryMaster(masters, libraryLayouts)
+    ? "UseDestinationTheme"
+    : "KeepSourceFormatting";
 }
 
 /** Layout names per slide master of the open presentation (PowerPointApi 1.3), null if unavailable. */

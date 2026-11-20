@@ -1,6 +1,6 @@
 # Selbsttest-Bericht – Folienbibliothek
 
-- Zeitpunkt: 20.11.2026, 06:18:00
+- Zeitpunkt: 20.11.2026, 07:50:45
 - Bibliothek: Build `06c3818d00`, Stand 2026-11-20, 58 Einträge (54 Folien + 4 Grundlayouts)
 - Ablauf: `scripts/selftest.ps1` (Dev-Build, automatisch geöffneter Seitenbereich, Einfügen jeder Vorlage hinter Folie 1, Prüfung per COM)
 
@@ -341,26 +341,37 @@
 | Zielfolien verwenden das Ziel-Design „Office Theme“ | ✅ |
 | Option „Format der Vorlage beibehalten“ importiert den Bibliotheks-Master | ✅ (Designs: Office Theme, Office Theme [1795136486273]) |
 
-## Screenshot-Vergleich
+## Immer Master & Farben der Bibliothek (`keep-vorlage`)
 
-Je Folie: links die Vorlage aus der Bibliothek, daneben die eingefügte Folie in jeder Zielpräsentation (Export per COM).
+| Prüfung | Ergebnis |
+|---|---|
+| 13 Folien nacheinander eingefügt | ✅ |
+| Eingefügte Folien teilen sich einen Bibliotheks-Master (kein Master je Folie) | ✅ (1) |
+| Designs vorher → nachher | 1 → 2: Office Theme [1795136486273] (Akzent 1 #735D45), Office Theme [1795136486273] (Akzent 1 #663300) |
 
-- [compare-fremd-01.jpg](screens/compare-fremd-01.jpg)
-- [compare-fremd-02.jpg](screens/compare-fremd-02.jpg)
-- [compare-fremd-03.jpg](screens/compare-fremd-03.jpg)
-- [compare-fremd-04.jpg](screens/compare-fremd-04.jpg)
-- [compare-fremd-05.jpg](screens/compare-fremd-05.jpg)
-- [compare-fremd-06.jpg](screens/compare-fremd-06.jpg)
-- [compare-fremd-07.jpg](screens/compare-fremd-07.jpg)
-- [compare-fremd-08.jpg](screens/compare-fremd-08.jpg)
-- [compare-vorlage-01.jpg](screens/compare-vorlage-01.jpg)
-- [compare-vorlage-02.jpg](screens/compare-vorlage-02.jpg)
-- [compare-vorlage-03.jpg](screens/compare-vorlage-03.jpg)
-- [compare-vorlage-04.jpg](screens/compare-vorlage-04.jpg)
-- [compare-vorlage-05.jpg](screens/compare-vorlage-05.jpg)
-- [compare-vorlage-06.jpg](screens/compare-vorlage-06.jpg)
-- [compare-vorlage-07.jpg](screens/compare-vorlage-07.jpg)
-- [compare-vorlage-08.jpg](screens/compare-vorlage-08.jpg)
+## Immer Master & Farben der Bibliothek (`keep-fremd`)
+
+| Prüfung | Ergebnis |
+|---|---|
+| 13 Folien nacheinander eingefügt | ✅ |
+| Eingefügte Folien teilen sich einen Bibliotheks-Master (kein Master je Folie) | ✅ (1) |
+| Designs vorher → nachher | 1 → 2: Selbsttest Eigenes Theme (Akzent 1 #0051E6), Office Theme [1795136486273] (Akzent 1 #663300) |
+
+## Automatisch (Standard) (`auto-vorlage`)
+
+| Prüfung | Ergebnis |
+|---|---|
+| 13 Folien nacheinander eingefügt | ✅ |
+| Eingefügte Folien teilen sich einen Bibliotheks-Master (kein Master je Folie) | ✅ (1) |
+| Designs vorher → nachher | 1 → 1: Office Theme [1795136486273] (Akzent 1 #735D45) |
+
+## Automatisch (Standard) (`auto-fremd`)
+
+| Prüfung | Ergebnis |
+|---|---|
+| 13 Folien nacheinander eingefügt | ✅ |
+| Eingefügte Folien teilen sich einen Bibliotheks-Master (kein Master je Folie) | ✅ (1) |
+| Designs vorher → nachher | 1 → 2: Selbsttest Eigenes Theme (Akzent 1 #0051E6), Office Theme [1795136486273] (Akzent 1 #663300) |
 
 ## Zusammenfassung
 
@@ -375,6 +386,10 @@ Je Folie: links die Vorlage aus der Bibliothek, daneben die eingefügte Folie in
 | custom: Master, Farben, Schriften des Ziels (Ausnahmen nur Lint) | ✅ |
 | custom: Einfügen < 2 s, Position, Auswahl, Doppelklick | ✅ |
 | Leere Präsentation → Einfügen am Ende/Anfang | ✅ |
+| keep-vorlage: Vorlagenformat ohne Master-Duplikate | ✅ |
+| keep-fremd: Vorlagenformat ohne Master-Duplikate | ✅ |
+| auto-vorlage: Vorlagenformat ohne Master-Duplikate | ✅ |
+| auto-fremd: Vorlagenformat ohne Master-Duplikate | ✅ |
 
 Hinweise:
 - „Keine Auswahl → am Ende einfügen“: PowerPoint lässt sich per API nicht in einen Zustand ohne ausgewählte Folie versetzen (`setSelectedSlides([])` ändert nichts). Die Logik ist per Unit-Test abgedeckt; der Fall „leere Präsentation“ ist oben getestet.
