@@ -64,7 +64,7 @@ Write-Host 'Dev-Server laeuft: https://localhost:3000'
 # --- 2. sideload dev manifest ------------------------------------------------------------------
 $devKey = 'HKCU:\Software\Microsoft\Office\16.0\WEF\Developer'
 $devWasRegistered = (Test-Path $devKey) -and ((Get-ItemProperty $devKey).PSObject.Properties.Name -contains $devId)
-New-Item -Path $devKey -Force | Out-Null
+if (-not (Test-Path $devKey)) { New-Item -Path $devKey | Out-Null }  # never -Force: would wipe existing values
 Set-ItemProperty -Path $devKey -Name $devId -Value $manifest
 
 # --- 3. test decks -----------------------------------------------------------------------------

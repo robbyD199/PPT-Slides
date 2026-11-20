@@ -76,7 +76,7 @@ if (-not (Test-Path $unc)) {
   return
 }
 
-New-Item -Path $catKey -Force | Out-Null
+if (-not (Test-Path $catKey)) { New-Item -Path $catKey | Out-Null }  # never -Force: would wipe existing catalogs
 $existing = Get-ChildItem $catKey -ErrorAction SilentlyContinue | Where-Object { (Get-ItemProperty $_.PSPath).Url -eq $unc }
 if (-not $existing) {
   $guid = '{' + [guid]::NewGuid().ToString() + '}'

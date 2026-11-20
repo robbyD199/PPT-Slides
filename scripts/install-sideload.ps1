@@ -58,7 +58,7 @@ if ($Dev) {
   }
 }
 $id = Get-ManifestId $dest
-New-Item -Path $devKey -Force | Out-Null
+if (-not (Test-Path $devKey)) { New-Item -Path $devKey | Out-Null }  # never -Force: would wipe existing values
 Set-ItemProperty -Path $devKey -Name $id -Value $dest
 Write-Host "Registriert: $id -> $dest"
 Write-Host 'PowerPoint neu starten: Start -> Gruppe "Folienbibliothek" -> "Bibliothek" bzw. "Folie suchen".'
