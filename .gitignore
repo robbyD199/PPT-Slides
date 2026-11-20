@@ -1,0 +1,21 @@
+node_modules/
+dist/
+lib/
+coverage/
+*.log
+.env
+
+# Office lock files / user working copies in the project root
+~$*
+/*.pptx
+/*.potx
+
+# local test output (report.md is kept)
+test-results/*
+!test-results/report.md
+!test-results/.gitkeep
+
+# personal agent instructions stay local (repo is public)
+claude.md
+CLAUDE.md
+

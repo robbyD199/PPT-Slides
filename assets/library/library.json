@@ -1,0 +1,2727 @@
+{
+  "schema": 1,
+  "name": "Folienbibliothek",
+  "updated": "2026-11-20T01:27:58.435Z",
+  "built": "2026-11-20T01:50:43.337Z",
+  "build": "3b629875e1",
+  "source": {
+    "file": "Library.pptx",
+    "sha1": "3b629875e154af9c774d0463c831812bff9943fb",
+    "slides": 55
+  },
+  "insertMode": "perSlide",
+  "libraryFile": "Library.pptx",
+  "categories": [
+    {
+      "id": "layouts",
+      "name": "Grundlayouts",
+      "short": "Layouts",
+      "description": "Leere Folien mit den Master-Layouts der Vorlage – der schnellste Start für eigene Inhalte.",
+      "subcategories": [
+        {
+          "id": "empty",
+          "name": "Leere Layouts"
+        }
+      ]
+    },
+    {
+      "id": "structure",
+      "name": "Struktur & Storyline",
+      "short": "Struktur",
+      "description": "Folien, die das Deck rahmen: Deckblatt, Einleitung, Executive Summary, Abschluss und Quellen.",
+      "subcategories": [
+        {
+          "id": "cover",
+          "name": "Deckblatt"
+        },
+        {
+          "id": "intro",
+          "name": "Einleitung & Vorstellung"
+        },
+        {
+          "id": "summary",
+          "name": "Executive Summary"
+        },
+        {
+          "id": "closing",
+          "name": "Abschluss & Call-to-Action"
+        },
+        {
+          "id": "references",
+          "name": "Quellen & Anhang"
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "name": "Text & Kernaussagen",
+      "short": "Text",
+      "description": "Inhalte, die vor allem über Text wirken: Aufzählungen, Fließtext, Spalten und Karten mit Icons.",
+      "subcategories": [
+        {
+          "id": "bullets",
+          "name": "Aufzählung"
+        },
+        {
+          "id": "longform",
+          "name": "Fließtext"
+        },
+        {
+          "id": "columns",
+          "name": "Spalten & Bereiche"
+        },
+        {
+          "id": "cards",
+          "name": "Karten & Icons"
+        }
+      ]
+    },
+    {
+      "id": "charts",
+      "name": "Diagramme",
+      "short": "Diagramme",
+      "description": "Datengetriebene Diagramme (editierbare Diagrammdaten): Linien, Säulen, Wasserfall, Blasen.",
+      "subcategories": [
+        {
+          "id": "line",
+          "name": "Linien"
+        },
+        {
+          "id": "column",
+          "name": "Säulen"
+        },
+        {
+          "id": "waterfall",
+          "name": "Wasserfall"
+        },
+        {
+          "id": "bubble",
+          "name": "Blasen"
+        }
+      ]
+    },
+    {
+      "id": "figures",
+      "name": "Kennzahlen & Tabellen",
+      "short": "Kennzahlen",
+      "description": "Zahlen ohne Diagramm: Key-Facts-Kacheln und Status-/KPI-Tabellen.",
+      "subcategories": [
+        {
+          "id": "keyfacts",
+          "name": "Key Facts"
+        },
+        {
+          "id": "tables",
+          "name": "Tabellen"
+        }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "name": "Frameworks & Matrizen",
+      "short": "Frameworks",
+      "description": "Konzeptionelle Strukturen: Matrizen und Portfolios (auch als Blasendiagramm), Hub & Spoke, Issue Trees, Säulenmodelle.",
+      "subcategories": [
+        {
+          "id": "matrix",
+          "name": "Matrix & Portfolio"
+        },
+        {
+          "id": "hub",
+          "name": "Hub & Spoke"
+        },
+        {
+          "id": "tree",
+          "name": "Issue Tree"
+        },
+        {
+          "id": "pillars",
+          "name": "Säulen & Bausteine"
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "name": "Prozesse & Phasen",
+      "short": "Prozesse",
+      "description": "Abfolgen ohne Zeitachse: Phasenmodelle, Schrittfolgen, Treppen und Kaskaden.",
+      "subcategories": [
+        {
+          "id": "overview",
+          "name": "Phasenübersicht"
+        },
+        {
+          "id": "detail",
+          "name": "Phase im Detail"
+        },
+        {
+          "id": "steps",
+          "name": "Schrittfolge"
+        },
+        {
+          "id": "stairs",
+          "name": "Treppe & Kaskade"
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "name": "Zeitpläne & Roadmaps",
+      "short": "Zeitpläne",
+      "description": "Alles mit Zeitachse: Gantt-/Projektpläne, Phasen- und Wellen-Roadmaps mit Meilensteinen.",
+      "subcategories": [
+        {
+          "id": "plan",
+          "name": "Projektplan & Gantt"
+        },
+        {
+          "id": "roadmap",
+          "name": "Phasen-Roadmap"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "name": "Team & Organisation",
+      "short": "Team",
+      "description": "Organigramme, Projektteams und Rollen.",
+      "subcategories": [
+        {
+          "id": "org",
+          "name": "Organigramm"
+        },
+        {
+          "id": "team",
+          "name": "Team & Rollen"
+        }
+      ]
+    }
+  ],
+  "theme": {
+    "fonts": {
+      "heading": "Arial",
+      "body": "Arial"
+    },
+    "signalColors": [
+      {
+        "name": "Positive (sage)",
+        "hex": "A9C1A0"
+      },
+      {
+        "name": "Positive light",
+        "hex": "D9E4D3"
+      },
+      {
+        "name": "Caution (sand)",
+        "hex": "E6CE96"
+      },
+      {
+        "name": "Caution light",
+        "hex": "F2E6C9"
+      },
+      {
+        "name": "Negative (clay)",
+        "hex": "D49A8A"
+      },
+      {
+        "name": "Negative light",
+        "hex": "EFD5CC"
+      },
+      {
+        "name": "Neutral (cream)",
+        "hex": "F4EFE6"
+      }
+    ]
+  },
+  "templates": [
+    {
+      "id": "jp-morgan",
+      "name": "JP Morgan",
+      "file": "template/jp-morgan.pptx",
+      "colors": {
+        "dk1": "161616",
+        "lt1": "FFFFFF",
+        "dk2": "707070",
+        "lt2": "F0F0F0",
+        "accent1": "003366",
+        "accent2": "056FAA",
+        "accent3": "69A9CC",
+        "accent4": "C0DBEA",
+        "accent5": "161616",
+        "accent6": "CFCFCF",
+        "hlink": "056FAA",
+        "folHlink": "003366"
+      },
+      "active": true
+    },
+    {
+      "id": "rothschild",
+      "name": "Rothschild",
+      "file": "template/rothschild.pptx",
+      "colors": {
+        "dk1": "455D73",
+        "lt1": "FFFFFF",
+        "dk2": "737372",
+        "lt2": "F2F2F2",
+        "accent1": "455D73",
+        "accent2": "657A8C",
+        "accent3": "BF8C6F",
+        "accent4": "D8DEE2",
+        "accent5": "737372",
+        "accent6": "C8C8C7",
+        "hlink": "657A8C",
+        "folHlink": "455D73"
+      },
+      "active": false
+    },
+    {
+      "id": "credit-suisse",
+      "name": "Credit Suisse",
+      "file": "template/credit-suisse.pptx",
+      "colors": {
+        "dk1": "001F3B",
+        "lt1": "FFFFFF",
+        "dk2": "36526E",
+        "lt2": "F4F4F4",
+        "accent1": "003565",
+        "accent2": "731117",
+        "accent3": "36526E",
+        "accent4": "BFCCD8",
+        "accent5": "001F3B",
+        "accent6": "C3CBD3",
+        "hlink": "003565",
+        "folHlink": "731117"
+      },
+      "active": false
+    },
+    {
+      "id": "marlboro",
+      "name": "Marlboro",
+      "file": "template/marlboro.pptx",
+      "colors": {
+        "dk1": "000000",
+        "lt1": "FFFFFF",
+        "dk2": "4D4D4D",
+        "lt2": "F2F2F2",
+        "accent1": "000000",
+        "accent2": "FE0000",
+        "accent3": "4D4D4D",
+        "accent4": "D9D9D9",
+        "accent5": "000000",
+        "accent6": "B8B8B8",
+        "hlink": "FE0000",
+        "folHlink": "4D4D4D"
+      },
+      "active": false
+    },
+    {
+      "id": "ubs",
+      "name": "UBS",
+      "file": "template/ubs.pptx",
+      "colors": {
+        "dk1": "000000",
+        "lt1": "FFFFFF",
+        "dk2": "4D4D4D",
+        "lt2": "F2F2F2",
+        "accent1": "000000",
+        "accent2": "FE0000",
+        "accent3": "4D4D4D",
+        "accent4": "D9D9D9",
+        "accent5": "000000",
+        "accent6": "B8B8B8",
+        "hlink": "FE0000",
+        "folHlink": "4D4D4D"
+      },
+      "active": false
+    }
+  ],
+  "slides": [
+    {
+      "key": "2147473501#3613336259",
+      "kind": "slide",
+      "slideId": "2147473501",
+      "creationId": "3613336259",
+      "position": 1,
+      "title": "Deckblatt",
+      "category": "structure",
+      "subcategory": "cover",
+      "keywords": [
+        "cover",
+        "title page",
+        "titelseite",
+        "titelfolie",
+        "front page",
+        "logo",
+        "start"
+      ],
+      "description": "Titelfolie mit Titelbild, Logos, Titel, Untertitel und Kurzbeschreibung.",
+      "order": 1,
+      "sourceTitle": "[Presentation Title]",
+      "layout": "Title Slide",
+      "text": "[Subtitle] · [One- or two-line description of the presentation, the author or the team]",
+      "charts": 0,
+      "images": 4,
+      "thumb": "thumbs/2147473501.png",
+      "preview": "previews/2147473501.png",
+      "file": "slides/2147473501.pptx",
+      "hash": "dda9c5e2be70914b",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473459#1877702481",
+      "kind": "slide",
+      "slideId": "2147473459",
+      "creationId": "1877702481",
+      "position": 2,
+      "title": "Vorstellung mit Foto",
+      "category": "structure",
+      "subcategory": "intro",
+      "keywords": [
+        "introduction",
+        "einleitung",
+        "about",
+        "about us",
+        "über uns",
+        "speaker",
+        "presenter",
+        "referent",
+        "profil",
+        "profile",
+        "contact",
+        "kontakt",
+        "ansprechpartner",
+        "company overview",
+        "unternehmensüberblick"
+      ],
+      "description": "Persönliche Vorstellung oder Einleitung: Foto, Logo, drei Kernpunkte, Name und Rolle.",
+      "order": 2,
+      "sourceTitle": "Introduction",
+      "layout": "Title and Content",
+      "text": "[Introductory point 1: insert your own text and bold the phrase the reader should remember] [Introductory point 2: insert your own text] [Introductory point 3: insert your own text, for example how to get in touch] · Insert logo · Insert photo · [Name] [Job Title] [Company and Role]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473459.png",
+      "preview": "previews/2147473459.png",
+      "file": "slides/2147473459.pptx",
+      "hash": "a9853130cb16be0d",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473403#943334419",
+      "kind": "slide",
+      "slideId": "2147473403",
+      "creationId": "943334419",
+      "position": 3,
+      "title": "Executive Summary – Fließtext",
+      "category": "structure",
+      "subcategory": "summary",
+      "keywords": [
+        "executive summary",
+        "management summary",
+        "zusammenfassung",
+        "summary",
+        "key takeaway",
+        "fazit",
+        "überblick",
+        "text"
+      ],
+      "description": "Zusammenfassung in Absätzen mit Kernaussage oben.",
+      "order": 3,
+      "sourceTitle": "Executive summary",
+      "layout": "Title Only",
+      "text": "[Insert own text description key takeaway.] · [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.] · [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.] · [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.] · [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473403.png",
+      "preview": "previews/2147473403.png",
+      "file": "slides/2147473403.pptx",
+      "hash": "3ff6e83cd5eeae59",
+      "lint": {
+        "level": "info",
+        "warnings": [],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473430#4172671294",
+      "kind": "slide",
+      "slideId": "2147473430",
+      "creationId": "4172671294",
+      "position": 4,
+      "title": "Executive Summary – Kernaussagen mit Belegen",
+      "category": "structure",
+      "subcategory": "summary",
+      "keywords": [
+        "executive summary",
+        "management summary",
+        "zusammenfassung",
+        "key takeaways",
+        "kernaussagen",
+        "conclusion",
+        "recommendation",
+        "empfehlung",
+        "bullets",
+        "pyramid",
+        "pyramidenprinzip"
+      ],
+      "description": "Drei fett gesetzte Kernaussagen mit Belegen als Bullets und abschließender Empfehlung.",
+      "order": 4,
+      "sourceTitle": "Executive summary",
+      "layout": "Title Only",
+      "text": "[Key takeaway/conclusion in bold text] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Key takeaway/conclusion in bold text] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Key takeaway/conclusion in bold text] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Supporting arguments for key takeaway/conclusion in bullet points] · [Final conclusion/recommendation in bold text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473430.png",
+      "preview": "previews/2147473430.png",
+      "file": "slides/2147473430.pptx",
+      "hash": "d4a82890fd0ec15e",
+      "lint": {
+        "level": "info",
+        "warnings": [],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473457#723597516",
+      "kind": "slide",
+      "slideId": "2147473457",
+      "creationId": "723597516",
+      "position": 5,
+      "title": "Aufzählung mit Einleitungssatz",
+      "category": "text",
+      "subcategory": "bullets",
+      "keywords": [
+        "bullet points",
+        "bullets",
+        "aufzählung",
+        "stichpunkte",
+        "liste",
+        "list",
+        "agenda",
+        "text",
+        "six points"
+      ],
+      "description": "Einleitungssatz und sechs Punkte mit fetter Überschrift – selbsterklärend ohne Präsentator.",
+      "order": 5,
+      "sourceTitle": "[Insert the key message of this slide in one line]",
+      "layout": "Title and Content",
+      "text": "[Point 1 heading]: [explain this point in two or three lines; insert your own text, with the facts, figures or examples that support it, so that the slide can be read on its own without a presenter] [Point 2 heading]: [explain this point in two or three lines; insert your own text, with the facts, figures or examples that support it, so that the slide can be read on its own without a presenter] [Point 3 heading]: [explain this point in two or three lines; insert your own text, with the facts, figures or examples that support it, so that the slide can be read on its own without a presenter] [Point 4 heading]: [explain this point in two or three lines; insert your own text, with the facts, figures or examples that support it, so that the slide can be read on its own without a presenter] [Point 5 heading]: [explain this point in two or three lines; insert your own text, with the facts, figures or examples that support it, so that the slide can be read on its own without a presenter] [Point 6 heading]: [explain this point in two or three lines; insert your own text, with the facts, figures or examples that support it, so that the slide can be read on its own without a presenter] · [Introductory sentence: summarize in one or two lines what the points below have in common and why they matter to the audience]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473457.png",
+      "preview": "previews/2147473457.png",
+      "file": "slides/2147473457.pptx",
+      "hash": "ce5619bfaa97c96a",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473468#167158260",
+      "kind": "slide",
+      "slideId": "2147473468",
+      "creationId": "167158260",
+      "position": 6,
+      "title": "Fließtext mit nummerierter Liste",
+      "category": "text",
+      "subcategory": "longform",
+      "keywords": [
+        "long-form text",
+        "fließtext",
+        "paragraphs",
+        "absätze",
+        "framework",
+        "concept",
+        "konzept",
+        "numbered list",
+        "nummerierte liste",
+        "text"
+      ],
+      "description": "Konzept oder Framework in Absätzen erklären, mit nummerierter Liste.",
+      "order": 6,
+      "sourceTitle": "[Insert the key message about the framework or concept, on one or two lines] (1/2)",
+      "layout": "Title Only",
+      "text": "[Opening paragraph: introduce the framework, concept or topic in three to five lines. Explain what it is, where it comes from and what it is used for. Insert your own text and keep each paragraph to a single idea so the page stays readable.] [Second paragraph: add the background or reasoning the reader needs, in two or three lines. Insert your own text.] [Lead-in sentence that introduces the list below:] 1. [Item 1]: [one-line explanation of what it means and what to do about it] 2. [Item 2]: [one-line explanation of what it means and what to do about it] 3. [Item 3]: [one-line explanation of what it means and what to do about it] 4. [Item 4]: [one-line explanation of what it means and what to do about it] [Paragraph: explain how to read or apply the list above, in one or two lines. Insert your own text.] [Closing paragraph: state why this matters to the audience, in one or two lines.]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473468.png",
+      "preview": "previews/2147473468.png",
+      "file": "slides/2147473468.pptx",
+      "hash": "36caa463a83adf76",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473473#2785456364",
+      "kind": "slide",
+      "slideId": "2147473473",
+      "creationId": "2785456364",
+      "position": 7,
+      "title": "Framework-Beschreibung mit 7 Elementen",
+      "category": "text",
+      "subcategory": "longform",
+      "keywords": [
+        "framework description",
+        "framework",
+        "modell",
+        "model",
+        "konzept",
+        "elements",
+        "elemente",
+        "numbered list",
+        "nummerierte liste",
+        "text"
+      ],
+      "description": "Beschreibung eines Frameworks: Einleitung und sieben nummerierte Elemente (Teil 1/2 zur Treppe).",
+      "order": 7,
+      "sourceTitle": "[Framework or topic name]",
+      "layout": "Title and Subtitle",
+      "text": "[Description (1/2)] · [Opening paragraph: introduce the framework or topic in two or three lines. Explain what it is and how it helps the audience; insert your own text.] [Lead-in sentence that introduces the list below:] 1. [Element 1]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text] 2. [Element 2]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text] 3. [Element 3]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text] 4. [Element 4]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text] 5. [Element 5]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text] 6. [Element 6]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text] 7. [Element 7]: [explain in one or two lines what this element means, with an example the audience will recognize; insert your own text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473473.png",
+      "preview": "previews/2147473473.png",
+      "file": "slides/2147473473.pptx",
+      "hash": "0610532f8df1da74",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473489#1250848316",
+      "kind": "slide",
+      "slideId": "2147473489",
+      "creationId": "1250848316",
+      "position": 8,
+      "title": "Drei Bereiche mit Icons",
+      "category": "text",
+      "subcategory": "columns",
+      "keywords": [
+        "three areas",
+        "drei bereiche",
+        "trends",
+        "focus areas",
+        "schwerpunkte",
+        "handlungsfelder",
+        "icons",
+        "themes",
+        "themen"
+      ],
+      "description": "Drei Trends oder Bereiche untereinander, je mit Icon im Kreis und Bullets.",
+      "order": 8,
+      "sourceTitle": "[Three key trends or areas slide / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Trend/area 3] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Trend/area 1] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Trend/area 2] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points]",
+      "charts": 0,
+      "images": 4,
+      "thumb": "thumbs/2147473489.png",
+      "preview": "previews/2147473489.png",
+      "file": "slides/2147473489.pptx",
+      "hash": "a9c6692b0ac7871f",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Graphik Regular, Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473490#1682838688",
+      "kind": "slide",
+      "slideId": "2147473490",
+      "creationId": "1682838688",
+      "position": 9,
+      "title": "Drei Trends – Tabelle mit Beispielen",
+      "category": "text",
+      "subcategory": "columns",
+      "keywords": [
+        "three trends",
+        "drei trends",
+        "trends",
+        "market trends",
+        "markttrends",
+        "examples",
+        "beispiele",
+        "table",
+        "tabelle",
+        "drivers",
+        "treiber"
+      ],
+      "description": "Drei Trends als Zeilen: Trend, Beschreibung, Beispiele.",
+      "order": 9,
+      "sourceTitle": "[Three key trends slide / Insert action title]",
+      "layout": "Title Only",
+      "text": "[Trend 1] · [Trend 2] · [Trend 3] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Select examples] · [Select examples] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Select examples] · Trend · Description · Examples",
+      "charts": 0,
+      "images": 1,
+      "thumb": "thumbs/2147473490.png",
+      "preview": "previews/2147473490.png",
+      "file": "slides/2147473490.pptx",
+      "hash": "4ff08ef30ca5a09e",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473491#4100074295",
+      "kind": "slide",
+      "slideId": "2147473491",
+      "creationId": "4100074295",
+      "position": 10,
+      "title": "Drei Trends – nummerierte Karten",
+      "category": "text",
+      "subcategory": "columns",
+      "keywords": [
+        "three trends",
+        "drei trends",
+        "trends",
+        "cards",
+        "karten",
+        "numbered",
+        "nummeriert",
+        "themes",
+        "themen"
+      ],
+      "description": "Drei nummerierte Karten mit Trendname und Bullets.",
+      "order": 10,
+      "sourceTitle": "[Three key trends slide / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Trend 1] · [Trend 2] · [Trend 3] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · [Short description of trend in 3-4 bullet points] · 1 · 2 · 3",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473491.png",
+      "preview": "previews/2147473491.png",
+      "file": "slides/2147473491.pptx",
+      "hash": "23b998ca9cf64642",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473442#1276465947",
+      "kind": "slide",
+      "slideId": "2147473442",
+      "creationId": "1276465947",
+      "position": 11,
+      "title": "Fünf Kernbereiche mit Beschreibung",
+      "category": "text",
+      "subcategory": "columns",
+      "keywords": [
+        "five areas",
+        "fünf bereiche",
+        "key areas",
+        "kernbereiche",
+        "handlungsfelder",
+        "agenda",
+        "inhalt",
+        "gliederung",
+        "overview",
+        "übersicht",
+        "numbered list"
+      ],
+      "description": "Fünf nummerierte Bereiche mit Beschreibung – auch als Agenda nutzbar.",
+      "order": 11,
+      "sourceTitle": "[Five key areas slide / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Insert description, ideally 2-4 lines] · [Insert description, ideally 2-4 lines] · [Insert description, ideally 2-4 lines] · [Insert description, ideally 2-4 lines] · [Insert description, ideally 2-4 lines] · [Area 5] · [Area 1] · [Area 2] · [Area 3] · [Area 4] · Area · Description · 1 · 2 · 3 · 4 · 5",
+      "charts": 0,
+      "images": 1,
+      "thumb": "thumbs/2147473442.png",
+      "preview": "previews/2147473442.png",
+      "file": "slides/2147473442.pptx",
+      "hash": "3e2e6262a70a43c8",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Verdana, Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473479#3050334132",
+      "kind": "slide",
+      "slideId": "2147473479",
+      "creationId": "3050334132",
+      "position": 12,
+      "title": "Icon-Liste mit Zahlen",
+      "category": "text",
+      "subcategory": "cards",
+      "keywords": [
+        "icon list",
+        "icons",
+        "what is included",
+        "lieferumfang",
+        "scope",
+        "umfang",
+        "figures",
+        "zahlen",
+        "numbers",
+        "deliverables"
+      ],
+      "description": "Vier Zeilen mit Icon, Zahl und Beschreibung – z. B. Lieferumfang oder Umfang.",
+      "order": 12,
+      "sourceTitle": "[Insert the key message about what is included, on one or two lines]",
+      "layout": "Title Only",
+      "text": "Icon · [Number] [item 1 included, for example pages, files or modules] · Icon · [Number] [item 2 included, for example pages, files or modules] · Icon · [Number] [item 3 included, for example pages, files or modules] · Icon · [Number] [item 4 included, for example pages, files or modules] · *[Insert a footnote or caveat that explains how the figures above are counted, in one or two lines]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473479.png",
+      "preview": "previews/2147473479.png",
+      "file": "slides/2147473479.pptx",
+      "hash": "3b4587d05bfac639",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473480#2650881405",
+      "kind": "slide",
+      "slideId": "2147473480",
+      "creationId": "2650881405",
+      "position": 13,
+      "title": "3×3 Nutzen-Karten mit Icons",
+      "category": "text",
+      "subcategory": "cards",
+      "keywords": [
+        "benefits",
+        "nutzen",
+        "vorteile",
+        "advantages",
+        "value proposition",
+        "mehrwert",
+        "usp",
+        "features",
+        "cards",
+        "karten",
+        "icons",
+        "grid",
+        "raster"
+      ],
+      "description": "Neun Karten mit Icon, fetter Headline und Erklärung.",
+      "order": 13,
+      "sourceTitle": "[Insert the key message about the benefits, in one line]",
+      "layout": "Title Only",
+      "text": "Icon · [Benefit 1 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 2 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 3 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 4 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 5 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 6 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 7 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 8 headline.] [Explain the benefit in two or three lines; insert your own text.] · Icon · [Benefit 9 headline.] [Explain the benefit in two or three lines; insert your own text.]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473480.png",
+      "preview": "previews/2147473480.png",
+      "file": "slides/2147473480.pptx",
+      "hash": "adff070f20aa9096",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473460#1531550078",
+      "kind": "slide",
+      "slideId": "2147473460",
+      "creationId": "1531550078",
+      "position": 14,
+      "title": "Phasenübersicht – 5 Phasen",
+      "category": "process",
+      "subcategory": "overview",
+      "keywords": [
+        "phases",
+        "phasen",
+        "approach",
+        "vorgehen",
+        "vorgehensweise",
+        "methodik",
+        "methodology",
+        "process",
+        "prozess",
+        "chevron",
+        "chevrons",
+        "pfeile",
+        "transaction process",
+        "transaktionsprozess",
+        "workstreams"
+      ],
+      "description": "Fünf Chevron-Phasen mit je vier Themen und Unterthemen.",
+      "order": 14,
+      "sourceTitle": "[Insert the key message about your phased approach, on one or two lines]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473460.png",
+      "preview": "previews/2147473460.png",
+      "file": "slides/2147473460.pptx",
+      "hash": "2f15b9b923ed08c3",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473461#4157290339",
+      "kind": "slide",
+      "slideId": "2147473461",
+      "creationId": "4157290339",
+      "position": 15,
+      "title": "Phase 1 im Detail mit Bildraster",
+      "category": "process",
+      "subcategory": "detail",
+      "keywords": [
+        "phase detail",
+        "phase 1",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ],
+      "description": "Aktive Phase 1 hervorgehoben, darunter sechs Bildplatzhalter.",
+      "order": 15,
+      "sourceTitle": "[Phase 1: insert the key message for this phase]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · Insert image · Insert image · Insert image · Insert image · Insert image · Insert image",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473461.png",
+      "preview": "previews/2147473461.png",
+      "file": "slides/2147473461.pptx",
+      "hash": "89daf4e0e0ad1b4e",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473462#3853614699",
+      "kind": "slide",
+      "slideId": "2147473462",
+      "creationId": "3853614699",
+      "position": 16,
+      "title": "Phase 2 im Detail mit Bildraster",
+      "category": "process",
+      "subcategory": "detail",
+      "keywords": [
+        "phase detail",
+        "phase 2",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ],
+      "description": "Aktive Phase 2 hervorgehoben, darunter sechs Bildplatzhalter.",
+      "order": 16,
+      "sourceTitle": "[Phase 2: insert the key message for this phase]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · Insert image · Insert image · Insert image · Insert image · Insert image · Insert image",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473462.png",
+      "preview": "previews/2147473462.png",
+      "file": "slides/2147473462.pptx",
+      "hash": "d7cc2c92fdc822d7",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473463#1669200467",
+      "kind": "slide",
+      "slideId": "2147473463",
+      "creationId": "1669200467",
+      "position": 17,
+      "title": "Phase 3 im Detail mit Bildraster",
+      "category": "process",
+      "subcategory": "detail",
+      "keywords": [
+        "phase detail",
+        "phase 3",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ],
+      "description": "Aktive Phase 3 hervorgehoben, darunter sechs Bildplatzhalter.",
+      "order": 17,
+      "sourceTitle": "[Phase 3: insert the key message for this phase]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · Insert image · Insert image · Insert image · Insert image · Insert image · Insert image",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473463.png",
+      "preview": "previews/2147473463.png",
+      "file": "slides/2147473463.pptx",
+      "hash": "33c2dfd1958845bf",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473464#325643814",
+      "kind": "slide",
+      "slideId": "2147473464",
+      "creationId": "325643814",
+      "position": 18,
+      "title": "Phase 4 im Detail mit Bildraster",
+      "category": "process",
+      "subcategory": "detail",
+      "keywords": [
+        "phase detail",
+        "phase 4",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ],
+      "description": "Aktive Phase 4 hervorgehoben, darunter sechs Bildplatzhalter.",
+      "order": 18,
+      "sourceTitle": "[Phase 4: insert the key message for this phase]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · Insert image · Insert image · Insert image · Insert image · Insert image · Insert image",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473464.png",
+      "preview": "previews/2147473464.png",
+      "file": "slides/2147473464.pptx",
+      "hash": "a2862d79ea9f0e8b",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473465#482530911",
+      "kind": "slide",
+      "slideId": "2147473465",
+      "creationId": "482530911",
+      "position": 19,
+      "title": "Phase 5 im Detail mit Bildraster",
+      "category": "process",
+      "subcategory": "detail",
+      "keywords": [
+        "phase detail",
+        "phase 5",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ],
+      "description": "Aktive Phase 5 hervorgehoben, darunter sechs Bildplatzhalter.",
+      "order": 19,
+      "sourceTitle": "[Phase 5: insert the key message for this phase]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · Insert image · Insert image · Insert image · Insert image · Insert image · Insert image",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473465.png",
+      "preview": "previews/2147473465.png",
+      "file": "slides/2147473465.pptx",
+      "hash": "a6d0f396a39c8705",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473466#554920032",
+      "kind": "slide",
+      "slideId": "2147473466",
+      "creationId": "554920032",
+      "position": 20,
+      "title": "Phasenübersicht – Zusammenfassung",
+      "category": "process",
+      "subcategory": "overview",
+      "keywords": [
+        "phases",
+        "phasen",
+        "recap",
+        "zusammenfassung",
+        "transition",
+        "überleitung",
+        "approach",
+        "vorgehen",
+        "chevron"
+      ],
+      "description": "Alle fünf Phasen aktiv – als Überleitung oder Zusammenfassung des Vorgehens.",
+      "order": 20,
+      "sourceTitle": "[Insert a transition message that recaps the approach, on one or two lines]",
+      "layout": "Title Only",
+      "text": "[Phase 1 name] · [Phase 2 name] · [Phase 3 name] · [Phase 4 name] · [Phase 5 name] · 1 · 2 · 3 · 4 · 5 · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 1. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 2. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 3. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic] · 4. [Topic] · [Sub-topic] · [Sub-topic] · [Sub-topic]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473466.png",
+      "preview": "previews/2147473466.png",
+      "file": "slides/2147473466.pptx",
+      "hash": "1b5f23039f7e1458",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473475#705222535",
+      "kind": "slide",
+      "slideId": "2147473475",
+      "creationId": "705222535",
+      "position": 21,
+      "title": "Schritt-für-Schritt-Anleitung (5 Schritte)",
+      "category": "process",
+      "subcategory": "steps",
+      "keywords": [
+        "step by step",
+        "schritt für schritt",
+        "steps",
+        "schritte",
+        "tutorial",
+        "anleitung",
+        "how to",
+        "checklist",
+        "checkliste",
+        "agenda",
+        "numbered list"
+      ],
+      "description": "Fünf nummerierte Schritte mit Aktion und Detail.",
+      "order": 21,
+      "sourceTitle": "[Framework or topic name]",
+      "layout": "Title and Subtitle",
+      "text": "[Step-by-step tutorial] · 1 · [Step 1: state the action in one line] [Add detail on how to carry it out, in one line; insert your own text] · 2 · [Step 2: state the action in one line] [Add detail on how to carry it out, in one line; insert your own text] · 3 · [Step 3: state the action in one line] [Add detail on how to carry it out, in one line; insert your own text] · 4 · [Step 4: state the action in one line] [Add detail on how to carry it out, in one line; insert your own text] · 5 · [Step 5: state the action in one line] [Add detail on how to carry it out, in one line; insert your own text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473475.png",
+      "preview": "previews/2147473475.png",
+      "file": "slides/2147473475.pptx",
+      "hash": "1f14d0c3f30d5a7d",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473474#1244938519",
+      "kind": "slide",
+      "slideId": "2147473474",
+      "creationId": "1244938519",
+      "position": 22,
+      "title": "Treppe – 7 Stufen",
+      "category": "process",
+      "subcategory": "stairs",
+      "keywords": [
+        "staircase",
+        "treppe",
+        "stufen",
+        "stairs",
+        "maturity",
+        "reifegrad",
+        "reifegradmodell",
+        "steps",
+        "schritte",
+        "framework"
+      ],
+      "description": "Sieben Stufen aufsteigend – Teil 2/2 zur Framework-Beschreibung.",
+      "order": 22,
+      "sourceTitle": "[Framework or topic name]",
+      "layout": "Title and Subtitle",
+      "text": "[Description (2/2)] · Insert logo · 1 · 2 · 3 · 4 · 5 · 6 · 7 · [Step 1 name, in two or three lines] · [Step 2 name, in two or three lines] · [Step 3 name, in two or three lines] · [Step 4 name, in two or three lines] · [Step 5 name, in two or three lines] · [Step 6 name, in two or three lines] · [Step 7 name, in two or three lines]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473474.png",
+      "preview": "previews/2147473474.png",
+      "file": "slides/2147473474.pptx",
+      "hash": "4d360305f1d9d49c",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473476#2206176638",
+      "kind": "slide",
+      "slideId": "2147473476",
+      "creationId": "2206176638",
+      "position": 23,
+      "title": "Treppe – 7 Stufen mit Praxisbeispiel",
+      "category": "process",
+      "subcategory": "stairs",
+      "keywords": [
+        "staircase",
+        "treppe",
+        "stufen",
+        "example",
+        "beispiel",
+        "case study",
+        "fallbeispiel",
+        "praxis",
+        "maturity",
+        "reifegrad"
+      ],
+      "description": "Treppe mit ausführlichem Beispieltext je Stufe.",
+      "order": 23,
+      "sourceTitle": "[Framework or topic name]",
+      "layout": "Title and Subtitle",
+      "text": "[Real-life example: summarize in one or two lines how the example applies the framework] · Insert logo · 1 · 2 · 3 · 4 · 5 · 6 · 7 · [Describe how the example applies step 1, in four to six lines; insert your own text] · [Describe how the example applies step 2, in four to six lines; insert your own text] · [Describe how the example applies step 3, in four to six lines; insert your own text] · [Describe how the example applies step 4, in four to six lines; insert your own text] · [Describe how the example applies step 5, in four to six lines; insert your own text] · [Describe how the example applies step 6, in four to six lines; insert your own text] · [Describe how the example applies step 7, in four to six lines; insert your own text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473476.png",
+      "preview": "previews/2147473476.png",
+      "file": "slides/2147473476.pptx",
+      "hash": "ac8be96b158965c3",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473478#866667062",
+      "kind": "slide",
+      "slideId": "2147473478",
+      "creationId": "866667062",
+      "position": 24,
+      "title": "Treppe – 7 Stufen, Ausfüllvorlage",
+      "category": "process",
+      "subcategory": "stairs",
+      "keywords": [
+        "staircase",
+        "treppe",
+        "stufen",
+        "template",
+        "vorlage",
+        "maturity",
+        "reifegrad",
+        "steps"
+      ],
+      "description": "Treppe mit kurzen Ausfüllfeldern je Stufe.",
+      "order": 24,
+      "sourceTitle": "[Framework or topic name]",
+      "layout": "Title and Subtitle",
+      "text": "[Template #2] · Insert logo · 1 · 2 · 3 · 4 · 5 · 6 · 7 · [Step 1 name] by [insert your own text] · [Step 2 name] by [insert your own text] · [Step 3 name] by [insert your own text] · [Step 4 name] by [insert your own text] · [Step 5 name] by [insert your own text] · [Step 6 name] by [insert your own text] · [Step 7 name] by [insert your own text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473478.png",
+      "preview": "previews/2147473478.png",
+      "file": "slides/2147473478.pptx",
+      "hash": "7b968c1f157aeeec",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473477#2566986623",
+      "kind": "slide",
+      "slideId": "2147473477",
+      "creationId": "2566986623",
+      "position": 25,
+      "title": "Kaskade – 7 Schritte diagonal",
+      "category": "process",
+      "subcategory": "stairs",
+      "keywords": [
+        "cascade",
+        "kaskade",
+        "diagonal",
+        "steps",
+        "schritte",
+        "sequence",
+        "abfolge",
+        "waterfall steps"
+      ],
+      "description": "Sieben Schritte als diagonale Kaskade.",
+      "order": 25,
+      "sourceTitle": "[Framework or topic name]",
+      "layout": "Title and Subtitle",
+      "text": "[Template #1] · 1 · [Step 1 name] by [insert your own text] · 2 · [Step 2 name] by [insert your own text] · 3 · [Step 3 name] by [insert your own text] · 4 · [Step 4 name] by [insert your own text] · 5 · [Step 5 name] by [insert your own text] · 6 · [Step 6 name] by [insert your own text] · 7 · [Step 7 name] by [insert your own text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473477.png",
+      "preview": "previews/2147473477.png",
+      "file": "slides/2147473477.pptx",
+      "hash": "b39a26aad7c255d6",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473455#423061664",
+      "kind": "slide",
+      "slideId": "2147473455",
+      "creationId": "423061664",
+      "position": 26,
+      "title": "Hub & Spoke mit Seitenbereichen",
+      "category": "frameworks",
+      "subcategory": "hub",
+      "keywords": [
+        "hub and spoke",
+        "hub",
+        "spoke",
+        "nabe",
+        "ecosystem",
+        "ökosystem",
+        "circle",
+        "kreis",
+        "wheel",
+        "core topic",
+        "kernthema",
+        "logos",
+        "partners",
+        "company overview",
+        "unternehmensüberblick"
+      ],
+      "description": "Kernthema im Zentrum, acht Elemente im Kreis, links und rechts erklärende Abschnitte mit Logos.",
+      "order": 26,
+      "sourceTitle": "[Insert the key message of this slide in one sentence, on one or two lines]",
+      "layout": "Title Only",
+      "text": "[Left section heading] · [Item 1] · [Item 2] · [Item 3] · [Item 4] · [Item 5] · [Item 6] · [Item 7] · [Item 8] · [Core topic] · [Right section heading 1] · [Right section heading 2] · [Right section heading 3] · [Supporting text for this section: insert your own text in one or two lines] · [Supporting text for this section: insert your own text in two or three lines, with the figure that matters most] · Logo · Logo · Logo · Logo · Logo",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473455.png",
+      "preview": "previews/2147473455.png",
+      "file": "slides/2147473455.pptx",
+      "hash": "57f0644438a282d1",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473469#341392432",
+      "kind": "slide",
+      "slideId": "2147473469",
+      "creationId": "341392432",
+      "position": 27,
+      "title": "2×2-Matrix mit Beschreibungen",
+      "category": "frameworks",
+      "subcategory": "matrix",
+      "keywords": [
+        "2x2",
+        "matrix",
+        "vierfeldermatrix",
+        "quadrant",
+        "quadranten",
+        "swot",
+        "positioning",
+        "positionierung",
+        "strategy",
+        "strategie",
+        "segmentation",
+        "segmentierung"
+      ],
+      "description": "Vier Quadranten mit Beschreibung und Strategie, Achsen mit Low/High.",
+      "order": 27,
+      "sourceTitle": "[Insert the key message about the matrix, on one or two lines] (2/2)",
+      "layout": "Title Only",
+      "text": "[Quadrant 1 name] · Description: [insert your own text in one or two lines] Strategy: [insert your own text] · [Quadrant 2 name] · Description: [insert your own text in one or two lines] Strategy: [insert your own text] · [Quadrant 3 name] · Description: [insert your own text in one or two lines] Strategy: [insert your own text] · [Quadrant 4 name] · Description: [insert your own text in one or two lines] Strategy: [insert your own text] · High · [Y-axis metric] · Low · Low · [X-axis metric] · High · Caption: · [Low label] · [High label]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473469.png",
+      "preview": "previews/2147473469.png",
+      "file": "slides/2147473469.pptx",
+      "hash": "cd1d1855c5c62428",
+      "lint": {
+        "level": "info",
+        "warnings": [],
+        "infos": [
+          "Signalfarben (bewusst fest): #E6CE96, #A9C1A0, #D49A8A, #D9E4D3"
+        ]
+      }
+    },
+    {
+      "key": "2147473471#1528357443",
+      "kind": "slide",
+      "slideId": "2147473471",
+      "creationId": "1528357443",
+      "position": 28,
+      "title": "2×2-Portfolio – manuell mit Labels",
+      "category": "frameworks",
+      "subcategory": "matrix",
+      "keywords": [
+        "2x2",
+        "matrix",
+        "portfolio",
+        "quadrant",
+        "quadranten",
+        "positioning",
+        "positionierung",
+        "competitors",
+        "wettbewerber",
+        "labels",
+        "manual"
+      ],
+      "description": "Portfolio-Matrix mit frei platzierbaren Item-Labels (manuelle Version).",
+      "order": 28,
+      "sourceTitle": "[Insert the key message about your portfolio, on one or two lines]",
+      "layout": "Title Only",
+      "text": "Version 2 - Manual chart · [Quadrant 1 name] · [Quadrant 2 name] · [Quadrant 3 name] · [Quadrant 4 name] · High · [Y-axis metric] · Low · Low · [X-axis metric] · High · Caption: · [Low label] · [High label] · [Item A] · [Item B] · [Item C] · [Item D] · [Item E] · [Item F] · [Item G] · [Item H]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473471.png",
+      "preview": "previews/2147473471.png",
+      "file": "slides/2147473471.pptx",
+      "hash": "65f3a8c99afd2d40",
+      "lint": {
+        "level": "info",
+        "warnings": [],
+        "infos": [
+          "Signalfarben (bewusst fest): #E6CE96, #A9C1A0, #D49A8A, #D9E4D3"
+        ]
+      }
+    },
+    {
+      "key": "2147473487#1024531250",
+      "kind": "slide",
+      "slideId": "2147473487",
+      "creationId": "1024531250",
+      "position": 29,
+      "title": "BCG-Matrix (Growth-Share)",
+      "category": "frameworks",
+      "subcategory": "matrix",
+      "keywords": [
+        "bcg",
+        "growth share",
+        "marktwachstum",
+        "market share",
+        "marktanteil",
+        "cash cow",
+        "star",
+        "question mark",
+        "dog",
+        "portfolio",
+        "bubble",
+        "blasen",
+        "matrix"
+      ],
+      "description": "BCG-Matrix als Blasendiagramm: Marktwachstum vs. relativer Marktanteil.",
+      "order": 29,
+      "sourceTitle": "[Growth-share matrix / Insert action title]",
+      "layout": "Title Only",
+      "text": "Dog · Question mark · Cash cow · Star · Size = [insert description] · Market share (%) · Growth rate 20xx-20xx (%)",
+      "charts": 1,
+      "images": 0,
+      "thumb": "thumbs/2147473487.png",
+      "preview": "previews/2147473487.png",
+      "file": "slides/2147473487.pptx",
+      "hash": "e1cd2fa3aad9ea85",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial, Graphik Regular"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473488#928776518",
+      "kind": "slide",
+      "slideId": "2147473488",
+      "creationId": "928776518",
+      "position": 30,
+      "title": "Priorisierungsmatrix (3×3)",
+      "category": "frameworks",
+      "subcategory": "matrix",
+      "keywords": [
+        "prioritization",
+        "priorisierung",
+        "priorities",
+        "prioritäten",
+        "impact",
+        "time to impact",
+        "quick wins",
+        "aufwand nutzen",
+        "effort",
+        "assessment",
+        "bewertung",
+        "matrix",
+        "initiatives",
+        "maßnahmen"
+      ],
+      "description": "Maßnahmen nach Wirkung und Zeit bis zur Wirkung priorisieren, mit Status-Blasen.",
+      "order": 30,
+      "sourceTitle": "[Prioritization or assessment matrix / Insert action title]",
+      "layout": "Title Only",
+      "text": "[Description] · Medium · Long · Short · Low · Medium · High · LEVEL OF IMPACT · TIME TO IMPACT · [Insert name] · [Insert name] · [Insert name] · [Insert name] · [Insert name] · [Insert name] · [Insert name] · [Insert name] · [Insert name] · = [Insert status/group] · = [Insert status/group] · = [Insert status/group]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473488.png",
+      "preview": "previews/2147473488.png",
+      "file": "slides/2147473488.pptx",
+      "hash": "f1b63476149dbf82",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial, Georgia, Graphik Regular"
+        ],
+        "infos": [
+          "Signalfarben (bewusst fest): #A9C1A0, #D49A8A",
+          "Feste ostasiat./komplexe Schrift: ＭＳ Ｐゴシック, Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473447#119437851",
+      "kind": "slide",
+      "slideId": "2147473447",
+      "creationId": "119437851",
+      "position": 31,
+      "title": "Issue Tree (Treiberbaum)",
+      "category": "frameworks",
+      "subcategory": "tree",
+      "keywords": [
+        "issue tree",
+        "logic tree",
+        "logikbaum",
+        "driver tree",
+        "treiberbaum",
+        "werttreiberbaum",
+        "hypothesis tree",
+        "hypothesenbaum",
+        "root cause",
+        "ursachen",
+        "mece",
+        "problem",
+        "drivers",
+        "treiber"
+      ],
+      "description": "Hauptproblem, Haupt- und Nebentreiber, zugrunde liegende Treiber.",
+      "order": 31,
+      "sourceTitle": "[Issue tree / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Main issue] · [Main drivers of issue] · [Main drivers of issue] · [Secondary drivers of issue] · [Secondary drivers of issue] · [Underlying drivers] · [Underlying drivers] · [Underlying drivers] · [Underlying drivers] · [Secondary drivers of issue] · [Underlying drivers] · [Underlying drivers] · [Secondary drivers of issue] · [Underlying drivers] · [Underlying drivers]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473447.png",
+      "preview": "previews/2147473447.png",
+      "file": "slides/2147473447.pptx",
+      "hash": "da9daa7f7c7e9cfc",
+      "lint": {
+        "level": "info",
+        "warnings": [],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: ＭＳ Ｐゴシック"
+        ]
+      }
+    },
+    {
+      "key": "2147473448#2932488895",
+      "kind": "slide",
+      "slideId": "2147473448",
+      "creationId": "2932488895",
+      "position": 32,
+      "title": "Bereichsübersicht A–G (Säulenmodell)",
+      "category": "frameworks",
+      "subcategory": "pillars",
+      "keywords": [
+        "pillars",
+        "säulen",
+        "building blocks",
+        "bausteine",
+        "areas",
+        "bereiche",
+        "workstreams",
+        "arbeitspakete",
+        "overview",
+        "übersicht",
+        "callout",
+        "agenda"
+      ],
+      "description": "Sieben Bereiche als Säulen mit Buchstaben, Beschreibung und optionalem Call-out.",
+      "order": 32,
+      "sourceTitle": "[Overview of areas / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Area 1] · [Area 2] · [Area 3] · [Area 4] · [Area 5] · [Area 6] · [Area 7] · [Description] · [Description] · [Description] · … · [Description] · [Description] · [Description] · … · [Description] · [Description] · [Description] · … · [Description] · [Description] · [Description] · … · [Description] · [Description] · [Description] · … · [Description] · [Description] · [Description] · … · [Description] · [Description] · [Description] · … · [Insert call-out, if relevant] · A · B · C · D · E · F · G",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473448.png",
+      "preview": "previews/2147473448.png",
+      "file": "slides/2147473448.pptx",
+      "hash": "3cafe85a4144074b",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473467#3806979255",
+      "kind": "slide",
+      "slideId": "2147473467",
+      "creationId": "3806979255",
+      "position": 33,
+      "title": "Vier Liniendiagramme (Small Multiples)",
+      "category": "charts",
+      "subcategory": "line",
+      "keywords": [
+        "line chart",
+        "liniendiagramm",
+        "linien",
+        "small multiples",
+        "trend",
+        "zeitreihe",
+        "time series",
+        "kpi development",
+        "entwicklung",
+        "four charts",
+        "financial overview",
+        "finanzübersicht",
+        "dashboard"
+      ],
+      "description": "Vier kleine Liniendiagramme für vier Kennzahlen im Zeitverlauf.",
+      "order": 33,
+      "sourceTitle": "[Insert the key message that the four charts make together, on one or two lines]",
+      "layout": "Title Only",
+      "text": "[Metric 1] ([unit]) · [Metric 2] ([unit]) · [Metric 3] ([unit]) · [Metric 4] ([unit])",
+      "charts": 4,
+      "images": 0,
+      "thumb": "thumbs/2147473467.png",
+      "preview": "previews/2147473467.png",
+      "file": "slides/2147473467.pptx",
+      "hash": "cff373689ef9241b",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Diagramm: feste Schrift Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473494#3933153845",
+      "kind": "slide",
+      "slideId": "2147473494",
+      "creationId": "3933153845",
+      "position": 34,
+      "title": "Säulendiagramm – Vergleich mit Takeaways",
+      "category": "charts",
+      "subcategory": "column",
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "comparison",
+        "vergleich",
+        "benchmark",
+        "benchmarking",
+        "ranking",
+        "peers",
+        "wettbewerber",
+        "competitors",
+        "takeaways",
+        "focus"
+      ],
+      "description": "Sortierter Säulenvergleich mit hervorgehobenem Fokus-Segment und Takeaway-Spalte.",
+      "order": 34,
+      "sourceTitle": "[Column chart for comparison with takeaways / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Description] · [Data], [Unit] · [Key takeaways/main conclusion] · [Short description and most important takeaways] · [Short description and most important takeaways] · [Short description and most important takeaways] · …",
+      "charts": 1,
+      "images": 1,
+      "thumb": "thumbs/2147473494.png",
+      "preview": "previews/2147473494.png",
+      "file": "slides/2147473494.pptx",
+      "hash": "cd8452328935f6d3",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial",
+          "Diagramm: feste Schrift Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473495#598086244",
+      "kind": "slide",
+      "slideId": "2147473495",
+      "creationId": "598086244",
+      "position": 35,
+      "title": "Säulendiagramm mit Wachstumspfeil (CAGR)",
+      "category": "charts",
+      "subcategory": "column",
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "growth",
+        "wachstum",
+        "cagr",
+        "revenue",
+        "umsatz",
+        "market size",
+        "marktvolumen",
+        "development",
+        "entwicklung",
+        "financial overview",
+        "finanzübersicht",
+        "takeaways"
+      ],
+      "description": "Zeitreihe als Säulen mit CAGR-Pfeil und Takeaways.",
+      "order": 35,
+      "sourceTitle": "[Column chart with simple growth and takeaways / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "xx% · Actuals · [Description] · [Data], [Unit] · [Key takeaways/main conclusion] · [Short description and most important takeaways] · [Short description and most important takeaways] · [Short description and most important takeaways] · …",
+      "charts": 1,
+      "images": 1,
+      "thumb": "thumbs/2147473495.png",
+      "preview": "previews/2147473495.png",
+      "file": "slides/2147473495.pptx",
+      "hash": "ddcd7b27b8008c4f",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473496#3885826688",
+      "kind": "slide",
+      "slideId": "2147473496",
+      "creationId": "3885826688",
+      "position": 36,
+      "title": "Säulendiagramm mit geteiltem Wachstum (2× CAGR)",
+      "category": "charts",
+      "subcategory": "column",
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "growth",
+        "wachstum",
+        "cagr",
+        "two periods",
+        "zwei perioden",
+        "revenue",
+        "umsatz",
+        "financial overview",
+        "finanzübersicht",
+        "takeaways"
+      ],
+      "description": "Säulen-Zeitreihe mit zwei CAGR-Pfeilen für zwei Perioden.",
+      "order": 36,
+      "sourceTitle": "[Column chart with split growth and takeaways / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "Actuals · xx% · xx% · [Description] · [Data], [Unit] · [Key takeaways/main conclusion] · [Short description and most important takeaways] · [Short description and most important takeaways] · [Short description and most important takeaways] · …",
+      "charts": 1,
+      "images": 1,
+      "thumb": "thumbs/2147473496.png",
+      "preview": "previews/2147473496.png",
+      "file": "slides/2147473496.pptx",
+      "hash": "6e3be3c4faa9fe80",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473497#2615797030",
+      "kind": "slide",
+      "slideId": "2147473497",
+      "creationId": "2615797030",
+      "position": 37,
+      "title": "Säulendiagramm – Ist vs. Prognose",
+      "category": "charts",
+      "subcategory": "column",
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "forecast",
+        "prognose",
+        "actuals",
+        "ist",
+        "plan",
+        "budget",
+        "outlook",
+        "ausblick",
+        "projection",
+        "business plan",
+        "financial overview",
+        "finanzübersicht",
+        "cagr"
+      ],
+      "description": "Historische Werte und Prognose in zwei Farben, je mit CAGR.",
+      "order": 37,
+      "sourceTitle": "[Column chart with historic and forecast figures / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Data], [Unit] · Forecast · xx% · xx% · Actuals · [Description] · [Data], [Unit] · [Key takeaways/main conclusion] · [Short description and most important takeaways] · [Short description and most important takeaways] · [Short description and most important takeaways] · …",
+      "charts": 1,
+      "images": 1,
+      "thumb": "thumbs/2147473497.png",
+      "preview": "previews/2147473497.png",
+      "file": "slides/2147473497.pptx",
+      "hash": "60ad9d2ffbbff2b3",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473493#3733257267",
+      "kind": "slide",
+      "slideId": "2147473493",
+      "creationId": "3733257267",
+      "position": 38,
+      "title": "Zwei Wasserfalldiagramme (Brücke)",
+      "category": "charts",
+      "subcategory": "waterfall",
+      "keywords": [
+        "waterfall",
+        "wasserfall",
+        "bridge",
+        "brücke",
+        "überleitung",
+        "ebitda bridge",
+        "walk",
+        "variance",
+        "abweichung",
+        "drivers",
+        "treiber",
+        "financial overview",
+        "finanzübersicht",
+        "build-up",
+        "aufbau"
+      ],
+      "description": "Zwei Wasserfälle nebeneinander: was treibt die Summe?",
+      "order": 38,
+      "sourceTitle": "[Insert the key message about what drives the total, on one or two lines]",
+      "layout": "Title Only",
+      "text": "[Metric 1] ([unit]), [period] · [Metric 2] ([unit]), [period]",
+      "charts": 2,
+      "images": 0,
+      "thumb": "thumbs/2147473493.png",
+      "preview": "previews/2147473493.png",
+      "file": "slides/2147473493.pptx",
+      "hash": "bad5e6321c04878a",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Diagramm: 12× feste Farbe",
+          "Diagramm: feste Schrift Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473470#2165152908",
+      "kind": "slide",
+      "slideId": "2147473470",
+      "creationId": "2165152908",
+      "position": 39,
+      "title": "2×2-Portfolio – Blasendiagramm (automatisch)",
+      "category": "frameworks",
+      "subcategory": "matrix",
+      "keywords": [
+        "2x2",
+        "portfolio",
+        "bubble chart",
+        "blasendiagramm",
+        "matrix",
+        "quadrant",
+        "positioning",
+        "positionierung",
+        "competitors",
+        "wettbewerber",
+        "chart",
+        "automated"
+      ],
+      "description": "Portfolio-Matrix als echtes Blasendiagramm mit farbigen Quadranten (automatische Version).",
+      "order": 39,
+      "sourceTitle": "[Insert the key message about your portfolio, on one or two lines]",
+      "layout": "Title Only",
+      "text": "Version 1 - Automated chart · [Y-axis metric] ([period]) · Size = [bubble size metric] ([unit]) · [X-axis metric] ([period])",
+      "charts": 1,
+      "images": 0,
+      "thumb": "thumbs/2147473470.png",
+      "preview": "previews/2147473470.png",
+      "file": "slides/2147473470.pptx",
+      "hash": "cae69a23a7cd06fc",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Diagramm: feste Schrift Arial"
+        ],
+        "infos": [
+          "Signalfarben (bewusst fest): #E6CE96, #A9C1A0, #EFD5CC, #D9E4D3"
+        ]
+      }
+    },
+    {
+      "key": "2147473498#2927037052",
+      "kind": "slide",
+      "slideId": "2147473498",
+      "creationId": "2927037052",
+      "position": 40,
+      "title": "Blasendiagramm",
+      "category": "charts",
+      "subcategory": "bubble",
+      "keywords": [
+        "bubble chart",
+        "blasendiagramm",
+        "scatter",
+        "streudiagramm",
+        "punktdiagramm",
+        "portfolio",
+        "groups",
+        "gruppen",
+        "positioning",
+        "positionierung",
+        "comparison",
+        "vergleich",
+        "peers"
+      ],
+      "description": "Blasendiagramm mit drei Gruppen und Größenlegende.",
+      "order": 40,
+      "sourceTitle": "[Bubble chart / Insert action title]",
+      "layout": "Title Only",
+      "text": "[Dimension 2], [Unit] · [Dimension 1], [Unit] · Size = [Insert dimension] · [Insert group 1] · [Insert group 2] · [Insert group 3]",
+      "charts": 1,
+      "images": 0,
+      "thumb": "thumbs/2147473498.png",
+      "preview": "previews/2147473498.png",
+      "file": "slides/2147473498.pptx",
+      "hash": "c5977f5e67f3f8fc",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Graphik Regular, Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473438#2446261864",
+      "kind": "slide",
+      "slideId": "2147473438",
+      "creationId": "2446261864",
+      "position": 41,
+      "title": "Blasendiagramm mit Takeaways",
+      "category": "charts",
+      "subcategory": "bubble",
+      "keywords": [
+        "bubble chart",
+        "blasendiagramm",
+        "scatter",
+        "streudiagramm",
+        "portfolio",
+        "takeaways",
+        "positioning",
+        "comparison",
+        "vergleich",
+        "peers"
+      ],
+      "description": "Blasendiagramm links, Takeaway-Spalte rechts.",
+      "order": 41,
+      "sourceTitle": "[Bubble chart with takeaways / Insert action title]",
+      "layout": "Title and Subtitle",
+      "text": "[Dimension 2], [Unit] · [Dimension 1], [Unit] · [Description] · [Key takeaway/conclusion] · [Short description and most important takeaways] · [Short description and most important takeaways] · [Short description and most important takeaways] · … · Size = [Insert dimension] · [Insert group 1] · [Insert group 2] · [Insert group 3]",
+      "charts": 1,
+      "images": 0,
+      "thumb": "thumbs/2147473438.png",
+      "preview": "previews/2147473438.png",
+      "file": "slides/2147473438.pptx",
+      "hash": "6401692dab60774a",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Graphik Regular, Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473481#75579200",
+      "kind": "slide",
+      "slideId": "2147473481",
+      "creationId": "75579200",
+      "position": 42,
+      "title": "Key Facts – Kennzahlen-Kacheln mit Logos",
+      "category": "figures",
+      "subcategory": "keyfacts",
+      "keywords": [
+        "key facts",
+        "kennzahlen",
+        "kpi",
+        "kpis",
+        "figures",
+        "zahlen",
+        "at a glance",
+        "auf einen blick",
+        "company overview",
+        "unternehmensüberblick",
+        "unternehmensprofil",
+        "company profile",
+        "steckbrief",
+        "highlights",
+        "logos",
+        "clients",
+        "kunden",
+        "map",
+        "karte",
+        "financial overview",
+        "finanzübersicht"
+      ],
+      "description": "Vier Kennzahlen als Kacheln, Logo-Leiste und Karte oder Bild.",
+      "order": 42,
+      "sourceTitle": "[Insert the key message that the figures support, on one or two lines]",
+      "layout": "Title Only",
+      "text": "[Heading for logos, clients or partners] · Logo · Logo · Logo · Logo · Logo · [Metric 1 name] · [0.0] · [Metric 2 name] · [000+] · Insert map or image · [Metric 3 name, on one or two lines] · [000,000+] · [Metric 4 name, on up to three lines] · [$0k-$0k]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473481.png",
+      "preview": "previews/2147473481.png",
+      "file": "slides/2147473481.pptx",
+      "hash": "3cb3fb93f348ffed",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473492#2030770423",
+      "kind": "slide",
+      "slideId": "2147473492",
+      "creationId": "2030770423",
+      "position": 43,
+      "title": "Status- & KPI-Tabelle mit Ampeln",
+      "category": "figures",
+      "subcategory": "tables",
+      "keywords": [
+        "table",
+        "tabelle",
+        "status",
+        "ampel",
+        "traffic light",
+        "rag",
+        "kpi",
+        "kpis",
+        "target",
+        "ziel",
+        "actual",
+        "ist",
+        "scorecard",
+        "dashboard",
+        "assessment",
+        "bewertung",
+        "controlling",
+        "financial overview",
+        "finanzübersicht"
+      ],
+      "description": "KPIs je Bereich mit Ziel, Ist und Ampelstatus.",
+      "order": 43,
+      "sourceTitle": "[Assessment or status overview / Insert action title]",
+      "layout": "Title Only",
+      "text": "Category · Key Performance Indicators · Target · Actual · Status · [Area/BU 1] · [insert dimension] · xx · xx · [insert status] · [insert dimension] · xx · xx · [insert status] · [insert dimension] · xx · xx · [insert status] · [insert dimension] · xx · xx · [insert status] · [Area/BU 2] · [insert dimension] · xx · xx · [insert status] · [insert dimension] · xx · xx · [insert status] · [insert dimension] · xx · xx · [insert status]",
+      "charts": 0,
+      "images": 2,
+      "thumb": "thumbs/2147473492.png",
+      "preview": "previews/2147473492.png",
+      "file": "slides/2147473492.pptx",
+      "hash": "1218eb04a4658b39",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Signalfarben (bewusst fest): #A9C1A0, #D49A8A",
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473444#3567944143",
+      "kind": "slide",
+      "slideId": "2147473444",
+      "creationId": "3567944143",
+      "position": 44,
+      "title": "Organigramm",
+      "category": "people",
+      "subcategory": "org",
+      "keywords": [
+        "org chart",
+        "organigramm",
+        "organization",
+        "organisation",
+        "structure",
+        "struktur",
+        "hierarchy",
+        "hierarchie",
+        "governance",
+        "reporting lines",
+        "berichtslinien",
+        "company overview"
+      ],
+      "description": "Klassisches Organigramm mit Linien und Stabsstellen.",
+      "order": 44,
+      "sourceTitle": "[Organizational chart / Insert action title]",
+      "layout": "Title Only",
+      "text": "[Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role] · [Name/title/role]",
+      "charts": 0,
+      "images": 1,
+      "thumb": "thumbs/2147473444.png",
+      "preview": "previews/2147473444.png",
+      "file": "slides/2147473444.pptx",
+      "hash": "72891795ab18a692",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473445#733495224",
+      "kind": "slide",
+      "slideId": "2147473445",
+      "creationId": "733495224",
+      "position": 45,
+      "title": "Projektteam mit Rollen und Icons",
+      "category": "people",
+      "subcategory": "team",
+      "keywords": [
+        "project team",
+        "projektteam",
+        "team",
+        "functions",
+        "funktionen",
+        "roles",
+        "rollen",
+        "responsibilities",
+        "verantwortlichkeiten",
+        "staffing",
+        "besetzung",
+        "icons",
+        "lead"
+      ],
+      "description": "Leitung oben, fünf Funktionen mit Icon und Verantwortlichkeiten.",
+      "order": 45,
+      "sourceTitle": "[Project team or functions / Insert action title]",
+      "layout": "Title Only",
+      "text": "[Insert name/title] · [Insert description of role / responsibilities] · [Insert name/title] · [Insert name/title] · [Insert name/title] · [Insert name/title] · [Insert description of role / responsibilities] · [Insert description of role / responsibilities] · [Insert description of role / responsibilities] · [Insert description of role / responsibilities] · [Insert name/title] · [Insert description of role / responsibilities]",
+      "charts": 0,
+      "images": 7,
+      "thumb": "thumbs/2147473445.png",
+      "preview": "previews/2147473445.png",
+      "file": "slides/2147473445.pptx",
+      "hash": "fbb6c80837b9a675",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Verdana, Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Verdana, Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473446#453340337",
+      "kind": "slide",
+      "slideId": "2147473446",
+      "creationId": "453340337",
+      "position": 46,
+      "title": "Teamstruktur nach Funktionen",
+      "category": "people",
+      "subcategory": "team",
+      "keywords": [
+        "team chart",
+        "team",
+        "teamstruktur",
+        "functions",
+        "funktionen",
+        "roles",
+        "rollen",
+        "staffing",
+        "besetzung",
+        "people",
+        "personen",
+        "governance"
+      ],
+      "description": "Projektteam als Dach mit sechs Funktionsspalten und Rollen.",
+      "order": 46,
+      "sourceTitle": "[Team chart / Insert action title]",
+      "layout": "Title Only",
+      "text": "[Project] Team · [Insert function e.g. leadership] · [Insert function] · [Insert function] · [Insert function] · [Insert function] · [Insert function] · [Insert description] · [Insert description] · [Insert description] · [Insert description] · [Insert description] · [Insert description] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Type of role, if relevant] · [Type of role, if relevant] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role] · [Insert role]",
+      "charts": 0,
+      "images": 2,
+      "thumb": "thumbs/2147473446.png",
+      "preview": "previews/2147473446.png",
+      "file": "slides/2147473446.pptx",
+      "hash": "574b0d6bd80fe269",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial, Helvetica Neue"
+        ]
+      }
+    },
+    {
+      "key": "2147473449#2924265338",
+      "kind": "slide",
+      "slideId": "2147473449",
+      "creationId": "2924265338",
+      "position": 47,
+      "title": "Projektplan nach Wochen mit Deliverables",
+      "category": "timeline",
+      "subcategory": "plan",
+      "keywords": [
+        "project plan",
+        "projektplan",
+        "workplan",
+        "arbeitsplan",
+        "weeks",
+        "wochen",
+        "activities",
+        "aktivitäten",
+        "deliverables",
+        "meetings",
+        "kick-off",
+        "milestones",
+        "meilensteine",
+        "transaction process",
+        "transaktionsprozess",
+        "timeline",
+        "zeitplan"
+      ],
+      "description": "Drei Wochenblöcke mit Aktivitäten, Management-Terminen und Deliverables.",
+      "order": 47,
+      "sourceTitle": "[Project title] process expected to run [xx weeks/months]",
+      "layout": "Title Only",
+      "text": "High-level project plan and deliverables · Week xxAnalysis and interviews · Week xxConsolidation and recommendation · Activities · Mgmt.interaction · Deliver-ables · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · … · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · … · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · … · Kick-off · Review 1 · Input on findings · Input on recommendation · Overview of hypothesis · Preliminary report · Final report · Week xxResearch and hypotheses",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473449.png",
+      "preview": "previews/2147473449.png",
+      "file": "slides/2147473449.pptx",
+      "hash": "2b870a7eb1f7c732",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: ＭＳ Ｐゴシック, Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473454#194393939",
+      "kind": "slide",
+      "slideId": "2147473454",
+      "creationId": "194393939",
+      "position": 48,
+      "title": "Gantt-Zeitplan mit Stage-Gates",
+      "category": "timeline",
+      "subcategory": "plan",
+      "keywords": [
+        "gantt",
+        "timeline",
+        "zeitplan",
+        "zeitstrahl",
+        "schedule",
+        "terminplan",
+        "weeks",
+        "kalenderwochen",
+        "workstreams",
+        "arbeitspakete",
+        "stage gate",
+        "milestones",
+        "meilensteine",
+        "steerco",
+        "next steps",
+        "nächste schritte"
+      ],
+      "description": "Gantt-Tabelle nach Kalenderwochen mit Workstreams und Stage-Gates.",
+      "order": 48,
+      "sourceTitle": "High-level timeline for next [insert timeframe]",
+      "layout": "Title and Subtitle",
+      "text": "Week · 37 · 38 · 39 · 40 · 41 · 42 · 43 · 44 · 45 · 46 · 47 · 48 · 49 · 50 · 51 · 01 [Insert work stream] · 02 [Insert work stream] · 03 [Insert work stream] · 01 [Insert work stream] · 02 [Insert work stream] · 03 [Insert work stream] · 01 [Insert work stream] · Kick-off · [Insert stage-gate] · [Insert stage-gate] · [Insert stage-gate or SteerCo or similar] · [Insert stage-gate or SteerCo or similar]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473454.png",
+      "preview": "previews/2147473454.png",
+      "file": "slides/2147473454.pptx",
+      "hash": "eb707b63a4885a14",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Helvetica Neue, Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473450#439499443",
+      "kind": "slide",
+      "slideId": "2147473450",
+      "creationId": "439499443",
+      "position": 49,
+      "title": "Drei Phasen mit Deliverables und Team",
+      "category": "timeline",
+      "subcategory": "roadmap",
+      "keywords": [
+        "three phases",
+        "drei phasen",
+        "roadmap",
+        "timeline",
+        "zeitplan",
+        "deliverables",
+        "people",
+        "team",
+        "mvp",
+        "launch",
+        "timeframe",
+        "zeitraum"
+      ],
+      "description": "Drei Phasen mit Zeitraum, Deliverables und beteiligten Personen.",
+      "order": 49,
+      "sourceTitle": "[Project] will evolve in three major phases",
+      "layout": "Title Only",
+      "text": "1 · Expore opportunity · 2 · Detail design and MVP · [Insert key deliverables] · [Insert key deliverables] · [Insert key deliverables] · 3 · Build MVP and launch in market · [Insert key deliverables] · [Insert key deliverables] · [Insert key deliverables] · [Insert key deliverables] · [Insert key deliverables] · [Insert key deliverables] · [Insert key people involved] · Deliverables · People · [Insert key people involved] · [Insert key people involved] · [Insert timeframe] · [Insert timeframe] · [Insert timeframe]",
+      "charts": 0,
+      "images": 2,
+      "thumb": "thumbs/2147473450.png",
+      "preview": "previews/2147473450.png",
+      "file": "slides/2147473450.pptx",
+      "hash": "c219b559d5eacd06",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473451#2757289017",
+      "kind": "slide",
+      "slideId": "2147473451",
+      "creationId": "2757289017",
+      "position": 50,
+      "title": "Vier Phasen mit Key Meetings (SteerCo)",
+      "category": "timeline",
+      "subcategory": "roadmap",
+      "keywords": [
+        "four phases",
+        "vier phasen",
+        "roadmap",
+        "timeline",
+        "zeitplan",
+        "steerco",
+        "steering committee",
+        "lenkungsausschuss",
+        "meetings",
+        "milestones",
+        "meilensteine",
+        "tracks",
+        "activities",
+        "responsibilities",
+        "governance"
+      ],
+      "description": "Vier Phasen mit SteerCo-Terminen, Meilensteinen, Tracks und Verantwortlichen.",
+      "order": 50,
+      "sourceTitle": "[Project] will evolve through four main phases",
+      "layout": "Title and Subtitle",
+      "text": "[Phase 1] · [Phase 3] · [Phase 4] · Key meetings · Responsible leads and participants · Delive-rables · [Insert track] · [Insert track] · [Insert timeline] · [Insert timeline] · [Insert timeline] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert name and role OR team/function] · [Insert name and role OR team/function] · [Insert name and role OR team/function] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert name and role OR team/function] · [Insert name and role OR team/function] · [Insert name and role OR team/function] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert name and role OR team/function] · [Insert name and role OR team/function] · [Insert name and role OR team/function] · SteerCo · SteerCo · SteerCo · SteerCo · [Milestone] · [Milestone] · [Phase 2] · [Insert timeline] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert key activi",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473451.png",
+      "preview": "previews/2147473451.png",
+      "file": "slides/2147473451.pptx",
+      "hash": "b85e7efbbb7604bc",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473452#4050444182",
+      "kind": "slide",
+      "slideId": "2147473452",
+      "creationId": "4050444182",
+      "position": 51,
+      "title": "Vier Wellen (Umsetzungs-Roadmap)",
+      "category": "timeline",
+      "subcategory": "roadmap",
+      "keywords": [
+        "four waves",
+        "vier wellen",
+        "waves",
+        "wellen",
+        "roadmap",
+        "rollout",
+        "implementation plan",
+        "umsetzungsplan",
+        "umsetzung",
+        "timeline",
+        "zeitstrahl",
+        "activities",
+        "deliverables"
+      ],
+      "description": "Vier Wellen auf einem Zeitstrahl mit Aktivitäten und Deliverables.",
+      "order": 51,
+      "sourceTitle": "[Project] will be built in four main waves",
+      "layout": "Title and Subtitle",
+      "text": "Key activities: · [Insert key activities] · [Insert key activities] · [Insert key activities] · Wave 1 · [Insert headline e.g. Get the fundamentals right] · Wave 2[Insert headline] · Wave 3[Insert headline] · Wave 4[Insert headline] · … · Key activities: · [Insert key activities] · [Insert key activities] · [Insert key activities] · Key activities: · [Insert key activities] · [Insert key activities] · [Insert key activities] · Key activities: · [Insert key activities] · [Insert key activities] · [Insert key activities] · [Insert timeframe] · [Insert timeframe] · [Insert timeframe] · [Insert timeframe] · Main deliverables: · [Insert main deliverables and/or decision to be made] · Main deliverables: · [Insert main deliverables and/or decision to be made] · Main deliverables: · [Insert main deliverables and/or decision to be made] · Main deliverables: · [Insert main deliverables and/or decision to be made]",
+      "charts": 0,
+      "images": 1,
+      "thumb": "thumbs/2147473452.png",
+      "preview": "previews/2147473452.png",
+      "file": "slides/2147473452.pptx",
+      "hash": "137032a6e4e5ccfc",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Georgia, Arial"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Helvetica Neue, Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473453#3166673426",
+      "kind": "slide",
+      "slideId": "2147473453",
+      "creationId": "3166673426",
+      "position": 52,
+      "title": "Vier Phasen auf Zeitstrahl",
+      "category": "timeline",
+      "subcategory": "roadmap",
+      "keywords": [
+        "four phases",
+        "vier phasen",
+        "roadmap",
+        "timeline",
+        "zeitstrahl",
+        "zeitplan",
+        "activities",
+        "outcomes",
+        "ergebnisse",
+        "kpis"
+      ],
+      "description": "Vier Phasen mit Zweck, Aktivitäten und Outcomes.",
+      "order": 52,
+      "sourceTitle": "[Project] will evolve through four main phases",
+      "layout": "Title and Subtitle",
+      "text": "[High-level description of main purpose of phase] · Phase 4 · [TIMELINE] · [High-level description of main purpose of phase] · [High-level description of main purpose of phase] · Phase 2 · Phase 3 · [TIMELINE] · [TIMELINE] · [High-level description of main purpose of phase] · Phase 1 · [TIMELINE] · Key activities · [Description of key activities] · Outcomes · [Description of key metrics or other outcomes] · Key activities · [Description of key activities] · Outcomes · [Description of key metrics or other outcomes] · Key activities · [Description of key activities] · Outcomes · [Description of key metrics or other outcomes] · Key activities · [Description of key activities] · Outcomes · [Description of key metrics or other outcomes]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473453.png",
+      "preview": "previews/2147473453.png",
+      "file": "slides/2147473453.pptx",
+      "hash": "6265940dae562590",
+      "lint": {
+        "level": "warn",
+        "warnings": [
+          "Feste Schrift: Arial, Graphik Regular"
+        ],
+        "infos": [
+          "Feste ostasiat./komplexe Schrift: Arial"
+        ]
+      }
+    },
+    {
+      "key": "2147473482#1218240361",
+      "kind": "slide",
+      "slideId": "2147473482",
+      "creationId": "1218240361",
+      "position": 53,
+      "title": "Leitfrage mit Bildraster und Call-to-Action",
+      "category": "structure",
+      "subcategory": "closing",
+      "keywords": [
+        "call to action",
+        "cta",
+        "closing",
+        "abschluss",
+        "hook",
+        "question",
+        "frage",
+        "offer",
+        "angebot",
+        "recommendation",
+        "empfehlung",
+        "images",
+        "bilder",
+        "image grid",
+        "bildraster",
+        "pitch",
+        "thank you"
+      ],
+      "description": "Frage an das Publikum, Antwort, sechs Bilder und Button.",
+      "order": 53,
+      "sourceTitle": "[Insert a question or hook for the audience, in one line] [Answer it with your offer or recommendation, in one line]",
+      "layout": "Title Only",
+      "text": "Insert image · Insert image · Insert image · Insert image · Insert image · Insert image · [Call-to-action button text]",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473482.png",
+      "preview": "previews/2147473482.png",
+      "file": "slides/2147473482.pptx",
+      "hash": "1dcc74a205bba6b0",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "2147473505#2633792897",
+      "kind": "slide",
+      "slideId": "2147473505",
+      "creationId": "2633792897",
+      "position": 54,
+      "title": "Literaturverzeichnis (APA 7)",
+      "category": "structure",
+      "subcategory": "references",
+      "keywords": [
+        "references",
+        "literatur",
+        "literaturverzeichnis",
+        "quellen",
+        "sources",
+        "bibliography",
+        "apa",
+        "citations",
+        "zitate",
+        "appendix",
+        "anhang",
+        "literature review"
+      ],
+      "description": "Quellenliste nach APA 7 mit hängendem Einzug.",
+      "order": 54,
+      "sourceTitle": "Literature review",
+      "layout": "Title and Subtitle",
+      "text": "References · Note. APA 7th edition: list sources alphabetically by the first author’s surname, with a 1.27 cm (0.5 in) hanging indent. · Author, A. A. (Year). Title of the book in sentence case (2nd ed.). Publisher Name. https://doi.org/10.xxxx/xxxxx · Author, A. A. (Year, Month Day). Title of the web page in sentence case. Name of Website. https://www.website.com/page · Author, A. A., & Author, B. B. (Year). Title of the chapter in sentence case. In C. C. Editor & D. D. Editor (Eds.), Title of the edited book (pp. 12–34). Publisher Name. · Author, A. A., Author, B. B., & Author, C. C. (Year). Title of the article in sentence case. Name of the Journal in Title Case, 12(3), 45–67. https://doi.org/10.xxxx/xxxxx · Name of Organization. (Year). Title of the report in sentence case (Report No. 123). https://www.organization.org/report",
+      "charts": 0,
+      "images": 0,
+      "thumb": "thumbs/2147473505.png",
+      "preview": "previews/2147473505.png",
+      "file": "slides/2147473505.pptx",
+      "hash": "2d6f630e15567b82",
+      "lint": {
+        "level": "ok",
+        "warnings": [],
+        "infos": []
+      }
+    },
+    {
+      "key": "layout:Title Slide",
+      "kind": "layout",
+      "layoutIndex": 1,
+      "position": 1,
+      "title": "Titelfolie (leer)",
+      "category": "layouts",
+      "subcategory": "empty",
+      "keywords": [
+        "title slide",
+        "titelfolie",
+        "cover",
+        "deckblatt",
+        "empty",
+        "leer",
+        "blank",
+        "layout"
+      ],
+      "description": "Leere Folie mit dem Layout „Title Slide“.",
+      "order": 1,
+      "layout": "Title Slide",
+      "text": "",
+      "thumb": "thumbs/layout-1.png",
+      "preview": "previews/layout-1.png",
+      "file": "layouts/layout-1.pptx",
+      "hash": "8dc65dd1d2eeaf73",
+      "lint": {
+        "level": "ok",
+        "warnings": []
+      }
+    },
+    {
+      "key": "layout:Title and Content",
+      "kind": "layout",
+      "layoutIndex": 2,
+      "position": 2,
+      "title": "Titel und Inhalt (leer)",
+      "category": "layouts",
+      "subcategory": "empty",
+      "keywords": [
+        "title and content",
+        "titel und inhalt",
+        "bullets",
+        "aufzählung",
+        "text",
+        "empty",
+        "leer",
+        "blank",
+        "layout"
+      ],
+      "description": "Leere Folie mit Titel und Textplatzhalter.",
+      "order": 2,
+      "layout": "Title and Content",
+      "text": "",
+      "thumb": "thumbs/layout-2.png",
+      "preview": "previews/layout-2.png",
+      "file": "layouts/layout-2.pptx",
+      "hash": "850d11121ee2b883",
+      "lint": {
+        "level": "ok",
+        "warnings": []
+      }
+    },
+    {
+      "key": "layout:Title Only",
+      "kind": "layout",
+      "layoutIndex": 3,
+      "position": 3,
+      "title": "Nur Titel (leer)",
+      "category": "layouts",
+      "subcategory": "empty",
+      "keywords": [
+        "title only",
+        "nur titel",
+        "empty",
+        "leer",
+        "blank",
+        "free",
+        "frei",
+        "layout"
+      ],
+      "description": "Leere Folie nur mit Titel – freie Inhaltsfläche.",
+      "order": 3,
+      "layout": "Title Only",
+      "text": "",
+      "thumb": "thumbs/layout-3.png",
+      "preview": "previews/layout-3.png",
+      "file": "layouts/layout-3.pptx",
+      "hash": "5d326ef5a87e6f1e",
+      "lint": {
+        "level": "ok",
+        "warnings": []
+      }
+    },
+    {
+      "key": "layout:Title and Subtitle",
+      "kind": "layout",
+      "layoutIndex": 4,
+      "position": 4,
+      "title": "Titel und Untertitel (leer)",
+      "category": "layouts",
+      "subcategory": "empty",
+      "keywords": [
+        "title and subtitle",
+        "titel und untertitel",
+        "subtitle",
+        "untertitel",
+        "empty",
+        "leer",
+        "blank",
+        "layout"
+      ],
+      "description": "Leere Folie mit Titel und 18-pt-Untertitel.",
+      "order": 4,
+      "layout": "Title and Subtitle",
+      "text": "",
+      "thumb": "thumbs/layout-4.png",
+      "preview": "previews/layout-4.png",
+      "file": "layouts/layout-4.pptx",
+      "hash": "388ed9e9e2456729",
+      "lint": {
+        "level": "ok",
+        "warnings": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,1222 @@
+{
+  "library": "Consulting slide template",
+  "version": "1.3",
+  "slide": {
+    "width": 960,
+    "height": 540,
+    "unit": "pt",
+    "boxFormat": "[left, top, width, height]",
+    "contentAreaFormat": "[left, top, right, bottom]"
+  },
+  "categories": [
+    {
+      "id": "structure",
+      "name": "Structure",
+      "subcategories": [
+        "Cover",
+        "Introduction",
+        "Executive summary"
+      ]
+    },
+    {
+      "id": "text",
+      "name": "Text & key messages",
+      "subcategories": [
+        "Bullet list",
+        "Long-form text",
+        "Key areas",
+        "Cards & icons"
+      ]
+    },
+    {
+      "id": "process",
+      "name": "Process & phases",
+      "subcategories": [
+        "Phase overview",
+        "Phase detail",
+        "Step list",
+        "Staircase",
+        "Cascade"
+      ]
+    },
+    {
+      "id": "frameworks",
+      "name": "Frameworks & matrices",
+      "subcategories": [
+        "Hub and spoke",
+        "2x2 matrix",
+        "Prioritization matrix",
+        "Issue tree",
+        "Area overview"
+      ]
+    },
+    {
+      "id": "charts",
+      "name": "Charts",
+      "subcategories": [
+        "Line",
+        "Column",
+        "Waterfall",
+        "Bubble"
+      ]
+    },
+    {
+      "id": "kpis",
+      "name": "KPIs & figures",
+      "subcategories": [
+        "KPI tiles"
+      ]
+    },
+    {
+      "id": "tables",
+      "name": "Tables",
+      "subcategories": [
+        "Status table"
+      ]
+    },
+    {
+      "id": "people",
+      "name": "Team & organization",
+      "subcategories": [
+        "Org chart",
+        "Team"
+      ]
+    },
+    {
+      "id": "timeline",
+      "name": "Timelines & plans",
+      "subcategories": [
+        "Project plan",
+        "Phased roadmap"
+      ]
+    },
+    {
+      "id": "images",
+      "name": "Images & call to action",
+      "subcategories": [
+        "Image with call to action"
+      ]
+    },
+    {
+      "id": "references",
+      "name": "References",
+      "subcategories": [
+        "Reference list"
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "key": "structure.cover",
+      "pos": 1,
+      "name": "Cover",
+      "category": "structure",
+      "sub": "Cover",
+      "layout": "Title Slide",
+      "elements": [
+        "cover-image",
+        "logo",
+        "title",
+        "subtitle",
+        "description"
+      ]
+    },
+    {
+      "key": "structure.introduction",
+      "pos": 2,
+      "name": "Introduction with photo",
+      "category": "structure",
+      "sub": "Introduction",
+      "layout": "Title and Content",
+      "elements": [
+        "photo",
+        "logo",
+        "bullet-panel",
+        "caption"
+      ]
+    },
+    {
+      "key": "structure.exec-summary-text",
+      "pos": 3,
+      "name": "Executive summary, text",
+      "category": "structure",
+      "sub": "Executive summary",
+      "layout": "Title Only",
+      "elements": [
+        "text-block"
+      ]
+    },
+    {
+      "key": "structure.exec-summary-takeaways",
+      "pos": 4,
+      "name": "Executive summary, takeaways",
+      "category": "structure",
+      "sub": "Executive summary",
+      "layout": "Title Only",
+      "elements": [
+        "text-block"
+      ]
+    },
+    {
+      "key": "text.bullets-intro",
+      "pos": 5,
+      "name": "Bullet list with intro sentence",
+      "category": "text",
+      "sub": "Bullet list",
+      "layout": "Title and Content",
+      "elements": [
+        "intro-sentence",
+        "bullets-6"
+      ]
+    },
+    {
+      "key": "text.long-form",
+      "pos": 6,
+      "name": "Long-form text",
+      "category": "text",
+      "sub": "Long-form text",
+      "layout": "Title Only",
+      "elements": [
+        "paragraphs"
+      ]
+    },
+    {
+      "key": "text.framework-description",
+      "pos": 7,
+      "name": "Framework description",
+      "category": "text",
+      "sub": "Long-form text",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "paragraphs",
+        "numbered-list"
+      ]
+    },
+    {
+      "key": "text.three-areas-images",
+      "pos": 8,
+      "name": "Three areas with images",
+      "category": "text",
+      "sub": "Key areas",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "columns-3",
+        "images-3"
+      ]
+    },
+    {
+      "key": "text.three-trends",
+      "pos": 9,
+      "name": "Three trends, columns",
+      "category": "text",
+      "sub": "Key areas",
+      "layout": "Title Only",
+      "elements": [
+        "columns-3"
+      ]
+    },
+    {
+      "key": "text.three-trends-cards",
+      "pos": 10,
+      "name": "Three trends, cards",
+      "category": "text",
+      "sub": "Key areas",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "cards-3"
+      ]
+    },
+    {
+      "key": "text.five-areas",
+      "pos": 11,
+      "name": "Five key areas",
+      "category": "text",
+      "sub": "Key areas",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "areas-5",
+        "description"
+      ]
+    },
+    {
+      "key": "text.icon-rows",
+      "pos": 12,
+      "name": "Icon rows with figures",
+      "category": "text",
+      "sub": "Cards & icons",
+      "layout": "Title Only",
+      "elements": [
+        "icon-rows-4"
+      ]
+    },
+    {
+      "key": "text.benefit-cards",
+      "pos": 13,
+      "name": "3x3 benefit cards",
+      "category": "text",
+      "sub": "Cards & icons",
+      "layout": "Title Only",
+      "elements": [
+        "cards-9",
+        "icons"
+      ]
+    },
+    {
+      "key": "process.phase-overview",
+      "pos": 14,
+      "name": "Phase overview, 5 phases",
+      "category": "process",
+      "sub": "Phase overview",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "text-columns-5"
+      ]
+    },
+    {
+      "key": "process.phase-detail-1",
+      "pos": 15,
+      "name": "Phase 1 detail with image grid",
+      "category": "process",
+      "sub": "Phase detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ]
+    },
+    {
+      "key": "process.phase-detail-2",
+      "pos": 16,
+      "name": "Phase 2 detail with image grid",
+      "category": "process",
+      "sub": "Phase detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ]
+    },
+    {
+      "key": "process.phase-detail-3",
+      "pos": 17,
+      "name": "Phase 3 detail with image grid",
+      "category": "process",
+      "sub": "Phase detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ]
+    },
+    {
+      "key": "process.phase-detail-4",
+      "pos": 18,
+      "name": "Phase 4 detail with image grid",
+      "category": "process",
+      "sub": "Phase detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ]
+    },
+    {
+      "key": "process.phase-detail-5",
+      "pos": 19,
+      "name": "Phase 5 detail with image grid",
+      "category": "process",
+      "sub": "Phase detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ]
+    },
+    {
+      "key": "process.phase-overview-recap",
+      "pos": 20,
+      "name": "Phase overview, transition",
+      "category": "process",
+      "sub": "Phase overview",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "text-columns-5"
+      ]
+    },
+    {
+      "key": "process.numbered-steps",
+      "pos": 21,
+      "name": "Numbered step list",
+      "category": "process",
+      "sub": "Step list",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "numbered-rows-5"
+      ]
+    },
+    {
+      "key": "process.staircase-7",
+      "pos": 22,
+      "name": "Staircase, 7 steps",
+      "category": "process",
+      "sub": "Staircase",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "staircase-7",
+        "logo"
+      ]
+    },
+    {
+      "key": "process.staircase-7-example",
+      "pos": 23,
+      "name": "Staircase with example text",
+      "category": "process",
+      "sub": "Staircase",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "staircase-7",
+        "logo"
+      ]
+    },
+    {
+      "key": "process.staircase-7-template",
+      "pos": 24,
+      "name": "Staircase, fill-in template",
+      "category": "process",
+      "sub": "Staircase",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "staircase-7",
+        "logo"
+      ]
+    },
+    {
+      "key": "process.cascade-7",
+      "pos": 25,
+      "name": "Diagonal cascade, 7 steps",
+      "category": "process",
+      "sub": "Cascade",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "cascade-7"
+      ]
+    },
+    {
+      "key": "frameworks.hub-spoke",
+      "pos": 26,
+      "name": "Hub and spoke with side sections",
+      "category": "frameworks",
+      "sub": "Hub and spoke",
+      "layout": "Title Only",
+      "elements": [
+        "circle-wheel-8",
+        "section-headers-3",
+        "logo-row"
+      ]
+    },
+    {
+      "key": "frameworks.matrix-2x2-descriptions",
+      "pos": 27,
+      "name": "2x2 matrix with descriptions",
+      "category": "frameworks",
+      "sub": "2x2 matrix",
+      "layout": "Title Only",
+      "elements": [
+        "matrix-2x2",
+        "quadrant-text",
+        "legend"
+      ]
+    },
+    {
+      "key": "frameworks.matrix-2x2-labels",
+      "pos": 28,
+      "name": "2x2 matrix with item labels",
+      "category": "frameworks",
+      "sub": "2x2 matrix",
+      "layout": "Title Only",
+      "elements": [
+        "matrix-2x2",
+        "label-pills",
+        "legend"
+      ]
+    },
+    {
+      "key": "frameworks.growth-share-matrix",
+      "pos": 29,
+      "name": "Growth-share (BCG) matrix",
+      "category": "frameworks",
+      "sub": "2x2 matrix",
+      "layout": "Title Only",
+      "elements": [
+        "chart-bubble",
+        "matrix-2x2"
+      ]
+    },
+    {
+      "key": "frameworks.prioritization-matrix",
+      "pos": 30,
+      "name": "Prioritization matrix",
+      "category": "frameworks",
+      "sub": "Prioritization matrix",
+      "layout": "Title Only",
+      "elements": [
+        "matrix-3x3",
+        "status-bubbles",
+        "legend"
+      ]
+    },
+    {
+      "key": "frameworks.issue-tree",
+      "pos": 31,
+      "name": "Issue tree",
+      "category": "frameworks",
+      "sub": "Issue tree",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "issue-tree"
+      ]
+    },
+    {
+      "key": "frameworks.areas-overview",
+      "pos": 32,
+      "name": "Overview of areas",
+      "category": "frameworks",
+      "sub": "Area overview",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "area-boxes",
+        "callout"
+      ]
+    },
+    {
+      "key": "charts.line-small-multiples",
+      "pos": 33,
+      "name": "Four line charts",
+      "category": "charts",
+      "sub": "Line",
+      "layout": "Title Only",
+      "elements": [
+        "chart-line-4"
+      ]
+    },
+    {
+      "key": "charts.column-takeaways",
+      "pos": 34,
+      "name": "Column chart with takeaways",
+      "category": "charts",
+      "sub": "Column",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "takeaways-panel"
+      ]
+    },
+    {
+      "key": "charts.column-growth",
+      "pos": 35,
+      "name": "Column chart with growth arrow",
+      "category": "charts",
+      "sub": "Column",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "growth-arrow",
+        "takeaways-panel"
+      ]
+    },
+    {
+      "key": "charts.column-split-growth",
+      "pos": 36,
+      "name": "Column chart with split growth",
+      "category": "charts",
+      "sub": "Column",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "growth-arrows-2",
+        "takeaways-panel"
+      ]
+    },
+    {
+      "key": "charts.column-forecast",
+      "pos": 37,
+      "name": "Column chart, actuals vs forecast",
+      "category": "charts",
+      "sub": "Column",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "forecast-split",
+        "growth-arrow"
+      ]
+    },
+    {
+      "key": "charts.waterfall-pair",
+      "pos": 38,
+      "name": "Two waterfall charts",
+      "category": "charts",
+      "sub": "Waterfall",
+      "layout": "Title Only",
+      "elements": [
+        "chart-waterfall-2"
+      ]
+    },
+    {
+      "key": "charts.bubble-portfolio",
+      "pos": 39,
+      "name": "Portfolio bubble chart on quadrants",
+      "category": "charts",
+      "sub": "Bubble",
+      "layout": "Title Only",
+      "elements": [
+        "chart-bubble",
+        "quadrant-background"
+      ]
+    },
+    {
+      "key": "charts.bubble",
+      "pos": 40,
+      "name": "Bubble chart",
+      "category": "charts",
+      "sub": "Bubble",
+      "layout": "Title Only",
+      "elements": [
+        "chart-bubble",
+        "legend"
+      ]
+    },
+    {
+      "key": "charts.bubble-takeaways",
+      "pos": 41,
+      "name": "Bubble chart with takeaways",
+      "category": "charts",
+      "sub": "Bubble",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-bubble",
+        "takeaways-panel"
+      ]
+    },
+    {
+      "key": "kpis.tiles-logos",
+      "pos": 42,
+      "name": "KPI tiles with logos",
+      "category": "kpis",
+      "sub": "KPI tiles",
+      "layout": "Title Only",
+      "elements": [
+        "kpi-tiles-4",
+        "logo-row",
+        "map-or-image"
+      ]
+    },
+    {
+      "key": "tables.status-overview",
+      "pos": 43,
+      "name": "Assessment or status table",
+      "category": "tables",
+      "sub": "Status table",
+      "layout": "Title Only",
+      "elements": [
+        "table",
+        "status-icons"
+      ]
+    },
+    {
+      "key": "people.org-chart",
+      "pos": 44,
+      "name": "Organizational chart",
+      "category": "people",
+      "sub": "Org chart",
+      "layout": "Title Only",
+      "elements": [
+        "org-chart"
+      ]
+    },
+    {
+      "key": "people.project-team-roles",
+      "pos": 45,
+      "name": "Project team or functions",
+      "category": "people",
+      "sub": "Team",
+      "layout": "Title Only",
+      "elements": [
+        "role-cards",
+        "icons"
+      ]
+    },
+    {
+      "key": "people.team-chart",
+      "pos": 46,
+      "name": "Team chart with photos",
+      "category": "people",
+      "sub": "Team",
+      "layout": "Title Only",
+      "elements": [
+        "team-chart",
+        "photos"
+      ]
+    },
+    {
+      "key": "timeline.project-plan-weeks",
+      "pos": 47,
+      "name": "Project plan by week",
+      "category": "timeline",
+      "sub": "Project plan",
+      "layout": "Title Only",
+      "elements": [
+        "gantt",
+        "week-columns"
+      ]
+    },
+    {
+      "key": "timeline.timeline-table",
+      "pos": 48,
+      "name": "High-level timeline with stage-gates",
+      "category": "timeline",
+      "sub": "Project plan",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "gantt-table",
+        "stage-gates"
+      ]
+    },
+    {
+      "key": "timeline.phases-3",
+      "pos": 49,
+      "name": "Three phases with icons",
+      "category": "timeline",
+      "sub": "Phased roadmap",
+      "layout": "Title Only",
+      "elements": [
+        "phases-3",
+        "icons"
+      ]
+    },
+    {
+      "key": "timeline.phases-4-meetings",
+      "pos": 50,
+      "name": "Four phases with key meetings",
+      "category": "timeline",
+      "sub": "Phased roadmap",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "phases-4",
+        "key-meetings"
+      ]
+    },
+    {
+      "key": "timeline.waves-4",
+      "pos": 51,
+      "name": "Four waves",
+      "category": "timeline",
+      "sub": "Phased roadmap",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "waves-4"
+      ]
+    },
+    {
+      "key": "timeline.phases-4-timeline",
+      "pos": 52,
+      "name": "Four phases on a timeline",
+      "category": "timeline",
+      "sub": "Phased roadmap",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "phases-4",
+        "timeline"
+      ]
+    },
+    {
+      "key": "images.image-grid-cta",
+      "pos": 53,
+      "name": "Image grid with call-to-action button",
+      "category": "images",
+      "sub": "Image with call to action",
+      "layout": "Title Only",
+      "elements": [
+        "image-grid-6",
+        "button"
+      ]
+    },
+    {
+      "key": "references.apa-reference-list",
+      "pos": 54,
+      "name": "Literature review, APA 7 reference list",
+      "category": "references",
+      "sub": "Reference list",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "reference-list",
+        "hanging-indent",
+        "apa-7"
+      ]
+    }
+  ],
+  "theme": {
+    "fonts": {
+      "heading": "Arial",
+      "body": "Arial"
+    },
+    "activeColorSet": "JP Morgan",
+    "slotRoles": {
+      "dk1": "Text 1: main text",
+      "lt1": "Background 1: slide background",
+      "dk2": "Text 2: secondary text, footer, lines",
+      "lt2": "Background 2: light panels",
+      "accent1": "main shapes, chevrons, bars",
+      "accent2": "highlight: number circles, focus bars",
+      "accent3": "extra or lighter highlight",
+      "accent4": "light tint",
+      "accent5": "extra dark",
+      "accent6": "mid grey: inactive elements",
+      "hlink": "hyperlink",
+      "folHlink": "followed hyperlink"
+    },
+    "colorSets": [
+      {
+        "name": "Rothschild",
+        "colors": {
+          "dk1": "455D73",
+          "lt1": "FFFFFF",
+          "dk2": "737372",
+          "lt2": "F2F2F2",
+          "accent1": "455D73",
+          "accent2": "657A8C",
+          "accent3": "BF8C6F",
+          "accent4": "D8DEE2",
+          "accent5": "737372",
+          "accent6": "C8C8C7",
+          "hlink": "657A8C",
+          "folHlink": "455D73"
+        }
+      },
+      {
+        "name": "Credit Suisse",
+        "colors": {
+          "dk1": "001F3B",
+          "lt1": "FFFFFF",
+          "dk2": "36526E",
+          "lt2": "F4F4F4",
+          "accent1": "003565",
+          "accent2": "731117",
+          "accent3": "36526E",
+          "accent4": "BFCCD8",
+          "accent5": "001F3B",
+          "accent6": "C3CBD3",
+          "hlink": "003565",
+          "folHlink": "731117"
+        }
+      },
+      {
+        "name": "JP Morgan",
+        "colors": {
+          "dk1": "161616",
+          "lt1": "FFFFFF",
+          "dk2": "707070",
+          "lt2": "F0F0F0",
+          "accent1": "003366",
+          "accent2": "056FAA",
+          "accent3": "69A9CC",
+          "accent4": "C0DBEA",
+          "accent5": "161616",
+          "accent6": "CFCFCF",
+          "hlink": "056FAA",
+          "folHlink": "003366"
+        }
+      },
+      {
+        "name": "Marlboro",
+        "colors": {
+          "dk1": "000000",
+          "lt1": "FFFFFF",
+          "dk2": "4D4D4D",
+          "lt2": "F2F2F2",
+          "accent1": "000000",
+          "accent2": "FE0000",
+          "accent3": "4D4D4D",
+          "accent4": "D9D9D9",
+          "accent5": "000000",
+          "accent6": "B8B8B8",
+          "hlink": "FE0000",
+          "folHlink": "4D4D4D"
+        }
+      },
+      {
+        "name": "UBS",
+        "colors": {
+          "dk1": "000000",
+          "lt1": "FFFFFF",
+          "dk2": "4D4D4D",
+          "lt2": "F2F2F2",
+          "accent1": "000000",
+          "accent2": "FE0000",
+          "accent3": "4D4D4D",
+          "accent4": "D9D9D9",
+          "accent5": "000000",
+          "accent6": "B8B8B8",
+          "hlink": "FE0000",
+          "folHlink": "4D4D4D"
+        }
+      }
+    ],
+    "signalColors": [
+      {
+        "name": "Positive (sage)",
+        "hex": "A9C1A0"
+      },
+      {
+        "name": "Positive light",
+        "hex": "D9E4D3"
+      },
+      {
+        "name": "Caution (sand)",
+        "hex": "E6CE96"
+      },
+      {
+        "name": "Caution light",
+        "hex": "F2E6C9"
+      },
+      {
+        "name": "Negative (clay)",
+        "hex": "D49A8A"
+      },
+      {
+        "name": "Negative light",
+        "hex": "EFD5CC"
+      },
+      {
+        "name": "Neutral (cream)",
+        "hex": "F4EFE6"
+      }
+    ]
+  },
+  "layouts": [
+    {
+      "name": "Title Slide",
+      "use": "Cover",
+      "contentArea": null,
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "ctrTitle",
+          "idx": null,
+          "box": [
+            27,
+            352,
+            720,
+            48
+          ]
+        },
+        {
+          "role": "subtitle",
+          "type": "subTitle",
+          "idx": 1,
+          "box": [
+            27,
+            400,
+            720,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title and Content",
+      "use": "Title with a body text placeholder",
+      "contentArea": [
+        43.7,
+        106,
+        916.3,
+        492
+      ],
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ]
+        },
+        {
+          "role": "body",
+          "type": "body",
+          "idx": 1,
+          "box": [
+            43.7,
+            106,
+            872.6,
+            386
+          ]
+        },
+        {
+          "role": "sectionMarker",
+          "type": "body",
+          "idx": 17,
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ]
+        },
+        {
+          "role": "footnoteSource",
+          "type": "body",
+          "idx": 18,
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ]
+        },
+        {
+          "role": "alignTop",
+          "type": "body",
+          "idx": 21,
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignBottom",
+          "type": "body",
+          "idx": 22,
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignLeft",
+          "type": "body",
+          "idx": 23,
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignRight",
+          "type": "body",
+          "idx": 24,
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title Only",
+      "use": "Title with free content area",
+      "contentArea": [
+        43.7,
+        106,
+        916.3,
+        492
+      ],
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ]
+        },
+        {
+          "role": "sectionMarker",
+          "type": "body",
+          "idx": 17,
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ]
+        },
+        {
+          "role": "footnoteSource",
+          "type": "body",
+          "idx": 18,
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ]
+        },
+        {
+          "role": "alignTop",
+          "type": "body",
+          "idx": 21,
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignBottom",
+          "type": "body",
+          "idx": 22,
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignLeft",
+          "type": "body",
+          "idx": 23,
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignRight",
+          "type": "body",
+          "idx": 24,
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title and Subtitle",
+      "use": "Title with an 18 pt subtitle line",
+      "contentArea": [
+        43.7,
+        132,
+        916.3,
+        492
+      ],
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ]
+        },
+        {
+          "role": "subtitle",
+          "type": "subTitle",
+          "idx": 1,
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ]
+        },
+        {
+          "role": "sectionMarker",
+          "type": "body",
+          "idx": 17,
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ]
+        },
+        {
+          "role": "footnoteSource",
+          "type": "body",
+          "idx": 18,
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ]
+        },
+        {
+          "role": "alignTop",
+          "type": "body",
+          "idx": 21,
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignBottom",
+          "type": "body",
+          "idx": 22,
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignLeft",
+          "type": "body",
+          "idx": 23,
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignRight",
+          "type": "body",
+          "idx": 24,
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ]
+        }
+      ]
+    }
+  ]
+}

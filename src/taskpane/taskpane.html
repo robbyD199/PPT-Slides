@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Folienbibliothek</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark" id="brand-mark"></span><span class="brand-name">Folienbibliothek</span></div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="btn-dialog" type="button" title="Großes Suchfenster öffnen" aria-label="Großes Suchfenster öffnen"></button>
+          <button class="icon-btn" id="btn-menu" type="button" title="Optionen" aria-label="Optionen" aria-haspopup="true" aria-expanded="false"></button>
+        </div>
+      </header>
+
+      <div class="search-area">
+        <label class="search" for="search-input">
+          <span class="search-icon" id="search-icon"></span>
+          <input id="search-input" type="search" autocomplete="off" spellcheck="false"
+            placeholder="Suchen: Säulendiagramm, Executive Summary …" aria-label="Folien suchen" />
+          <button class="search-clear" id="search-clear" type="button" aria-label="Suche löschen" hidden></button>
+        </label>
+        <div class="chips" id="chips" role="tablist" aria-label="Kategorien"></div>
+      </div>
+
+      <div class="banner-area" id="banners" aria-live="polite"></div>
+
+      <main class="content" id="content" tabindex="-1">
+        <div class="skeleton" id="skeleton" aria-label="Bibliothek wird geladen">
+          <div class="sk-line"></div>
+          <div class="sk-grid"><div></div><div></div><div></div><div></div></div>
+          <div class="sk-line"></div>
+          <div class="sk-grid"><div></div><div></div></div>
+        </div>
+      </main>
+
+      <footer class="footer" id="footer"></footer>
+    </div>
+
+    <div class="preview" id="preview" role="tooltip" hidden></div>
+    <div class="menu" id="menu" role="menu" hidden></div>
+    <div class="toast-area" id="toasts" aria-live="polite"></div>
+  </body>
+</html>

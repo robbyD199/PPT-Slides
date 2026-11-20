@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Folie suchen – Folienbibliothek</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  </head>
+  <body>
+    <div class="dlg">
+      <header class="dlg-head">
+        <label class="search search-xl" for="q">
+          <span class="search-icon" id="q-icon"></span>
+          <input id="q" type="search" autocomplete="off" spellcheck="false"
+            placeholder="Wonach suchen Sie? z. B. Säulendiagramm, Company Overview, Executive Summary, Zeitplan …" aria-label="Folien suchen" />
+          <button class="search-clear" id="q-clear" type="button" aria-label="Suche löschen" hidden></button>
+        </label>
+        <div class="chips" id="chips" role="tablist" aria-label="Kategorien"></div>
+      </header>
+      <div class="dlg-main">
+        <main class="dlg-results" id="results" tabindex="-1" aria-label="Suchergebnisse"></main>
+        <aside class="dlg-detail" id="detail" aria-live="polite"></aside>
+      </div>
+      <footer class="dlg-foot">
+        <label class="check"><input type="checkbox" id="keep-open" /> Fenster nach dem Einfügen offen lassen</label>
+        <span class="keys"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> auswählen · <kbd>Enter</kbd> einfügen · <kbd>Esc</kbd> schließen</span>
+      </footer>
+    </div>
+    <div class="toast-area" id="toasts" aria-live="polite"></div>
+  </body>
+</html>
