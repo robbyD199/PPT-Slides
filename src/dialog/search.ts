@@ -171,14 +171,13 @@ function render(): void {
   const root = $("results");
   root.innerHTML = "";
   const list: HTMLButtonElement[] = [];
-  const grid = (entries: SlideEntry[], captions = false) => {
+  const grid = (entries: SlideEntry[], captions = false, subOnly = false) => {
     const g = el("div", { class: "grid" });
     for (const e of entries) {
+      const sub = subcategoryName(lib!, e.category, e.subcategory);
       const c = makeCard(
         e,
-        captions
-          ? `${categoryName(lib!, e.category)} · ${subcategoryName(lib!, e.category, e.subcategory)}`
-          : undefined
+        captions ? (subOnly ? sub : `${categoryName(lib!, e.category)} · ${sub}`) : undefined
       );
       list.push(c);
       g.append(c);
@@ -242,10 +241,21 @@ function render(): void {
           el("span", { class: "count" }, String(g.count))
         )
       );
-      for (const sg of g.subgroups) {
-        if (sg.subcategory && g.subgroups.length > 1)
-          root.append(el("div", { class: "block-sub" }, sg.subcategory.name));
-        root.append(grid(sg.slides));
+      if (g.subgroups.length > 1 && g.count / g.subgroups.length < 2) {
+        // sparse category: one grid, subcategory shown as caption on each card
+        root.append(
+          grid(
+            g.subgroups.flatMap((sg) => sg.slides),
+            true,
+            true
+          )
+        );
+      } else {
+        for (const sg of g.subgroups) {
+          if (sg.subcategory && g.subgroups.length > 1)
+            root.append(el("div", { class: "block-sub" }, sg.subcategory.name));
+          root.append(grid(sg.slides));
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ import { setCardState, slideCard } from "../shared/cards";
 import { describeError, MSG } from "../shared/messages";
 import { prefs } from "../shared/prefs";
 import { openSearchDialog } from "../shared/dialogHost";
-import type { Formatting, Library, SlideEntry } from "../shared/types";
+import type { Formatting, Group, Library, SlideEntry } from "../shared/types";
 
 declare const __SELFTEST__: boolean;
 
@@ -262,6 +262,11 @@ function renderRecent(): void {
   else $("content").prepend(sec);
 }
 
+/** A category is "sparse" if its subcategories hold fewer than 2 slides on average. */
+function isSparse(g: Group): boolean {
+  return g.subgroups.length > 1 && g.count / g.subgroups.length < 2;
+}
+
 function renderBrowse(lib: Library): void {
   const content = $("content");
   content.innerHTML = "";
@@ -269,11 +274,22 @@ function renderBrowse(lib: Library): void {
   for (const g of groupLibrary(lib)) {
     if (state.chip !== "all" && g.category.id !== state.chip) continue;
     const body = el("div", { class: "section-body" });
-    for (const sg of g.subgroups) {
-      if (sg.subcategory && (g.subgroups.length > 1 || sg.subcategory.name !== g.category.name)) {
-        body.append(el("div", { class: "subhead" }, sg.subcategory.name));
+    if (isSparse(g)) {
+      // many subcategories with 1-2 slides: one compact grid, subcategory as caption on each card
+      body.append(
+        el(
+          "div",
+          { class: "grid" },
+          ...g.subgroups.flatMap((sg) => sg.slides.map((s) => cardFor(s, sg.subcategory?.name)))
+        )
+      );
+    } else {
+      for (const sg of g.subgroups) {
+        if (sg.subcategory && (g.subgroups.length > 1 || sg.subcategory.name !== g.category.name)) {
+          body.append(el("div", { class: "subhead" }, sg.subcategory.name));
+        }
+        body.append(el("div", { class: "grid" }, ...sg.slides.map((s) => cardFor(s))));
       }
-      body.append(el("div", { class: "grid" }, ...sg.slides.map((s) => cardFor(s))));
     }
     content.append(
       section(g.category.id, g.category.name, g.count, body, {
