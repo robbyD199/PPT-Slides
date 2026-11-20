@@ -49,7 +49,7 @@ describe("search over the real library", () => {
   });
 
   it("finds key facts / company overview", () => {
-    expect(top("company overview", 3)).toContain("Key Facts – Kennzahlen-Kacheln mit Logos");
+    expect(top("company overview", 1)[0]).toBe("Key Facts – Kennzahlen-Kacheln mit Logos");
     expect(top("Unternehmensüberblick", 3)).toContain("Key Facts – Kennzahlen-Kacheln mit Logos");
   });
 

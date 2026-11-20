@@ -17,13 +17,14 @@
 #>
 param(
   [string]$Source = '',
+  [string]$OutDir = '',
   [switch]$SkipMini
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 if (-not $Source) { $Source = Join-Path $root 'templates\Library.pptx' }
 $Source = (Resolve-Path $Source).Path
-$out = Join-Path $root 'assets\library'
+$out = if ($OutDir) { $OutDir } else { Join-Path $root 'assets\library' }
 $work = Join-Path $env:TEMP ('slidelib-' + [guid]::NewGuid().ToString('N').Substring(0, 8))
 $stage = Join-Path $work 'stage'
 foreach ($d in @('thumbs', 'previews', 'slides', 'layouts', 'template')) {
@@ -114,10 +115,18 @@ try {
   try {
     $coverId = $null
     foreach ($s in $ex.slides) { if (-not $s.hidden -and $s.layout -eq $ex.masters[0].layouts[0].name) { $coverId = [string]$s.slideId; break } }
+    # keep ALL master layouts in the new-presentation template (PowerPoint drops unused layouts otherwise)
+    foreach ($d in $p.Designs) {
+      $d.Preserved = $msoTrue
+      foreach ($l in $d.SlideMaster.CustomLayouts) { try { $l.Preserved = $msoTrue } catch { } }
+    }
     for ($i = $p.Slides.Count; $i -ge 1; $i--) {
       $sl = $p.Slides.Item($i)
       if ([string]$sl.SlideID -ne $coverId) { $sl.Delete() }
     }
+    try { $p.BuiltInDocumentProperties.Item('Title').Value = 'Neue Praesentation' } catch { }
+    $layoutsLeft = $p.SlideMaster.CustomLayouts.Count
+    if ($layoutsLeft -lt $layoutCount) { Write-Warning "Vorlage fuer neue Praesentationen hat nur $layoutsLeft von $layoutCount Layouts." }
     $p.SaveAs((Join-Path $stage 'template\base.pptx'), $ppSaveAsOpenXMLPresentation)
   } finally { $p.Close() }
 }

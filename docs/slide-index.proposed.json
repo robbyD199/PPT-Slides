@@ -1,0 +1,1995 @@
+{
+  "library": "Consulting slide template",
+  "version": "2.0",
+  "note": "MECE-Taxonomie der Folienbibliothek. Regel: Kategorie = wichtigstes Darstellungsmittel bzw. Funktion im Deck (siehe docs/TAXONOMIE.md).",
+  "slide": {
+    "width": 960,
+    "height": 540,
+    "unit": "pt",
+    "boxFormat": "[left, top, width, height]",
+    "contentAreaFormat": "[left, top, right, bottom]"
+  },
+  "categories": [
+    {
+      "id": "layouts",
+      "name": "Grundlayouts",
+      "rule": "Leere Folien mit den Master-Layouts der Vorlage – der schnellste Start für eigene Inhalte.",
+      "subcategories": [
+        "Leere Layouts"
+      ]
+    },
+    {
+      "id": "structure",
+      "name": "Struktur & Storyline",
+      "rule": "Folien, die das Deck rahmen: Deckblatt, Einleitung, Executive Summary, Abschluss und Quellen.",
+      "subcategories": [
+        "Deckblatt",
+        "Einleitung & Vorstellung",
+        "Executive Summary",
+        "Abschluss & Call-to-Action",
+        "Quellen & Anhang"
+      ]
+    },
+    {
+      "id": "text",
+      "name": "Text & Kernaussagen",
+      "rule": "Inhalte, die vor allem über Text wirken: Aufzählungen, Fließtext, Spalten und Karten mit Icons.",
+      "subcategories": [
+        "Aufzählung",
+        "Fließtext",
+        "Spalten & Bereiche",
+        "Karten & Icons"
+      ]
+    },
+    {
+      "id": "charts",
+      "name": "Diagramme",
+      "rule": "Datengetriebene Diagramme (editierbare Diagrammdaten): Linien, Säulen, Wasserfall, Blasen.",
+      "subcategories": [
+        "Linien",
+        "Säulen",
+        "Wasserfall",
+        "Blasen"
+      ]
+    },
+    {
+      "id": "figures",
+      "name": "Kennzahlen & Tabellen",
+      "rule": "Zahlen ohne Diagramm: Key-Facts-Kacheln und Status-/KPI-Tabellen.",
+      "subcategories": [
+        "Key Facts",
+        "Tabellen"
+      ]
+    },
+    {
+      "id": "frameworks",
+      "name": "Frameworks & Matrizen",
+      "rule": "Konzeptionelle Strukturen: Matrizen und Portfolios (auch als Blasendiagramm), Hub & Spoke, Issue Trees, Säulenmodelle.",
+      "subcategories": [
+        "Matrix & Portfolio",
+        "Hub & Spoke",
+        "Issue Tree",
+        "Säulen & Bausteine"
+      ]
+    },
+    {
+      "id": "process",
+      "name": "Prozesse & Phasen",
+      "rule": "Abfolgen ohne Zeitachse: Phasenmodelle, Schrittfolgen, Treppen und Kaskaden.",
+      "subcategories": [
+        "Phasenübersicht",
+        "Phase im Detail",
+        "Schrittfolge",
+        "Treppe & Kaskade"
+      ]
+    },
+    {
+      "id": "timeline",
+      "name": "Zeitpläne & Roadmaps",
+      "rule": "Alles mit Zeitachse: Gantt-/Projektpläne, Phasen- und Wellen-Roadmaps mit Meilensteinen.",
+      "subcategories": [
+        "Projektplan & Gantt",
+        "Phasen-Roadmap"
+      ]
+    },
+    {
+      "id": "people",
+      "name": "Team & Organisation",
+      "rule": "Organigramme, Projektteams und Rollen.",
+      "subcategories": [
+        "Organigramm",
+        "Team & Rollen"
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "key": "structure.cover",
+      "pos": 1,
+      "name": "Deckblatt",
+      "category": "structure",
+      "sub": "Deckblatt",
+      "layout": "Title Slide",
+      "elements": [
+        "cover-image",
+        "logo",
+        "title",
+        "subtitle",
+        "description"
+      ],
+      "keywords": [
+        "cover",
+        "title page",
+        "titelseite",
+        "titelfolie",
+        "front page",
+        "logo",
+        "start"
+      ]
+    },
+    {
+      "key": "structure.introduction",
+      "pos": 2,
+      "name": "Vorstellung mit Foto",
+      "category": "structure",
+      "sub": "Einleitung & Vorstellung",
+      "layout": "Title and Content",
+      "elements": [
+        "photo",
+        "logo",
+        "bullet-panel",
+        "caption"
+      ],
+      "keywords": [
+        "introduction",
+        "einleitung",
+        "about",
+        "about us",
+        "über uns",
+        "speaker",
+        "presenter",
+        "referent",
+        "profil",
+        "profile",
+        "contact",
+        "kontakt",
+        "ansprechpartner"
+      ]
+    },
+    {
+      "key": "structure.exec-summary-text",
+      "pos": 3,
+      "name": "Executive Summary – Fließtext",
+      "category": "structure",
+      "sub": "Executive Summary",
+      "layout": "Title Only",
+      "elements": [
+        "text-block"
+      ],
+      "keywords": [
+        "executive summary",
+        "management summary",
+        "zusammenfassung",
+        "summary",
+        "key takeaway",
+        "fazit",
+        "überblick",
+        "text"
+      ]
+    },
+    {
+      "key": "structure.exec-summary-takeaways",
+      "pos": 4,
+      "name": "Executive Summary – Kernaussagen mit Belegen",
+      "category": "structure",
+      "sub": "Executive Summary",
+      "layout": "Title Only",
+      "elements": [
+        "text-block"
+      ],
+      "keywords": [
+        "executive summary",
+        "management summary",
+        "zusammenfassung",
+        "key takeaways",
+        "kernaussagen",
+        "conclusion",
+        "recommendation",
+        "empfehlung",
+        "bullets",
+        "pyramid",
+        "pyramidenprinzip"
+      ]
+    },
+    {
+      "key": "text.bullets-intro",
+      "pos": 5,
+      "name": "Aufzählung mit Einleitungssatz",
+      "category": "text",
+      "sub": "Aufzählung",
+      "layout": "Title and Content",
+      "elements": [
+        "intro-sentence",
+        "bullets-6"
+      ],
+      "keywords": [
+        "bullet points",
+        "bullets",
+        "aufzählung",
+        "stichpunkte",
+        "liste",
+        "list",
+        "agenda",
+        "text",
+        "six points"
+      ]
+    },
+    {
+      "key": "text.long-form",
+      "pos": 6,
+      "name": "Fließtext mit nummerierter Liste",
+      "category": "text",
+      "sub": "Fließtext",
+      "layout": "Title Only",
+      "elements": [
+        "paragraphs"
+      ],
+      "keywords": [
+        "long-form text",
+        "fließtext",
+        "paragraphs",
+        "absätze",
+        "framework",
+        "concept",
+        "konzept",
+        "numbered list",
+        "nummerierte liste",
+        "text"
+      ]
+    },
+    {
+      "key": "text.framework-description",
+      "pos": 7,
+      "name": "Framework-Beschreibung mit 7 Elementen",
+      "category": "text",
+      "sub": "Fließtext",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "paragraphs",
+        "numbered-list"
+      ],
+      "keywords": [
+        "framework description",
+        "framework",
+        "modell",
+        "model",
+        "konzept",
+        "elements",
+        "elemente",
+        "numbered list",
+        "nummerierte liste",
+        "text"
+      ]
+    },
+    {
+      "key": "text.three-areas-images",
+      "pos": 8,
+      "name": "Drei Bereiche mit Icons",
+      "category": "text",
+      "sub": "Spalten & Bereiche",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "columns-3",
+        "images-3"
+      ],
+      "keywords": [
+        "three areas",
+        "drei bereiche",
+        "trends",
+        "focus areas",
+        "schwerpunkte",
+        "handlungsfelder",
+        "icons",
+        "themes",
+        "themen"
+      ]
+    },
+    {
+      "key": "text.three-trends",
+      "pos": 9,
+      "name": "Drei Trends – Tabelle mit Beispielen",
+      "category": "text",
+      "sub": "Spalten & Bereiche",
+      "layout": "Title Only",
+      "elements": [
+        "columns-3"
+      ],
+      "keywords": [
+        "three trends",
+        "drei trends",
+        "trends",
+        "market trends",
+        "markttrends",
+        "examples",
+        "beispiele",
+        "table",
+        "tabelle",
+        "drivers",
+        "treiber"
+      ]
+    },
+    {
+      "key": "text.three-trends-cards",
+      "pos": 10,
+      "name": "Drei Trends – nummerierte Karten",
+      "category": "text",
+      "sub": "Spalten & Bereiche",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "cards-3"
+      ],
+      "keywords": [
+        "three trends",
+        "drei trends",
+        "trends",
+        "cards",
+        "karten",
+        "numbered",
+        "nummeriert",
+        "themes",
+        "themen"
+      ]
+    },
+    {
+      "key": "text.five-areas",
+      "pos": 11,
+      "name": "Fünf Kernbereiche mit Beschreibung",
+      "category": "text",
+      "sub": "Spalten & Bereiche",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "areas-5",
+        "description"
+      ],
+      "keywords": [
+        "five areas",
+        "fünf bereiche",
+        "key areas",
+        "kernbereiche",
+        "handlungsfelder",
+        "agenda",
+        "inhalt",
+        "gliederung",
+        "overview",
+        "übersicht",
+        "numbered list"
+      ]
+    },
+    {
+      "key": "text.icon-rows",
+      "pos": 12,
+      "name": "Icon-Liste mit Zahlen",
+      "category": "text",
+      "sub": "Karten & Icons",
+      "layout": "Title Only",
+      "elements": [
+        "icon-rows-4"
+      ],
+      "keywords": [
+        "icon list",
+        "icons",
+        "what is included",
+        "lieferumfang",
+        "scope",
+        "umfang",
+        "figures",
+        "zahlen",
+        "numbers",
+        "deliverables"
+      ]
+    },
+    {
+      "key": "text.benefit-cards",
+      "pos": 13,
+      "name": "3×3 Nutzen-Karten mit Icons",
+      "category": "text",
+      "sub": "Karten & Icons",
+      "layout": "Title Only",
+      "elements": [
+        "cards-9",
+        "icons"
+      ],
+      "keywords": [
+        "benefits",
+        "nutzen",
+        "vorteile",
+        "advantages",
+        "value proposition",
+        "mehrwert",
+        "usp",
+        "features",
+        "cards",
+        "karten",
+        "icons",
+        "grid",
+        "raster"
+      ]
+    },
+    {
+      "key": "process.phase-overview",
+      "pos": 14,
+      "name": "Phasenübersicht – 5 Phasen",
+      "category": "process",
+      "sub": "Phasenübersicht",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "text-columns-5"
+      ],
+      "keywords": [
+        "phases",
+        "phasen",
+        "approach",
+        "vorgehen",
+        "vorgehensweise",
+        "methodik",
+        "methodology",
+        "process",
+        "prozess",
+        "chevron",
+        "chevrons",
+        "pfeile",
+        "transaction process",
+        "transaktionsprozess",
+        "workstreams"
+      ]
+    },
+    {
+      "key": "process.phase-detail-1",
+      "pos": 15,
+      "name": "Phase 1 im Detail mit Bildraster",
+      "category": "process",
+      "sub": "Phase im Detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ],
+      "keywords": [
+        "phase detail",
+        "phase 1",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ]
+    },
+    {
+      "key": "process.phase-detail-2",
+      "pos": 16,
+      "name": "Phase 2 im Detail mit Bildraster",
+      "category": "process",
+      "sub": "Phase im Detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ],
+      "keywords": [
+        "phase detail",
+        "phase 2",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ]
+    },
+    {
+      "key": "process.phase-detail-3",
+      "pos": 17,
+      "name": "Phase 3 im Detail mit Bildraster",
+      "category": "process",
+      "sub": "Phase im Detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ],
+      "keywords": [
+        "phase detail",
+        "phase 3",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ]
+    },
+    {
+      "key": "process.phase-detail-4",
+      "pos": 18,
+      "name": "Phase 4 im Detail mit Bildraster",
+      "category": "process",
+      "sub": "Phase im Detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ],
+      "keywords": [
+        "phase detail",
+        "phase 4",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ]
+    },
+    {
+      "key": "process.phase-detail-5",
+      "pos": 19,
+      "name": "Phase 5 im Detail mit Bildraster",
+      "category": "process",
+      "sub": "Phase im Detail",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "active-phase",
+        "image-grid-6"
+      ],
+      "keywords": [
+        "phase detail",
+        "phase 5",
+        "phasen",
+        "chevron",
+        "image grid",
+        "bildraster",
+        "bilder",
+        "images"
+      ]
+    },
+    {
+      "key": "process.phase-overview-recap",
+      "pos": 20,
+      "name": "Phasenübersicht – Zusammenfassung",
+      "category": "process",
+      "sub": "Phasenübersicht",
+      "layout": "Title Only",
+      "elements": [
+        "chevrons-5",
+        "text-columns-5"
+      ],
+      "keywords": [
+        "phases",
+        "phasen",
+        "recap",
+        "zusammenfassung",
+        "transition",
+        "überleitung",
+        "approach",
+        "vorgehen",
+        "chevron"
+      ]
+    },
+    {
+      "key": "process.numbered-steps",
+      "pos": 21,
+      "name": "Schritt-für-Schritt-Anleitung (5 Schritte)",
+      "category": "process",
+      "sub": "Schrittfolge",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "numbered-rows-5"
+      ],
+      "keywords": [
+        "step by step",
+        "schritt für schritt",
+        "steps",
+        "schritte",
+        "tutorial",
+        "anleitung",
+        "how to",
+        "checklist",
+        "checkliste",
+        "agenda",
+        "numbered list"
+      ]
+    },
+    {
+      "key": "process.staircase-7",
+      "pos": 22,
+      "name": "Treppe – 7 Stufen",
+      "category": "process",
+      "sub": "Treppe & Kaskade",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "staircase-7",
+        "logo"
+      ],
+      "keywords": [
+        "staircase",
+        "treppe",
+        "stufen",
+        "stairs",
+        "maturity",
+        "reifegrad",
+        "reifegradmodell",
+        "steps",
+        "schritte",
+        "framework"
+      ]
+    },
+    {
+      "key": "process.staircase-7-example",
+      "pos": 23,
+      "name": "Treppe – 7 Stufen mit Praxisbeispiel",
+      "category": "process",
+      "sub": "Treppe & Kaskade",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "staircase-7",
+        "logo"
+      ],
+      "keywords": [
+        "staircase",
+        "treppe",
+        "stufen",
+        "example",
+        "beispiel",
+        "case study",
+        "fallbeispiel",
+        "praxis",
+        "maturity",
+        "reifegrad"
+      ]
+    },
+    {
+      "key": "process.staircase-7-template",
+      "pos": 24,
+      "name": "Treppe – 7 Stufen, Ausfüllvorlage",
+      "category": "process",
+      "sub": "Treppe & Kaskade",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "staircase-7",
+        "logo"
+      ],
+      "keywords": [
+        "staircase",
+        "treppe",
+        "stufen",
+        "template",
+        "vorlage",
+        "maturity",
+        "reifegrad",
+        "steps"
+      ]
+    },
+    {
+      "key": "process.cascade-7",
+      "pos": 25,
+      "name": "Kaskade – 7 Schritte diagonal",
+      "category": "process",
+      "sub": "Treppe & Kaskade",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "cascade-7"
+      ],
+      "keywords": [
+        "cascade",
+        "kaskade",
+        "diagonal",
+        "steps",
+        "schritte",
+        "sequence",
+        "abfolge",
+        "waterfall steps"
+      ]
+    },
+    {
+      "key": "frameworks.hub-spoke",
+      "pos": 26,
+      "name": "Hub & Spoke mit Seitenbereichen",
+      "category": "frameworks",
+      "sub": "Hub & Spoke",
+      "layout": "Title Only",
+      "elements": [
+        "circle-wheel-8",
+        "section-headers-3",
+        "logo-row"
+      ],
+      "keywords": [
+        "hub and spoke",
+        "hub",
+        "spoke",
+        "nabe",
+        "ecosystem",
+        "ökosystem",
+        "circle",
+        "kreis",
+        "wheel",
+        "core topic",
+        "kernthema",
+        "logos",
+        "partners",
+        "company overview",
+        "unternehmensüberblick"
+      ]
+    },
+    {
+      "key": "frameworks.matrix-2x2-descriptions",
+      "pos": 27,
+      "name": "2×2-Matrix mit Beschreibungen",
+      "category": "frameworks",
+      "sub": "Matrix & Portfolio",
+      "layout": "Title Only",
+      "elements": [
+        "matrix-2x2",
+        "quadrant-text",
+        "legend"
+      ],
+      "keywords": [
+        "2x2",
+        "matrix",
+        "vierfeldermatrix",
+        "quadrant",
+        "quadranten",
+        "swot",
+        "positioning",
+        "positionierung",
+        "strategy",
+        "strategie",
+        "segmentation",
+        "segmentierung"
+      ]
+    },
+    {
+      "key": "frameworks.matrix-2x2-labels",
+      "pos": 28,
+      "name": "2×2-Portfolio – manuell mit Labels",
+      "category": "frameworks",
+      "sub": "Matrix & Portfolio",
+      "layout": "Title Only",
+      "elements": [
+        "matrix-2x2",
+        "label-pills",
+        "legend"
+      ],
+      "keywords": [
+        "2x2",
+        "matrix",
+        "portfolio",
+        "quadrant",
+        "quadranten",
+        "positioning",
+        "positionierung",
+        "competitors",
+        "wettbewerber",
+        "labels",
+        "manual"
+      ]
+    },
+    {
+      "key": "frameworks.growth-share-matrix",
+      "pos": 29,
+      "name": "BCG-Matrix (Growth-Share)",
+      "category": "frameworks",
+      "sub": "Matrix & Portfolio",
+      "layout": "Title Only",
+      "elements": [
+        "chart-bubble",
+        "matrix-2x2"
+      ],
+      "keywords": [
+        "bcg",
+        "growth share",
+        "marktwachstum",
+        "market share",
+        "marktanteil",
+        "cash cow",
+        "star",
+        "question mark",
+        "dog",
+        "portfolio",
+        "bubble",
+        "blasen",
+        "matrix"
+      ]
+    },
+    {
+      "key": "frameworks.prioritization-matrix",
+      "pos": 30,
+      "name": "Priorisierungsmatrix (3×3)",
+      "category": "frameworks",
+      "sub": "Matrix & Portfolio",
+      "layout": "Title Only",
+      "elements": [
+        "matrix-3x3",
+        "status-bubbles",
+        "legend"
+      ],
+      "keywords": [
+        "prioritization",
+        "priorisierung",
+        "priorities",
+        "prioritäten",
+        "impact",
+        "time to impact",
+        "quick wins",
+        "aufwand nutzen",
+        "effort",
+        "assessment",
+        "bewertung",
+        "matrix",
+        "initiatives",
+        "maßnahmen"
+      ]
+    },
+    {
+      "key": "frameworks.issue-tree",
+      "pos": 31,
+      "name": "Issue Tree (Treiberbaum)",
+      "category": "frameworks",
+      "sub": "Issue Tree",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "issue-tree"
+      ],
+      "keywords": [
+        "issue tree",
+        "logic tree",
+        "logikbaum",
+        "driver tree",
+        "treiberbaum",
+        "werttreiberbaum",
+        "hypothesis tree",
+        "hypothesenbaum",
+        "root cause",
+        "ursachen",
+        "mece",
+        "problem",
+        "drivers",
+        "treiber"
+      ]
+    },
+    {
+      "key": "frameworks.areas-overview",
+      "pos": 32,
+      "name": "Bereichsübersicht A–G (Säulenmodell)",
+      "category": "frameworks",
+      "sub": "Säulen & Bausteine",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "area-boxes",
+        "callout"
+      ],
+      "keywords": [
+        "pillars",
+        "säulen",
+        "building blocks",
+        "bausteine",
+        "areas",
+        "bereiche",
+        "workstreams",
+        "arbeitspakete",
+        "overview",
+        "übersicht",
+        "callout",
+        "agenda"
+      ]
+    },
+    {
+      "key": "charts.line-small-multiples",
+      "pos": 33,
+      "name": "Vier Liniendiagramme (Small Multiples)",
+      "category": "charts",
+      "sub": "Linien",
+      "layout": "Title Only",
+      "elements": [
+        "chart-line-4"
+      ],
+      "keywords": [
+        "line chart",
+        "liniendiagramm",
+        "linien",
+        "small multiples",
+        "trend",
+        "zeitreihe",
+        "time series",
+        "kpi development",
+        "entwicklung",
+        "four charts",
+        "financial overview",
+        "finanzübersicht",
+        "dashboard"
+      ]
+    },
+    {
+      "key": "charts.column-takeaways",
+      "pos": 34,
+      "name": "Säulendiagramm – Vergleich mit Takeaways",
+      "category": "charts",
+      "sub": "Säulen",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "takeaways-panel"
+      ],
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "comparison",
+        "vergleich",
+        "benchmark",
+        "benchmarking",
+        "ranking",
+        "peers",
+        "wettbewerber",
+        "competitors",
+        "takeaways",
+        "focus"
+      ]
+    },
+    {
+      "key": "charts.column-growth",
+      "pos": 35,
+      "name": "Säulendiagramm mit Wachstumspfeil (CAGR)",
+      "category": "charts",
+      "sub": "Säulen",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "growth-arrow",
+        "takeaways-panel"
+      ],
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "growth",
+        "wachstum",
+        "cagr",
+        "revenue",
+        "umsatz",
+        "market size",
+        "marktvolumen",
+        "development",
+        "entwicklung",
+        "financial overview",
+        "finanzübersicht",
+        "takeaways"
+      ]
+    },
+    {
+      "key": "charts.column-split-growth",
+      "pos": 36,
+      "name": "Säulendiagramm mit geteiltem Wachstum (2× CAGR)",
+      "category": "charts",
+      "sub": "Säulen",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "growth-arrows-2",
+        "takeaways-panel"
+      ],
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "growth",
+        "wachstum",
+        "cagr",
+        "two periods",
+        "zwei perioden",
+        "revenue",
+        "umsatz",
+        "financial overview",
+        "finanzübersicht",
+        "takeaways"
+      ]
+    },
+    {
+      "key": "charts.column-forecast",
+      "pos": 37,
+      "name": "Säulendiagramm – Ist vs. Prognose",
+      "category": "charts",
+      "sub": "Säulen",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-column",
+        "forecast-split",
+        "growth-arrow"
+      ],
+      "keywords": [
+        "column chart",
+        "säulendiagramm",
+        "bar chart",
+        "balkendiagramm",
+        "forecast",
+        "prognose",
+        "actuals",
+        "ist",
+        "plan",
+        "budget",
+        "outlook",
+        "ausblick",
+        "projection",
+        "business plan",
+        "financial overview",
+        "finanzübersicht",
+        "cagr"
+      ]
+    },
+    {
+      "key": "charts.waterfall-pair",
+      "pos": 38,
+      "name": "Zwei Wasserfalldiagramme (Brücke)",
+      "category": "charts",
+      "sub": "Wasserfall",
+      "layout": "Title Only",
+      "elements": [
+        "chart-waterfall-2"
+      ],
+      "keywords": [
+        "waterfall",
+        "wasserfall",
+        "bridge",
+        "brücke",
+        "überleitung",
+        "ebitda bridge",
+        "walk",
+        "variance",
+        "abweichung",
+        "drivers",
+        "treiber",
+        "financial overview",
+        "finanzübersicht",
+        "build-up",
+        "aufbau"
+      ]
+    },
+    {
+      "key": "charts.bubble-portfolio",
+      "pos": 39,
+      "name": "2×2-Portfolio – Blasendiagramm (automatisch)",
+      "category": "frameworks",
+      "sub": "Matrix & Portfolio",
+      "layout": "Title Only",
+      "elements": [
+        "chart-bubble",
+        "quadrant-background"
+      ],
+      "keywords": [
+        "2x2",
+        "portfolio",
+        "bubble chart",
+        "blasendiagramm",
+        "matrix",
+        "quadrant",
+        "positioning",
+        "positionierung",
+        "competitors",
+        "wettbewerber",
+        "chart",
+        "automated"
+      ]
+    },
+    {
+      "key": "charts.bubble",
+      "pos": 40,
+      "name": "Blasendiagramm",
+      "category": "charts",
+      "sub": "Blasen",
+      "layout": "Title Only",
+      "elements": [
+        "chart-bubble",
+        "legend"
+      ],
+      "keywords": [
+        "bubble chart",
+        "blasendiagramm",
+        "scatter",
+        "streudiagramm",
+        "punktdiagramm",
+        "portfolio",
+        "groups",
+        "gruppen",
+        "positioning",
+        "positionierung",
+        "comparison",
+        "vergleich",
+        "peers"
+      ]
+    },
+    {
+      "key": "charts.bubble-takeaways",
+      "pos": 41,
+      "name": "Blasendiagramm mit Takeaways",
+      "category": "charts",
+      "sub": "Blasen",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "chart-bubble",
+        "takeaways-panel"
+      ],
+      "keywords": [
+        "bubble chart",
+        "blasendiagramm",
+        "scatter",
+        "streudiagramm",
+        "portfolio",
+        "takeaways",
+        "positioning",
+        "comparison",
+        "vergleich",
+        "peers"
+      ]
+    },
+    {
+      "key": "kpis.tiles-logos",
+      "pos": 42,
+      "name": "Key Facts – Kennzahlen-Kacheln mit Logos",
+      "category": "figures",
+      "sub": "Key Facts",
+      "layout": "Title Only",
+      "elements": [
+        "kpi-tiles-4",
+        "logo-row",
+        "map-or-image"
+      ],
+      "keywords": [
+        "key facts",
+        "kennzahlen",
+        "kpi",
+        "kpis",
+        "figures",
+        "zahlen",
+        "at a glance",
+        "auf einen blick",
+        "company overview",
+        "unternehmensüberblick",
+        "unternehmensprofil",
+        "company profile",
+        "steckbrief",
+        "highlights",
+        "logos",
+        "clients",
+        "kunden",
+        "map",
+        "karte",
+        "financial overview",
+        "finanzübersicht"
+      ]
+    },
+    {
+      "key": "tables.status-overview",
+      "pos": 43,
+      "name": "Status- & KPI-Tabelle mit Ampeln",
+      "category": "figures",
+      "sub": "Tabellen",
+      "layout": "Title Only",
+      "elements": [
+        "table",
+        "status-icons"
+      ],
+      "keywords": [
+        "table",
+        "tabelle",
+        "status",
+        "ampel",
+        "traffic light",
+        "rag",
+        "kpi",
+        "kpis",
+        "target",
+        "ziel",
+        "actual",
+        "ist",
+        "scorecard",
+        "dashboard",
+        "assessment",
+        "bewertung",
+        "controlling",
+        "financial overview",
+        "finanzübersicht"
+      ]
+    },
+    {
+      "key": "people.org-chart",
+      "pos": 44,
+      "name": "Organigramm",
+      "category": "people",
+      "sub": "Organigramm",
+      "layout": "Title Only",
+      "elements": [
+        "org-chart"
+      ],
+      "keywords": [
+        "org chart",
+        "organigramm",
+        "organization",
+        "organisation",
+        "structure",
+        "struktur",
+        "hierarchy",
+        "hierarchie",
+        "governance",
+        "reporting lines",
+        "berichtslinien",
+        "company overview"
+      ]
+    },
+    {
+      "key": "people.project-team-roles",
+      "pos": 45,
+      "name": "Projektteam mit Rollen und Icons",
+      "category": "people",
+      "sub": "Team & Rollen",
+      "layout": "Title Only",
+      "elements": [
+        "role-cards",
+        "icons"
+      ],
+      "keywords": [
+        "project team",
+        "projektteam",
+        "team",
+        "functions",
+        "funktionen",
+        "roles",
+        "rollen",
+        "responsibilities",
+        "verantwortlichkeiten",
+        "staffing",
+        "besetzung",
+        "icons",
+        "lead"
+      ]
+    },
+    {
+      "key": "people.team-chart",
+      "pos": 46,
+      "name": "Teamstruktur nach Funktionen",
+      "category": "people",
+      "sub": "Team & Rollen",
+      "layout": "Title Only",
+      "elements": [
+        "team-chart",
+        "photos"
+      ],
+      "keywords": [
+        "team chart",
+        "team",
+        "teamstruktur",
+        "functions",
+        "funktionen",
+        "roles",
+        "rollen",
+        "staffing",
+        "besetzung",
+        "people",
+        "personen",
+        "governance"
+      ]
+    },
+    {
+      "key": "timeline.project-plan-weeks",
+      "pos": 47,
+      "name": "Projektplan nach Wochen mit Deliverables",
+      "category": "timeline",
+      "sub": "Projektplan & Gantt",
+      "layout": "Title Only",
+      "elements": [
+        "gantt",
+        "week-columns"
+      ],
+      "keywords": [
+        "project plan",
+        "projektplan",
+        "workplan",
+        "arbeitsplan",
+        "weeks",
+        "wochen",
+        "activities",
+        "aktivitäten",
+        "deliverables",
+        "meetings",
+        "kick-off",
+        "milestones",
+        "meilensteine",
+        "transaction process",
+        "transaktionsprozess",
+        "timeline",
+        "zeitplan"
+      ]
+    },
+    {
+      "key": "timeline.timeline-table",
+      "pos": 48,
+      "name": "Gantt-Zeitplan mit Stage-Gates",
+      "category": "timeline",
+      "sub": "Projektplan & Gantt",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "gantt-table",
+        "stage-gates"
+      ],
+      "keywords": [
+        "gantt",
+        "timeline",
+        "zeitplan",
+        "zeitstrahl",
+        "schedule",
+        "terminplan",
+        "weeks",
+        "kalenderwochen",
+        "workstreams",
+        "arbeitspakete",
+        "stage gate",
+        "milestones",
+        "meilensteine",
+        "steerco",
+        "next steps",
+        "nächste schritte"
+      ]
+    },
+    {
+      "key": "timeline.phases-3",
+      "pos": 49,
+      "name": "Drei Phasen mit Deliverables und Team",
+      "category": "timeline",
+      "sub": "Phasen-Roadmap",
+      "layout": "Title Only",
+      "elements": [
+        "phases-3",
+        "icons"
+      ],
+      "keywords": [
+        "three phases",
+        "drei phasen",
+        "roadmap",
+        "timeline",
+        "zeitplan",
+        "deliverables",
+        "people",
+        "team",
+        "mvp",
+        "launch",
+        "timeframe",
+        "zeitraum"
+      ]
+    },
+    {
+      "key": "timeline.phases-4-meetings",
+      "pos": 50,
+      "name": "Vier Phasen mit Key Meetings (SteerCo)",
+      "category": "timeline",
+      "sub": "Phasen-Roadmap",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "phases-4",
+        "key-meetings"
+      ],
+      "keywords": [
+        "four phases",
+        "vier phasen",
+        "roadmap",
+        "timeline",
+        "zeitplan",
+        "steerco",
+        "steering committee",
+        "lenkungsausschuss",
+        "meetings",
+        "milestones",
+        "meilensteine",
+        "tracks",
+        "activities",
+        "responsibilities",
+        "governance"
+      ]
+    },
+    {
+      "key": "timeline.waves-4",
+      "pos": 51,
+      "name": "Vier Wellen (Umsetzungs-Roadmap)",
+      "category": "timeline",
+      "sub": "Phasen-Roadmap",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "waves-4"
+      ],
+      "keywords": [
+        "four waves",
+        "vier wellen",
+        "waves",
+        "wellen",
+        "roadmap",
+        "rollout",
+        "implementation plan",
+        "umsetzungsplan",
+        "umsetzung",
+        "timeline",
+        "zeitstrahl",
+        "activities",
+        "deliverables"
+      ]
+    },
+    {
+      "key": "timeline.phases-4-timeline",
+      "pos": 52,
+      "name": "Vier Phasen auf Zeitstrahl",
+      "category": "timeline",
+      "sub": "Phasen-Roadmap",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "phases-4",
+        "timeline"
+      ],
+      "keywords": [
+        "four phases",
+        "vier phasen",
+        "roadmap",
+        "timeline",
+        "zeitstrahl",
+        "zeitplan",
+        "activities",
+        "outcomes",
+        "ergebnisse",
+        "kpis"
+      ]
+    },
+    {
+      "key": "images.image-grid-cta",
+      "pos": 53,
+      "name": "Leitfrage mit Bildraster und Call-to-Action",
+      "category": "structure",
+      "sub": "Abschluss & Call-to-Action",
+      "layout": "Title Only",
+      "elements": [
+        "image-grid-6",
+        "button"
+      ],
+      "keywords": [
+        "call to action",
+        "cta",
+        "closing",
+        "abschluss",
+        "hook",
+        "question",
+        "frage",
+        "offer",
+        "angebot",
+        "recommendation",
+        "empfehlung",
+        "images",
+        "bilder",
+        "image grid",
+        "bildraster",
+        "pitch",
+        "thank you"
+      ]
+    },
+    {
+      "key": "references.apa-reference-list",
+      "pos": 54,
+      "name": "Literaturverzeichnis (APA 7)",
+      "category": "structure",
+      "sub": "Quellen & Anhang",
+      "layout": "Title and Subtitle",
+      "elements": [
+        "reference-list",
+        "hanging-indent",
+        "apa-7"
+      ],
+      "keywords": [
+        "references",
+        "literatur",
+        "literaturverzeichnis",
+        "quellen",
+        "sources",
+        "bibliography",
+        "apa",
+        "citations",
+        "zitate",
+        "appendix",
+        "anhang",
+        "literature review"
+      ]
+    }
+  ],
+  "basicLayouts": [
+    {
+      "name": "Titelfolie (leer)",
+      "layout": "Title Slide",
+      "category": "layouts"
+    },
+    {
+      "name": "Titel und Inhalt (leer)",
+      "layout": "Title and Content",
+      "category": "layouts"
+    },
+    {
+      "name": "Nur Titel (leer)",
+      "layout": "Title Only",
+      "category": "layouts"
+    },
+    {
+      "name": "Titel und Untertitel (leer)",
+      "layout": "Title and Subtitle",
+      "category": "layouts"
+    }
+  ],
+  "theme": {
+    "fonts": {
+      "heading": "Arial",
+      "body": "Arial"
+    },
+    "activeColorSet": "JP Morgan",
+    "slotRoles": {
+      "dk1": "Text 1: main text",
+      "lt1": "Background 1: slide background",
+      "dk2": "Text 2: secondary text, footer, lines",
+      "lt2": "Background 2: light panels",
+      "accent1": "main shapes, chevrons, bars",
+      "accent2": "highlight: number circles, focus bars",
+      "accent3": "extra or lighter highlight",
+      "accent4": "light tint",
+      "accent5": "extra dark",
+      "accent6": "mid grey: inactive elements",
+      "hlink": "hyperlink",
+      "folHlink": "followed hyperlink"
+    },
+    "colorSets": [
+      {
+        "name": "Rothschild",
+        "colors": {
+          "dk1": "455D73",
+          "lt1": "FFFFFF",
+          "dk2": "737372",
+          "lt2": "F2F2F2",
+          "accent1": "455D73",
+          "accent2": "657A8C",
+          "accent3": "BF8C6F",
+          "accent4": "D8DEE2",
+          "accent5": "737372",
+          "accent6": "C8C8C7",
+          "hlink": "657A8C",
+          "folHlink": "455D73"
+        }
+      },
+      {
+        "name": "Credit Suisse",
+        "colors": {
+          "dk1": "001F3B",
+          "lt1": "FFFFFF",
+          "dk2": "36526E",
+          "lt2": "F4F4F4",
+          "accent1": "003565",
+          "accent2": "731117",
+          "accent3": "36526E",
+          "accent4": "BFCCD8",
+          "accent5": "001F3B",
+          "accent6": "C3CBD3",
+          "hlink": "003565",
+          "folHlink": "731117"
+        }
+      },
+      {
+        "name": "JP Morgan",
+        "colors": {
+          "dk1": "161616",
+          "lt1": "FFFFFF",
+          "dk2": "707070",
+          "lt2": "F0F0F0",
+          "accent1": "003366",
+          "accent2": "056FAA",
+          "accent3": "69A9CC",
+          "accent4": "C0DBEA",
+          "accent5": "161616",
+          "accent6": "CFCFCF",
+          "hlink": "056FAA",
+          "folHlink": "003366"
+        }
+      },
+      {
+        "name": "Marlboro",
+        "colors": {
+          "dk1": "000000",
+          "lt1": "FFFFFF",
+          "dk2": "4D4D4D",
+          "lt2": "F2F2F2",
+          "accent1": "000000",
+          "accent2": "FE0000",
+          "accent3": "4D4D4D",
+          "accent4": "D9D9D9",
+          "accent5": "000000",
+          "accent6": "B8B8B8",
+          "hlink": "FE0000",
+          "folHlink": "4D4D4D"
+        }
+      },
+      {
+        "name": "UBS",
+        "colors": {
+          "dk1": "000000",
+          "lt1": "FFFFFF",
+          "dk2": "4D4D4D",
+          "lt2": "F2F2F2",
+          "accent1": "000000",
+          "accent2": "FE0000",
+          "accent3": "4D4D4D",
+          "accent4": "D9D9D9",
+          "accent5": "000000",
+          "accent6": "B8B8B8",
+          "hlink": "FE0000",
+          "folHlink": "4D4D4D"
+        }
+      }
+    ],
+    "signalColors": [
+      {
+        "name": "Positive (sage)",
+        "hex": "A9C1A0"
+      },
+      {
+        "name": "Positive light",
+        "hex": "D9E4D3"
+      },
+      {
+        "name": "Caution (sand)",
+        "hex": "E6CE96"
+      },
+      {
+        "name": "Caution light",
+        "hex": "F2E6C9"
+      },
+      {
+        "name": "Negative (clay)",
+        "hex": "D49A8A"
+      },
+      {
+        "name": "Negative light",
+        "hex": "EFD5CC"
+      },
+      {
+        "name": "Neutral (cream)",
+        "hex": "F4EFE6"
+      }
+    ]
+  },
+  "layouts": [
+    {
+      "name": "Title Slide",
+      "use": "Cover",
+      "contentArea": null,
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "ctrTitle",
+          "idx": null,
+          "box": [
+            27,
+            352,
+            720,
+            48
+          ]
+        },
+        {
+          "role": "subtitle",
+          "type": "subTitle",
+          "idx": 1,
+          "box": [
+            27,
+            400,
+            720,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title and Content",
+      "use": "Title with a body text placeholder",
+      "contentArea": [
+        43.7,
+        106,
+        916.3,
+        492
+      ],
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ]
+        },
+        {
+          "role": "body",
+          "type": "body",
+          "idx": 1,
+          "box": [
+            43.7,
+            106,
+            872.6,
+            386
+          ]
+        },
+        {
+          "role": "sectionMarker",
+          "type": "body",
+          "idx": 17,
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ]
+        },
+        {
+          "role": "footnoteSource",
+          "type": "body",
+          "idx": 18,
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ]
+        },
+        {
+          "role": "alignTop",
+          "type": "body",
+          "idx": 21,
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignBottom",
+          "type": "body",
+          "idx": 22,
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignLeft",
+          "type": "body",
+          "idx": 23,
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignRight",
+          "type": "body",
+          "idx": 24,
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title Only",
+      "use": "Title with free content area",
+      "contentArea": [
+        43.7,
+        106,
+        916.3,
+        492
+      ],
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ]
+        },
+        {
+          "role": "sectionMarker",
+          "type": "body",
+          "idx": 17,
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ]
+        },
+        {
+          "role": "footnoteSource",
+          "type": "body",
+          "idx": 18,
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ]
+        },
+        {
+          "role": "alignTop",
+          "type": "body",
+          "idx": 21,
+          "box": [
+            -170,
+            106,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignBottom",
+          "type": "body",
+          "idx": 22,
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignLeft",
+          "type": "body",
+          "idx": 23,
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignRight",
+          "type": "body",
+          "idx": 24,
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Title and Subtitle",
+      "use": "Title with an 18 pt subtitle line",
+      "contentArea": [
+        43.7,
+        132,
+        916.3,
+        492
+      ],
+      "placeholders": [
+        {
+          "role": "title",
+          "type": "title",
+          "idx": null,
+          "box": [
+            43.7,
+            28,
+            872.6,
+            57.6
+          ]
+        },
+        {
+          "role": "subtitle",
+          "type": "subTitle",
+          "idx": 1,
+          "box": [
+            43.7,
+            103.9,
+            872.6,
+            21.8
+          ]
+        },
+        {
+          "role": "sectionMarker",
+          "type": "body",
+          "idx": 17,
+          "box": [
+            600.8,
+            7.9,
+            315.5,
+            9.7
+          ]
+        },
+        {
+          "role": "footnoteSource",
+          "type": "body",
+          "idx": 18,
+          "box": [
+            43.7,
+            492,
+            573.1,
+            32.5
+          ]
+        },
+        {
+          "role": "alignTop",
+          "type": "body",
+          "idx": 21,
+          "box": [
+            -170,
+            132,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignBottom",
+          "type": "body",
+          "idx": 22,
+          "box": [
+            -170,
+            464,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignLeft",
+          "type": "body",
+          "idx": 23,
+          "box": [
+            43.7,
+            -76,
+            140,
+            28
+          ]
+        },
+        {
+          "role": "alignRight",
+          "type": "body",
+          "idx": 24,
+          "box": [
+            776.3,
+            -76,
+            140,
+            28
+          ]
+        }
+      ]
+    }
+  ]
+}

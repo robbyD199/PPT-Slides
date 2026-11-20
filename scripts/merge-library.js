@@ -255,6 +255,11 @@ async function buildTemplates(basePptx, outDir) {
   };
   fs.writeFileSync(libFile, JSON.stringify(lib, null, 2) + "\n", "utf8");
   if (idx) fs.writeFileSync(path.join(out, "index-from-template.json"), JSON.stringify(idx, null, 2) + "\n", "utf8");
+  const missing = slides.filter((s) => !fs.existsSync(path.join(out, s.file)));
+  if (missing.length) {
+    console.warn(`WARNUNG: ${missing.length} Folien ohne PPTX-Datei (update-templates.ps1 ohne -SkipMini ausführen):`);
+    for (const s of missing) console.warn(`    - ${s.key}  ${s.title}`);
+  }
   if (extract.jsonIndexError) console.warn(`WARNUNG: JSON-Indexfolie konnte nicht gelesen werden: ${extract.jsonIndexError}`);
 
   const fmt = (list) => list.map((s) => `    - ${s.key}  ${s.title}`).join("\n");

@@ -69,3 +69,17 @@ describe("manifests", () => {
     expect(prod).toContain('DefaultValue="Folienbibliothek"/>');
   });
 });
+
+describe("new-presentation templates", () => {
+  it("contain the master with all layouts of the library", async () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const JSZip = require("jszip");
+    const layoutsInLibrary = lib.slides.filter((s) => s.kind === "layout").length;
+    for (const t of lib.templates) {
+      const zip = await JSZip.loadAsync(fs.readFileSync(path.join(dir, t.file)));
+      const layouts = Object.keys(zip.files).filter((n) => /^ppt\/slideLayouts\/slideLayout\d+\.xml$/.test(n));
+      expect(layouts.length).toBe(layoutsInLibrary);
+      expect(Object.keys(zip.files).some((n) => n.startsWith("ppt/webextensions/"))).toBe(false);
+    }
+  });
+});

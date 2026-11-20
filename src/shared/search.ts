@@ -185,8 +185,10 @@ export function tokenScore(term: string, token: string, allowFuzzy = true): numb
   return 0;
 }
 
+/** Best field match plus a small bonus for every further field that also matches (tie-breaker). */
 function termScore(term: Term, doc: IndexedDoc): number {
   let best = 0;
+  let sum = 0;
   const isPhrase = term.t.includes(" ");
   const fuzzy = term.w === 1; // only what the user typed, not synonym expansions
   for (const f of doc.fields) {
@@ -202,8 +204,9 @@ function termScore(term: Term, doc: IndexedDoc): number {
       }
     }
     best = Math.max(best, s * f.weight);
+    sum += s * f.weight;
   }
-  return best * term.w;
+  return (best + 0.1 * (sum - best)) * term.w;
 }
 
 export interface SearchHit {

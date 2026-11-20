@@ -63,6 +63,7 @@ Write-Host 'Dev-Server laeuft: https://localhost:3000'
 
 # --- 2. sideload dev manifest ------------------------------------------------------------------
 $devKey = 'HKCU:\Software\Microsoft\Office\16.0\WEF\Developer'
+$devWasRegistered = (Test-Path $devKey) -and ((Get-ItemProperty $devKey).PSObject.Properties.Name -contains $devId)
 New-Item -Path $devKey -Force | Out-Null
 Set-ItemProperty -Path $devKey -Name $devId -Value $manifest
 
@@ -123,4 +124,6 @@ if ($LASTEXITCODE -ne 0) { throw 'Bericht konnte nicht erstellt werden.' }
 if ($startedServer -and -not $KeepServer) {
   Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'webpack' -and $_.CommandLine -match 'serve' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
 }
+# remove the dev sideload again unless it was registered before (otherwise the ribbon shows a broken Dev group)
+if (-not $devWasRegistered) { Remove-ItemProperty -Path $devKey -Name $devId -ErrorAction SilentlyContinue }
 Write-Host "Bericht: $out\report.md"

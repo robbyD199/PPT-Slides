@@ -426,3 +426,7 @@ body.cannot-insert .card {
     transition: none !important;
   }
 }
+
+[hidden] {
+  display: none !important;
+}

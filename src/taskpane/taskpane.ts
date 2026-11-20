@@ -280,7 +280,11 @@ function renderBrowse(lib: Library): void {
         el(
           "div",
           { class: "grid" },
-          ...g.subgroups.flatMap((sg) => sg.slides.map((s) => cardFor(s, sg.subcategory?.name)))
+          ...g.subgroups.flatMap((sg) =>
+            sg.slides.map((s) =>
+              cardFor(s, sg.subcategory?.name !== s.title ? sg.subcategory?.name : undefined)
+            )
+          )
         )
       );
     } else {

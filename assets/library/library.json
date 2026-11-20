@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "Folienbibliothek",
   "updated": "2026-11-20T01:27:58.435Z",
-  "built": "2026-11-20T02:36:05.256Z",
+  "built": "2026-11-20T02:56:16.757Z",
   "build": "3b629875e1",
   "source": {
     "file": "Library.pptx",
@@ -421,9 +421,7 @@
         "profile",
         "contact",
         "kontakt",
-        "ansprechpartner",
-        "company overview",
-        "unternehmensüberblick"
+        "ansprechpartner"
       ],
       "description": "Persönliche Vorstellung oder Einleitung: Foto, Logo, drei Kernpunkte, Name und Rolle.",
       "order": 2,
@@ -6020,7 +6018,7 @@
         "financial overview",
         "finanzübersicht"
       ],
-      "description": "Vier Kennzahlen als Kacheln, Logo-Leiste und Karte oder Bild.",
+      "description": "Company Overview / Key Facts auf einen Blick: vier Kennzahlen als Kacheln, Logo-Leiste (Kunden, Partner) und Karte oder Bild.",
       "order": 42,
       "sourceTitle": "[Insert the key message that the figures support, on one or two lines]",
       "layout": "Title Only",
