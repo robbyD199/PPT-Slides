@@ -79,6 +79,20 @@ try {
   (Get-ThemeInfo $p | ConvertTo-Json -Depth 4) | Set-Content -Encoding UTF8 (Join-Path $OutDir 'target-custom.json')
   $p.Close()
 
+  # --- decks based on the OWN template (master + cover) in two color sets: the everyday case ---
+  $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+  foreach ($cs in @('rothschild', 'ubs')) {
+    $tpl = Join-Path $root "assets\library\template\$cs.pptx"
+    if (-not (Test-Path $tpl)) { continue }
+    $p = $app.Presentations.Open($tpl, $msoTrue, $msoTrue, $msoFalse)
+    $content = $p.Slides.AddSlide(2, $p.Designs.Item(1).SlideMaster.CustomLayouts.Item(2))
+    $content.Shapes.Item(1).TextFrame.TextRange.Text = 'Bestehende Inhaltsfolie'
+    $file = Join-Path $OutDir "target-vorlage-$cs.pptx"
+    $p.SaveAs($file, $ppSaveAsOpenXMLPresentation)
+    (Get-ThemeInfo $p | ConvertTo-Json -Depth 4) | Set-Content -Encoding UTF8 (Join-Path $OutDir "target-vorlage-$cs.json")
+    $p.Close()
+  }
+
   # --- empty presentation (edge cases: insert into 0 slides, keep source formatting) ---
   $p = $app.Presentations.Add($msoFalse)
   $p.PageSetup.SlideWidth = 960; $p.PageSetup.SlideHeight = 540

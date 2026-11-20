@@ -9,7 +9,8 @@
 param(
   [Parameter(Mandatory = $true)][string]$RunIds,       # comma separated, e.g. 20261120-031645-ion,20261120-031645-custom
   [string]$OutDir = '',
-  [int]$PerSheet = 8
+  [int]$PerSheet = 8,
+  [string]$Prefix = 'compare'
 )
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
@@ -90,7 +91,7 @@ for ($start = 0; $start -lt $entries.Count; $start += $PerSheet) {
     }
     $y += $cellH + $pad
   }
-  $file = Join-Path $screens ("compare-{0:00}.jpg" -f $sheet)
+  $file = Join-Path $screens ("{0}-{1:00}.jpg" -f $Prefix, $sheet)
   $codec = [Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq 'image/jpeg' }
   $ep = New-Object Drawing.Imaging.EncoderParameters(1)
   $ep.Param[0] = New-Object Drawing.Imaging.EncoderParameter([Drawing.Imaging.Encoder]::Quality, [long]84)

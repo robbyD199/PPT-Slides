@@ -191,6 +191,30 @@ export async function insertSlide(base64: string, opts: InsertOptions): Promise<
   });
 }
 
+/**
+ * True if one of the destination's masters contains all layouts of the library master
+ * (= the deck is based on the own template; inserted slides then look exactly like the library).
+ */
+export function hasLibraryMaster(masters: string[][], libraryLayouts: string[]): boolean {
+  if (!libraryLayouts.length) return true;
+  return masters.some((layouts) => libraryLayouts.every((name) => layouts.includes(name)));
+}
+
+/** Layout names per slide master of the open presentation (PowerPointApi 1.3), null if unavailable. */
+export async function destinationLayouts(): Promise<string[][] | null> {
+  if (!isSetSupported("PowerPointApi", "1.3")) return null;
+  try {
+    return await PowerPoint.run(async (context) => {
+      const masters = context.presentation.slideMasters;
+      masters.load("items/layouts/items/name");
+      await context.sync();
+      return masters.items.map((m) => m.layouts.items.map((l) => l.name));
+    });
+  } catch {
+    return null;
+  }
+}
+
 /** Opens a new presentation from a base64 .pptx (PowerPointApi 1.1). */
 export function createPresentation(base64: string): Promise<void> {
   return PowerPoint.createPresentation(base64);

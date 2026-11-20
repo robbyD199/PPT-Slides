@@ -17,6 +17,7 @@ test-results/*
 !test-results/screens/
 test-results/screens/*
 !test-results/screens/compare-*.jpg
+!test-results/screens/kontrast-*.jpg
 
 # personal agent instructions stay local (repo is public)
 claude.md

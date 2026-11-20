@@ -13,6 +13,7 @@ import { setCardState, slideCard } from "../shared/cards";
 import { describeError, MSG } from "../shared/messages";
 import { prefs } from "../shared/prefs";
 import { openSearchDialog } from "../shared/dialogHost";
+import { destinationLayouts, hasLibraryMaster } from "../shared/insert";
 import type { Formatting, Group, Library, SlideEntry } from "../shared/types";
 
 declare const __SELFTEST__: boolean;
@@ -152,9 +153,23 @@ function setBusy(busy: boolean): void {
   $("content").setAttribute("aria-busy", busy ? "true" : "false");
 }
 
+let foreignChecked = false;
+
 function onInserted(out: InsertOutcome): void {
   prefs.addRecent(out.entry.key);
   toast("success", MSG.inserted(out.entry.title, out.position, out.atEnd));
+  // once per session: tell the user if the deck uses a foreign design (slides adopt its colors/fonts)
+  if (!foreignChecked && prefs.formatting() === "UseDestinationTheme" && state.svc) {
+    foreignChecked = true;
+    const libLayouts = state.svc.lib.slides
+      .filter((s) => s.kind === "layout")
+      .map((s) => s.layout ?? "");
+    void destinationLayouts().then((masters) => {
+      if (masters && !hasLibraryMaster(masters, libLayouts)) {
+        toast("info", MSG.foreignDesign, MSG.foreignDesignHint, 12000);
+      }
+    });
+  }
 }
 
 async function activate(entry: SlideEntry, card: HTMLElement): Promise<void> {

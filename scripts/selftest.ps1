@@ -75,6 +75,8 @@ foreach ($x in @(Get-CimInstance Win32_Process -Filter "Name='POWERPNT.EXE'")) {
 
 # --- 4. runs -----------------------------------------------------------------------------------
 $runs = @(
+  @{ name = 'vorlage-rothschild'; mode = 'full' },
+  @{ name = 'vorlage-ubs'; mode = 'full' },
   @{ name = 'ion'; mode = 'full' },
   @{ name = 'custom'; mode = 'full' },
   @{ name = 'empty'; mode = 'empty' }
@@ -113,9 +115,15 @@ foreach ($r in $runs) {
 Remove-Item Env:\WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS
 
 # --- 5. screenshots: library preview vs. inserted slide in each target -------------------------
-$fullRuns = @($runIds | Where-Object { $_ -notmatch '-empty$' }) -join ','
-& powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'selftest\export-screens.ps1') -RunIds $fullRuns -OutDir $out
-if ($LASTEXITCODE -ne 0) { Write-Warning 'Screenshot-Vergleich fehlgeschlagen.' }
+# own template (everyday case) and foreign designs (stress test) in separate sheets
+Get-ChildItem (Join-Path $out 'screens') -Filter 'compare-*.jpg' -ErrorAction SilentlyContinue | Remove-Item
+$own = @($runIds | Where-Object { $_ -match '-vorlage-' }) -join ','
+$foreign = @($runIds | Where-Object { $_ -match '-(ion|custom)$' }) -join ','
+foreach ($set in @(@($own, 'compare-vorlage'), @($foreign, 'compare-fremd'))) {
+  if (-not $set[0]) { continue }
+  & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'selftest\export-screens.ps1') -RunIds $set[0] -OutDir $out -Prefix $set[1]
+  if ($LASTEXITCODE -ne 0) { Write-Warning "Screenshot-Vergleich $($set[1]) fehlgeschlagen." }
+}
 
 # --- 6. report ---------------------------------------------------------------------------------
 & node (Join-Path $PSScriptRoot 'selftest\report.js') --out (Join-Path $out 'report.md') --lib $lib @($runIds | ForEach-Object { '--run'; $_ })

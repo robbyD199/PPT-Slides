@@ -80,7 +80,7 @@ for (const id of runs) {
 
 const screens = path.join(dir, "screens");
 if (fs.existsSync(screens)) {
-  const sheets = fs.readdirSync(screens).filter((f) => /^compare-\d+\.jpg$/.test(f)).sort();
+  const sheets = fs.readdirSync(screens).filter((f) => /^compare-.*\d+\.jpg$/.test(f)).sort();
   if (sheets.length) {
     lines.push("## Screenshot-Vergleich", "");
     lines.push("Je Folie: links die Vorlage aus der Bibliothek, daneben die eingefügte Folie in jeder Zielpräsentation (Export per COM).", "");

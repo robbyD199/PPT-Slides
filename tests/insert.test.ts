@@ -59,3 +59,16 @@ describe("template placeholder layout", () => {
     expect(geometryDiffers({ left: 60, top: 40, width: 800, height: 90 }, boxes[0].box)).toBe(true);
   });
 });
+
+import { hasLibraryMaster } from "../src/shared/insert";
+
+describe("hasLibraryMaster", () => {
+  const lib = ["Title Slide", "Title and Content", "Title Only", "Title and Subtitle"];
+  it("detects decks based on the own template", () => {
+    expect(hasLibraryMaster([["Title Slide", "Title and Content", "Title Only", "Title and Subtitle", "Blank"]], lib)).toBe(true);
+  });
+  it("detects foreign designs (e.g. Ion without 'Title and Subtitle')", () => {
+    expect(hasLibraryMaster([["Title Slide", "Title and Content", "Title Only", "Section Header"]], lib)).toBe(false);
+    expect(hasLibraryMaster([], lib)).toBe(false);
+  });
+});

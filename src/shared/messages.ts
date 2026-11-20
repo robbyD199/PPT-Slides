@@ -22,6 +22,9 @@ export const MSG = {
   createdPresentation: (name: string) => `Neue Präsentation mit Farbset „${name}“ geöffnet.`,
   createFailed: "Die neue Präsentation konnte nicht erstellt werden.",
   dialogFailed: "Das Suchfenster konnte nicht geöffnet werden.",
+  foreignDesign: "Diese Präsentation nutzt ein fremdes Design.",
+  foreignDesignHint:
+    "Eingefügte Folien übernehmen dessen Farben und Schriften. Für das Aussehen der Vorlage: Menü ⋯ → „Format der Vorlage beibehalten“ oder „Neue Präsentation aus Vorlage“.",
   lintHint:
     "Enthält feste Farben oder Schriften – passt sich evtl. nicht vollständig an das Design der Zielpräsentation an.",
 };

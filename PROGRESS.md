@@ -74,3 +74,22 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
 - Optional die Indexfolie durch `docs/slide-index.proposed.json` ersetzen und fehlende Klassiker ergänzen
   (Agenda, Kapiteltrenner, Kontakt/Danke, Football Field, TAM/SAM/SOM) – siehe `docs/TAXONOMIE.md`.
 - Optional feste „Arial“-Formatierungen in der Vorlage entfernen (Liste: `scripts/lint-templates.ps1`).
+
+## Prüfung 20.11.2026 (Rückmeldung: blauer Hintergrund, überlaufende Titel, Kontrast)
+- **Blauer Hintergrund / ungewohnte Farben** stammten vom absichtlich fremden Office-Design „Ion“ im Stresstest.
+  Neu im Selbsttest: zwei Präsentationen auf Basis der **eigenen Vorlage** (Farbsets Rothschild, UBS). Ergebnis: eingefügte
+  Folien sind identisch mit der Bibliothek (Layout, Titel, Größen), nur die Farben folgen dem Farbset
+  (`test-results/screens/compare-vorlage-*.jpg`; Stresstest getrennt: `compare-fremd-*.jpg`).
+- **Überlaufende Titel** traten nur in fremden Designs und nur vor dem Layout-Schutz auf; in allen aktuellen Läufen keine.
+- **Kontrast**: neue Prüfung `scripts/contrast-check.ps1` (WCAG-Verhältnis Text/Symbol gegen Hintergrund, aufgelöste Farben je Farbset).
+  Befund in der Vorlage (alle 5 Farbsets): schwarzes SVG-Symbol auf dunkelblauem Kreis (#45), weiße Schrift auf hellem Akzent 4
+  (#29 BCG, #48 Gantt, #49), hellgraue Hinweistexte (#A6A6A6, 2,4:1), helle Phasen-Beschriftungen (#52); nur Rothschild:
+  dunkelblaue Schrift auf Signal-Rot (#27, #28, #30).
+- **Korrigierte Kopie** `templates/Library.kontrastfix.pptx` (Original unverändert, erzeugt mit `scripts/fix-contrast.ps1`,
+  37 Korrekturen mit Theme-Farben): danach 0 Problemstellen in JP Morgan und Rothschild, je 1 in Credit Suisse/Marlboro/UBS
+  (Gantt #48 Zeile 8 auf Akzent 3 – Akzent 3 ist in diesen Farbsets dunkel, in JP Morgan/Rothschild hell; Farbset-Definition
+  uneinheitlich). Vorher/Nachher: `test-results/screens/kontrast-vorher-nachher.jpg`. **Übernahme in die Vorlage nur nach Zustimmung.**
+- Fremde Designs (Ion: 524 Stellen) belegen Akzentfarben anders (z. B. Akzent 4 = Grün statt heller Ton) – dafür gibt das Add-in
+  jetzt einmalig den Hinweis auf „Format der Vorlage beibehalten“ / „Neue Präsentation aus Vorlage“.
+- Nicht automatisch prüfbar: Texte innerhalb von Diagrammen (z. B. weiße Datenbeschriftungen auf hellen BCG-Quadranten #29)
+  und Logos (UBS/Marlboro: dunkles HSG-Logo auf schwarzem Deckblatt-Hintergrund, Akzent 1 = Schwarz).
