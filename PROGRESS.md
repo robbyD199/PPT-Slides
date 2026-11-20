@@ -88,7 +88,7 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
 - **Korrigierte Kopie** `templates/Library.kontrastfix.pptx` (Original unverändert, erzeugt mit `scripts/fix-contrast.ps1`,
   37 Korrekturen mit Theme-Farben): danach 0 Problemstellen in JP Morgan und Rothschild, je 1 in Credit Suisse/Marlboro/UBS
   (Gantt #48 Zeile 8 auf Akzent 3 – Akzent 3 ist in diesen Farbsets dunkel, in JP Morgan/Rothschild hell; Farbset-Definition
-  uneinheitlich). Vorher/Nachher: `test-results/screens/kontrast-vorher-nachher.jpg`. **Übernahme in die Vorlage nur nach Zustimmung.**
+  uneinheitlich). Vorher/Nachher: `test-results/screens/kontrast-vorher-nachher.jpg`. **Mit Zustimmung übernommen** (20.11.2026): `templates/Library.pptx` = korrigierte Fassung, Original als `templates/Library.original.pptx`. Bibliothek neu gebaut (14 Folien geändert), Selbsttest 4×58/58 bestanden; Kontrast der eingefügten Folien im Rothschild-Deck 0, im UBS-Deck 1 Stelle (Akzent 3, s. o.).
 - Fremde Designs (Ion: 524 Stellen) belegen Akzentfarben anders (z. B. Akzent 4 = Grün statt heller Ton) – dafür gibt das Add-in
   jetzt einmalig den Hinweis auf „Format der Vorlage beibehalten“ / „Neue Präsentation aus Vorlage“.
 - Nicht automatisch prüfbar: Texte innerhalb von Diagrammen (z. B. weiße Datenbeschriftungen auf hellen BCG-Quadranten #29)

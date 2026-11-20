@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "name": "Folienbibliothek",
-  "updated": "2026-11-20T01:27:58.435Z",
-  "built": "2026-11-20T02:56:16.757Z",
-  "build": "3b629875e1",
+  "updated": "2026-11-20T03:35:50.592Z",
+  "built": "2026-11-20T05:11:49.670Z",
+  "build": "06c3818d00",
   "source": {
     "file": "Library.pptx",
-    "sha1": "3b629875e154af9c774d0463c831812bff9943fb",
+    "sha1": "06c3818d001344efffd4a22581ad558efaac0af4",
     "slides": 55
   },
   "insertMode": "perSlide",
@@ -392,7 +392,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "dda9c5e2be70914b",
+      "hash": "f2e3245b1cff1c93",
       "lint": {
         "level": "ok",
         "warnings": [],
@@ -1365,7 +1365,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "a9c6692b0ac7871f",
+      "hash": "e20deaeda081cbd5",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -1501,7 +1501,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "4ff08ef30ca5a09e",
+      "hash": "42f7278fc215adeb",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -1797,7 +1797,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "3e2e6262a70a43c8",
+      "hash": "d798e9cdb8ed1a8d",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -3963,7 +3963,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "cd1d1855c5c62428",
+      "hash": "94cc9e45fd924a54",
       "lint": {
         "level": "info",
         "warnings": [],
@@ -4097,7 +4097,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "65f3a8c99afd2d40",
+      "hash": "427979537b30add1",
       "lint": {
         "level": "info",
         "warnings": [],
@@ -4233,7 +4233,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "e1cd2fa3aad9ea85",
+      "hash": "6db9b53dcca2618b",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -4372,7 +4372,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "f1b63476149dbf82",
+      "hash": "221e954decd211fd",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -4959,7 +4959,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "cd8452328935f6d3",
+      "hash": "2d5a60ef7674a15a",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -5112,7 +5112,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "ddcd7b27b8008c4f",
+      "hash": "52147429ed5bbfca",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -5262,7 +5262,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "6e3be3c4faa9fe80",
+      "hash": "8d286b906ce9dc84",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -5415,7 +5415,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "60ad9d2ffbbff2b3",
+      "hash": "bd672f201a616488",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -5827,7 +5827,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "c5977f5e67f3f8fc",
+      "hash": "7659370136dc44b9",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -5975,7 +5975,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "6401692dab60774a",
+      "hash": "d601fee595dad679",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -6261,7 +6261,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "1218eb04a4658b39",
+      "hash": "513440777a738b41",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -6399,7 +6399,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "72891795ab18a692",
+      "hash": "2d5949fa5f9fb4ea",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -6535,7 +6535,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "fbb6c80837b9a675",
+      "hash": "b2558d464e56feb0",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -6672,7 +6672,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "574b0d6bd80fe269",
+      "hash": "703f88a706dfaf94",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -6968,7 +6968,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "eb707b63a4885a14",
+      "hash": "1dd10491f9f3ee60",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -7105,7 +7105,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "c219b559d5eacd06",
+      "hash": "3e0cd21b7e2992b8",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -7409,7 +7409,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "137032a6e4e5ccfc",
+      "hash": "58d9931925ab420c",
       "lint": {
         "level": "warn",
         "warnings": [
@@ -7557,7 +7557,7 @@
           "multiLevel": false
         }
       ],
-      "hash": "6265940dae562590",
+      "hash": "34198bbe8cda5ea3",
       "lint": {
         "level": "warn",
         "warnings": [
