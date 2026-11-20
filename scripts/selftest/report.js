@@ -28,6 +28,16 @@ for (const id of runs) {
   const res = read(path.join(dir, `selftest-${id}.json`));
   const ver = read(path.join(dir, `selftest-${id}.json.verify.json`));
   const name = id.replace(/^\d{8}-\d{6}-/, "");
+  if (res.mode === "keep") {
+    lines.push(`## Standard „Master & Farben der Bibliothek“ (\`${name}\`)`, "");
+    lines.push(`| Prüfung | Ergebnis |`, `|---|---|`);
+    lines.push(`| ${ver.inserted} Folien nacheinander eingefügt | ${yes(ver.inserted === res.results.length)} |`);
+    lines.push(`| Eingefügte Folien teilen sich einen Bibliotheks-Master (kein Master je Folie) | ${yes(ver.designsUsedByInserted === 1)} (${ver.designsUsedByInserted}) |`);
+    lines.push(`| Designs vorher → nachher | ${ver.designsBefore} → ${ver.designsAfter}: ${ver.designs.map((d) => `${d.name} (Akzent 1 #${d.accent1})`).join(", ")} |`);
+    lines.push("");
+    accept.push([`${name}: Vorlagenformat ohne Master-Duplikate`, ver.designsUsedByInserted === 1]);
+    continue;
+  }
   if (res.mode === "empty") {
     lines.push(`## Leere Präsentation (\`${name}\`)`, "");
     lines.push(`| Prüfung | Ergebnis |`, `|---|---|`);

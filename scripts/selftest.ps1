@@ -19,7 +19,8 @@
 #>
 param(
   [int]$TimeoutSec = 600,
-  [switch]$KeepServer
+  [switch]$KeepServer,
+  [string]$Only = ''   # comma separated run names, e.g. 'keep-vorlage,keep-fremd'
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
@@ -79,15 +80,20 @@ $runs = @(
   @{ name = 'vorlage-ubs'; mode = 'full' },
   @{ name = 'ion'; mode = 'full' },
   @{ name = 'custom'; mode = 'full' },
-  @{ name = 'empty'; mode = 'empty' }
+  @{ name = 'empty'; mode = 'empty' },
+  # default mode (keep source formatting): repeated inserts must not add a master per slide
+  @{ name = 'keep-vorlage'; target = 'vorlage-rothschild'; mode = 'keep' },
+  @{ name = 'keep-fremd'; target = 'custom'; mode = 'keep' }
 )
+if ($Only) { $runs = @($runs | Where-Object { ($Only -split ',') -contains $_.name }) }
 $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--ignore-certificate-errors'
 $runIds = @()
 foreach ($r in $runs) {
   $runId = "$stamp-$($r.name)"
   $runIds += $runId
   $deck = Join-Path $out "run-$runId.pptx"
-  & node (Join-Path $PSScriptRoot 'lib\webextension.js') (Join-Path $out "target-$($r.name).pptx") $deck $devId '1.0.0.0' "slidelib.selftest=$runId" "slidelib.selftest.mode=$($r.mode)"
+  $tgt = if ($r.target) { $r.target } else { $r.name }
+  & node (Join-Path $PSScriptRoot 'lib\webextension.js') (Join-Path $out "target-$tgt.pptx") $deck $devId '1.0.0.0' "slidelib.selftest=$runId" "slidelib.selftest.mode=$($r.mode)"
   if ($LASTEXITCODE -ne 0) { throw 'Web-Extension konnte nicht eingefuegt werden.' }
   $resultFile = Join-Path $out "selftest-$runId.json"
   Write-Host "[$($r.name)] PowerPoint startet, Selbsttest laeuft ..."
@@ -98,11 +104,11 @@ foreach ($r in $runs) {
     Start-Sleep 3
   }
   Start-Sleep 2
-  $verify = if ($r.mode -eq 'empty') { 'verify-empty.ps1' } else { 'verify-deck.ps1' }
+  $verify = switch ($r.mode) { 'empty' { 'verify-empty.ps1' } 'keep' { 'verify-keep.ps1' } default { 'verify-deck.ps1' } }
   $vArgs = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', (Join-Path $PSScriptRoot "selftest\$verify"),
-    '-DeckPath', $deck, '-ResultJson', $resultFile, '-TargetJson', (Join-Path $out "target-$($r.name).json"),
+    '-DeckPath', $deck, '-ResultJson', $resultFile, '-TargetJson', (Join-Path $out "target-$tgt.json"),
     '-SaveAs', (Join-Path $out "result-$($r.name).pptx"), '-Quit')
-  if ($r.mode -ne 'empty') { $vArgs += @('-LibraryJson', $lib) }
+  if ($r.mode -eq 'full') { $vArgs += @('-LibraryJson', $lib) }
   & powershell.exe @vArgs
   if ($LASTEXITCODE -ne 0) { throw "[$($r.name)] COM-Pruefung fehlgeschlagen." }
   # wait until the test instance (started above, PowerPoint was not running before) has exited

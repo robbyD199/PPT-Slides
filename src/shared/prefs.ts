@@ -19,13 +19,18 @@ function write(key: string, value: unknown): void {
 }
 
 export const prefs = {
+  /**
+   * Default: keep the library's master and color set ("Format der Vorlage beibehalten").
+   * Stored under a new key (v2) so an older explicit choice does not override the new default.
+   */
   formatting(): Formatting {
-    return read<Formatting>("slidelib.formatting", "UseDestinationTheme") === "KeepSourceFormatting"
-      ? "KeepSourceFormatting"
-      : "UseDestinationTheme";
+    return read<Formatting>("slidelib.formatting.v2", "KeepSourceFormatting") ===
+      "UseDestinationTheme"
+      ? "UseDestinationTheme"
+      : "KeepSourceFormatting";
   },
   setFormatting(f: Formatting) {
-    write("slidelib.formatting", f);
+    write("slidelib.formatting.v2", f);
   },
   /** restore the template placeholder layout after inserting with the destination theme */
   keepLayout(): boolean {

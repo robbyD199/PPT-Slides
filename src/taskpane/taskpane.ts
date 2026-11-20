@@ -472,8 +472,8 @@ function openMenu(): void {
           toast(
             "info",
             value === "UseDestinationTheme"
-              ? "Einfügen übernimmt das Design der Zielpräsentation."
-              : "Einfügen behält das Format der Vorlage bei (Master wird importiert).",
+              ? "Folien passen sich an Master und Farben der Präsentation an."
+              : "Folien behalten Master und Farben der Bibliothek.",
             "",
             2600
           );
@@ -490,14 +490,14 @@ function openMenu(): void {
   m.append(
     el("div", { class: "menu-label" }, "Beim Einfügen"),
     radio(
-      "UseDestinationTheme",
-      "Design der Zielpräsentation",
-      "Master, Farben und Schriften des Ziels (empfohlen)"
+      "KeepSourceFormatting",
+      "Master & Farben der Bibliothek (Standard)",
+      "Folie sieht aus wie in der Vorlage; der Bibliotheks-Master wird mitgebracht"
     ),
     radio(
-      "KeepSourceFormatting",
-      "Format der Vorlage beibehalten",
-      "Importiert den Bibliotheks-Master in die Präsentation"
+      "UseDestinationTheme",
+      "An Präsentation anpassen",
+      "Übernimmt Master, Farben und Schriften der geöffneten Präsentation"
     )
   );
   const keep = prefs.keepLayout();
