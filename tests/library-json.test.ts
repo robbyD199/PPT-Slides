@@ -8,9 +8,19 @@ const dir = path.join(root, "assets", "library");
 const lib = parseLibrary(JSON.parse(fs.readFileSync(path.join(dir, "library.json"), "utf8")));
 
 describe("library.json", () => {
-  it("has 5-10 categories", () => {
-    expect(lib.categories.length).toBeGreaterThanOrEqual(5);
-    expect(lib.categories.length).toBeLessThanOrEqual(10);
+  // The taxonomy is shared with locally imported folders (e.g. think-cell): categories without own slides
+  // (Maps, the element categories) are allowed and hidden in the add-in until something is imported.
+  it("has 5-10 categories with own slides", () => {
+    const used = lib.categories.filter((c) => lib.slides.some((s) => s.category === c.id));
+    expect(used.length).toBeGreaterThanOrEqual(5);
+    expect(used.length).toBeLessThanOrEqual(10);
+  });
+
+  it("assigns every category to the area slides or elements, with unique ids", () => {
+    for (const c of lib.categories) expect(["slides", "elements"]).toContain(c.area);
+    expect(new Set(lib.categories.map((c) => c.id)).size).toBe(lib.categories.length);
+    for (const c of lib.categories)
+      expect(new Set(c.subcategories.map((s) => s.id)).size).toBe(c.subcategories.length);
   });
 
   it("puts every slide in exactly one existing category and subcategory", () => {
@@ -21,10 +31,10 @@ describe("library.json", () => {
     }
   });
 
-  it("has no category with only one slide", () => {
+  it("has no category with only one own slide", () => {
     for (const c of lib.categories) {
       const n = lib.slides.filter((s) => s.category === c.id).length;
-      expect(n).toBeGreaterThan(1);
+      expect(n === 0 || n > 1).toBe(true);
     }
   });
 
@@ -77,7 +87,9 @@ describe("new-presentation templates", () => {
     const layoutsInLibrary = lib.slides.filter((s) => s.kind === "layout").length;
     for (const t of lib.templates) {
       const zip = await JSZip.loadAsync(fs.readFileSync(path.join(dir, t.file)));
-      const layouts = Object.keys(zip.files).filter((n) => /^ppt\/slideLayouts\/slideLayout\d+\.xml$/.test(n));
+      const layouts = Object.keys(zip.files).filter((n) =>
+        /^ppt\/slideLayouts\/slideLayout\d+\.xml$/.test(n)
+      );
       expect(layouts.length).toBe(layoutsInLibrary);
       expect(Object.keys(zip.files).some((n) => n.startsWith("ppt/webextensions/"))).toBe(false);
     }

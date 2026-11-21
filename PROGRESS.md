@@ -117,3 +117,14 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
 - Code: `src/shared/folders.ts` (rein, `tests/folders.test.ts`), `src/shared/folderView.ts`; `cdp.js` wartet auf Ordner.
 - Visuell geprüft (Headless-Edge + CDP, 497 Folien aus `library-own`): Wurzel, think-cell, Charts, Waterfall, Suche
   „gantt“, Suchfenster.
+
+## Änderung 21.11.2026: gemeinsame englische Struktur (Slides / Elements)
+- `library.json`: 17 Kategorien mit `area` (10 Slides, 7 Elements), englische Namen; IDs der eigenen Folien unverändert,
+  eigene Folientitel weiterhin deutsch. Details und Regeln: `docs/TAXONOMIE.md`.
+- Lokale Ordner: Katalogfelder `TaxCategory`/`TaxSubcategory` → Folie erscheint im gemeinsamen Ordner (eigene Folien
+  zuerst); ohne Zuordnung weiter unter „Local Folders“. think-cell: 219 Folien, 278 Elemente, 0 ohne Zuordnung
+  (`TC-Library\taxonomy-map.json`, `tc-taxonomy.js`). Diagramm-Bausteine nur unter Elements, außer in Übersichtsfolien.
+- Ordneransicht: Startseite gruppiert nach „Slides“ / „Elements“ / „Local Folders“; Kategorien > 12 Folien mit
+  Unterordnern; Navigationstexte englisch (Library, slides · folders). Titel ohne Platzhalter: „Currencies 7“.
+- Tests: 64 grün (Regel „5–10 Kategorien“ gilt jetzt für Kategorien mit eigenen Folien). Visuell geprüft (Headless-Edge).
+- **Nötig beim Nutzer:** Ordner `library-own` (und ggf. `library`) in der Folienbibliothek **neu hinzufügen**.

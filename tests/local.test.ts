@@ -92,7 +92,7 @@ describe("local libraries: import plan", () => {
     expect(wf.title).toBe("Contribution to change: Build-up waterfall");
     expect(wf.keywords).toEqual(["waterfall", "think-cell", "chart"]);
     expect(wf.text).toBe(""); // placeholder copy is not indexed
-    expect(dev.title).toBe("Devices"); // untitled → file name without index
+    expect(dev.title).toBe("Devices 1"); // untitled → file name + variant number
     expect(dev.thumb).toBe(""); // thumbnail not part of the selection
   });
 
@@ -180,6 +180,22 @@ describe("local libraries: merge into the library", () => {
     expect(matchesChip("exec", "lib:l1")).toBe(false);
     expect(matchesChip("exec", "exec")).toBe(true);
     expect(matchesChip("local:l1:maps", "all")).toBe(true);
+  });
+
+  test("items mapped to the shared taxonomy join existing categories (unknown ids fall back)", () => {
+    const mapped: LocalLibraryMeta = {
+      ...meta,
+      items: [
+        { ...meta.items[0], categoryId: "exec", subcategoryId: "nope" },
+        { ...meta.items[1], categoryId: "unknown-cat" },
+      ],
+    };
+    const lib = mergeLocal(baseLib, [mapped]);
+    expect(lib.categories.map((c) => c.id)).toEqual(["exec", "local:l1:useful-elements"]);
+    const [a, b] = lib.slides.slice(1);
+    expect([a.category, a.subcategory]).toEqual(["exec", null]);
+    expect(a.order).toBeGreaterThan(10000);
+    expect(b.category).toBe("local:l1:useful-elements");
   });
 
   test("assetUrl never builds a web URL for local files", () => {

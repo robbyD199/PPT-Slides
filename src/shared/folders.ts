@@ -13,10 +13,23 @@ export interface SlideGroup {
   slides: SlideEntry[];
 }
 
+/** Top-level areas: whole slides, building blocks to copy, unmapped imported folders. */
+export type FolderArea = "slides" | "elements" | "local";
+
+export const AREA_LABELS: Record<FolderArea, string> = {
+  slides: "Slides",
+  elements: "Elements",
+  local: "Local Folders",
+};
+
+/** A category with more slides than this shows its subcategories as subfolders instead of subheadings. */
+export const SUBFOLDER_THRESHOLD = 12;
+
 export interface FolderNode {
   id: string;
   name: string;
   description?: string;
+  area: FolderArea;
   local: boolean;
   parent: FolderNode | null;
   children: FolderNode[];
@@ -39,6 +52,7 @@ function node(
     id,
     name,
     description,
+    area: parent && parent.id !== ROOT_ID ? parent.area : local ? "local" : "slides",
     local,
     parent,
     children: [],
@@ -60,9 +74,13 @@ function computeCount(n: FolderNode): number {
   return n.count;
 }
 
-/** Builds the folder tree. Own categories keep their subcategories as subheadings (they are small). */
+/**
+ * Builds the folder tree. Library categories are top-level folders (area slides/elements); large ones get
+ * one subfolder per subcategory, small ones show subcategories as subheadings. Imported slides that are not
+ * mapped to a library category stay in one folder per local library (area "local").
+ */
 export function buildFolderTree(lib: Library): FolderNode {
-  const root = node(ROOT_ID, "Bibliothek", null, false);
+  const root = node(ROOT_ID, "Library", null, false);
   const localRoots = new Map<string, FolderNode>();
   const labels = new Map((lib.localLibs ?? []).map((l) => [l.id, l.label]));
   for (const g of groupLibrary(lib)) {
@@ -91,16 +109,35 @@ export function buildFolderTree(lib: Library): FolderNode {
       }
     } else {
       const catNode = node(`c:${cid}`, g.category.name, root, false, g.category.description);
-      const single = g.subgroups.length === 1;
-      for (const sg of g.subgroups) {
-        const name =
-          sg.subcategory && !(single && sg.subcategory.name === g.category.name)
-            ? sg.subcategory.name
-            : null;
-        catNode.groups.push({ name, slides: sg.slides });
+      catNode.area = g.category.area === "elements" ? "elements" : "slides";
+      const named = g.subgroups.filter((sg) => sg.subcategory);
+      if (g.count > SUBFOLDER_THRESHOLD && named.length > 1) {
+        for (const sg of g.subgroups) {
+          if (!sg.subcategory) {
+            catNode.groups.push({ name: null, slides: sg.slides });
+            continue;
+          }
+          const sub = node(`c:${cid}/${sg.subcategory.id}`, sg.subcategory.name, catNode, false);
+          sub.groups.push({ name: null, slides: sg.slides });
+        }
+      } else {
+        const single = g.subgroups.length === 1;
+        for (const sg of g.subgroups) {
+          const name =
+            sg.subcategory && !(single && sg.subcategory.name === g.category.name)
+              ? sg.subcategory.name
+              : null;
+          catNode.groups.push({ name, slides: sg.slides });
+        }
       }
     }
   }
+  // order at the top level: slides, elements, local folders (stable within each area)
+  const rank: Record<FolderArea, number> = { slides: 0, elements: 1, local: 2 };
+  root.children = root.children
+    .map((c, i) => ({ c, i }))
+    .sort((a, b) => rank[a.c.area] - rank[b.c.area] || a.i - b.i)
+    .map((x) => x.c);
   for (const l of localRoots.values()) sortLocal(l);
   computeCount(root);
   return root;
@@ -158,9 +195,17 @@ export function folderPathLabel(n: FolderNode | null): string {
     .join(" › ");
 }
 
-/** "12 Folien · 3 Ordner" */
+/** "12 slides · 3 folders" */
 export function folderMeta(n: FolderNode): string {
-  const parts = [`${n.count} ${n.count === 1 ? "Folie" : "Folien"}`];
-  if (n.children.length) parts.push(`${n.children.length} Ordner`);
+  const parts = [`${n.count} ${n.count === 1 ? "slide" : "slides"}`];
+  if (n.children.length)
+    parts.push(`${n.children.length} ${n.children.length === 1 ? "folder" : "folders"}`);
   return parts.join(" · ");
+}
+
+/** Top-level folders grouped by area, in display order (empty areas left out). */
+export function foldersByArea(root: FolderNode): { area: FolderArea; folders: FolderNode[] }[] {
+  return (["slides", "elements", "local"] as FolderArea[])
+    .map((area) => ({ area, folders: root.children.filter((c) => c.area === area) }))
+    .filter((x) => x.folders.length);
 }

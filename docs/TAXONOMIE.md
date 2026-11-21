@@ -1,4 +1,29 @@
-# Taxonomie der Folienbibliothek (MECE-Prüfung)
+# Taxonomie der Folienbibliothek
+
+## Stand 21.11.2026: gemeinsame englische Struktur (Slides / Elements)
+
+Auf Wunsch eine **gemeinsame, englische Ordnerstruktur** für eigene Folien und lokal importierte Ordner (think-cell).
+Quelle der Wahrheit: `categories` in `assets/library/library.json` (jede Kategorie mit `area`). Kategorien ohne eigene
+Folien (Maps, alle Elements) bleiben im Add-in unsichtbar, bis ein lokaler Ordner sie füllt.
+
+| Bereich | Kategorien (Unterordner) |
+|---|---|
+| **Slides** | Blank Layouts · Structure & Storyline (Cover, Agenda & Contents, Introduction, Executive Summary, Quotes & Key Messages, Closing & Call to Action, Sources & Appendix) · Text & Key Messages (Bullet Points, Body Text, Columns & Sections, Cards & Icons, Text Boxes) · Charts (Column & Bar, Line & Area, Waterfall, Mekko, Pie & Doughnut, Scatter & Bubble, Annotations) · KPIs, Dashboards & Tables (Key Facts, Infographics, Dashboards, Tables) · Frameworks & Matrices (Matrix & Portfolio, SWOT, Concepts & Mental Models, Pros & Cons, Hub & Spoke, Issue & Decision Trees, Pillars & Building Blocks) · Processes & Phases (Phase Overview, Phase Detail, Step by Step, Stairs & Cascades, Process Flows & Swim Lanes, Infographic Processes, Cycles, Value Chain & Customer Journey, Cause & Effect) · Timelines & Roadmaps (Project Plan & Gantt, Phase Roadmap, Timelines & Milestones, Schedules & Calendars) · Team & Organization (Org Charts, Team & Roles, Profiles & Contacts) · Maps (World & Regions, Countries) |
+| **Elements** | Diagram Elements (Cubes, Funnels, Pyramids & Core Elements, Venn Diagrams, Circular Elements, Sunbursts & Spiderwebs, Phases & Processes, Progress Bars & Gauges) · Arrows · Call-outs & Stickers · Symbols & Icons · Ratings & Status · Shapes & Layout · Hand-drawn Elements |
+
+Regeln:
+- **Diagramm-Bausteine** (Würfel, Trichter, Pyramiden, Venn, Kreiselemente, Radar) erscheinen **nur unter Elements**,
+  außer sie sind Teil einer Gesamtübersicht (z. B. „Funnel dashboard“ → KPIs, Dashboards & Tables). Kreisförmige
+  Prozessfolien mit Beschreibungen bleiben Folien (Processes & Phases › Cycles).
+- Kategorien mit mehr als 12 Folien zeigen Unterkategorien als **Unterordner**, kleinere als Zwischenüberschriften.
+- Eigene Folien stehen innerhalb eines Unterordners vor importierten.
+- Zuordnung der think-cell-Folien: `TC-Library\taxonomy-map.json` (Regeln je Ordner/Folie) →
+  `node TC-Library\scripts\tc-taxonomy.js` schreibt `TaxCategory`/`TaxSubcategory` in `catalog.json` → Ordner in der
+  Folienbibliothek neu hinzufügen. Ergebnis: 219 Folien, 278 Elemente, 0 ohne Zuordnung.
+
+---
+
+## Historie: MECE-Prüfung der ursprünglichen JSON (20.11.2026)
 
 Grundlage war die JSON-Indexfolie in der Vorlage (`Slide library index (JSON)`, Version 1.3, 11 Kategorien).
 Die Vorlagen-PPTX selbst wurde **nicht** verändert. Die überarbeitete Struktur steht in

@@ -24,10 +24,13 @@ Alle Wege gelten **pro Windows-Benutzer und Office-Installation**, nicht pro Mic
 Diese Variante muss nach Office-Updates manchmal wiederholt werden; die Registry-Variante bleibt bestehen.
 
 **Bedienung**
-- **Ordner wie in der think-cell-Bibliothek:** oben „Zuletzt verwendet“ und die Ordner (eigene Kategorien, darunter je
-  ein Ordner pro lokal hinzugefügtem Ordner, z. B. *think-cell (eigenes Design)* mit derselben Ordnerstruktur wie
-  think-cell). Klick öffnet den Ordner, Pfadleiste („Bibliothek › think-cell › Charts › Waterfall“) bzw. `‹` oder die
+- **Ordner wie in der think-cell-Bibliothek, englische Struktur:** oben „Zuletzt verwendet“, dann **Slides** (ganze
+  Folien: Structure & Storyline, Charts, Frameworks & Matrices, …) und **Elements** (Bausteine zum Herauskopieren:
+  Diagram Elements, Arrows, Symbols & Icons, …). Lokal hinzugefügte think-cell-Folien landen über ihre Zuordnung
+  (`TC-Library\taxonomy-map.json`) in denselben Ordnern wie die eigenen Folien; nicht zugeordnete Ordner erscheinen unter
+  *Local Folders*. Klick öffnet den Ordner, Pfadleiste („Library › Charts › Column & Bar“) bzw. `‹` oder die
   **Rücktaste** gehen zurück. Die Suche durchsucht immer die ganze Bibliothek. Der zuletzt geöffnete Ordner bleibt gemerkt.
+  Nach Änderungen an der Zuordnung: `node TC-Library\scripts\tc-taxonomy.js`, dann den Ordner neu hinzufügen.
 - Klick auf eine Vorschau fügt die Folie **direkt hinter der ausgewählten Folie** ein (ohne Folien: als erste Folie) und wählt sie aus.
 - Suchfeld oben: deutsch/englisch, z. B. „bar chart“, „Säulendiagramm“, „company overview“, „Wasserfall“, „Gantt“.
 - `⤢` oder Menüband **Folie suchen**: großes Suchfenster mit Vorschau. `↑↓←→` auswählen, `Enter` einfügen, `Esc` schließen.

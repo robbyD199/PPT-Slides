@@ -13,7 +13,14 @@ import { setCardState, slideCard } from "../shared/cards";
 import { describeError, MSG } from "../shared/messages";
 import { prefs } from "../shared/prefs";
 import { openSearchDialog } from "../shared/dialogHost";
-import { buildFolderTree, findFolder, ROOT_ID, type FolderNode } from "../shared/folders";
+import {
+  AREA_LABELS,
+  buildFolderTree,
+  findFolder,
+  foldersByArea,
+  ROOT_ID,
+  type FolderNode,
+} from "../shared/folders";
 import { breadcrumb, folderList } from "../shared/folderView";
 import { deleteLocalLibrary, importFolder } from "../shared/localStore";
 import { destinationLayouts, hasLibraryMaster } from "../shared/insert";
@@ -323,15 +330,21 @@ function renderBrowse(): void {
   if (!node || !svc) return;
   const isRoot = node.id === ROOT_ID;
   if (isRoot) renderRecent();
-  if (node.children.length) {
-    if (isRoot) content.append(el("div", { class: "folder-heading" }, "Ordner"));
-    content.append(
-      folderList(node.children, { url: (p) => svc.url(p), onOpen: (n) => openFolder(n.id) })
-    );
+  const opts = { url: (p: string) => svc.url(p), onOpen: (n: FolderNode) => openFolder(n.id) };
+  if (isRoot) {
+    for (const { area, folders } of foldersByArea(node)) {
+      content.append(
+        el("div", { class: `folder-heading area-${area}` }, AREA_LABELS[area]),
+        folderList(folders, opts)
+      );
+    }
+  } else if (node.children.length) {
+    content.append(folderList(node.children, opts));
   }
   const slides = node.groups.reduce((s, g) => s + g.slides.length, 0);
   if (!slides) return;
-  if (node.children.length) content.append(el("div", { class: "folder-heading" }, "Folien"));
+  if (node.children.length)
+    content.append(el("div", { class: "folder-heading" }, "In this folder"));
   const named = node.groups.filter((g) => g.name);
   if (named.length > 1 && slides / node.groups.length < 2) {
     // many small subgroups: one compact grid, subgroup name as caption on each card

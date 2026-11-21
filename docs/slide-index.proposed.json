@@ -12,93 +12,196 @@
   "categories": [
     {
       "id": "layouts",
-      "name": "Grundlayouts",
-      "rule": "Leere Folien mit den Master-Layouts der Vorlage – der schnellste Start für eigene Inhalte.",
+      "name": "Blank Layouts",
+      "rule": "Empty slides with the master layouts of the library",
       "subcategories": [
-        "Leere Layouts"
+        "Blank Layouts"
       ]
     },
     {
       "id": "structure",
-      "name": "Struktur & Storyline",
-      "rule": "Folien, die das Deck rahmen: Deckblatt, Einleitung, Executive Summary, Abschluss und Quellen.",
+      "name": "Structure & Storyline",
+      "rule": "Cover, agenda, introduction, executive summary, quotes, closing and appendix",
       "subcategories": [
-        "Deckblatt",
-        "Einleitung & Vorstellung",
+        "Cover",
+        "Agenda & Contents",
+        "Introduction",
         "Executive Summary",
-        "Abschluss & Call-to-Action",
-        "Quellen & Anhang"
+        "Quotes & Key Messages",
+        "Closing & Call to Action",
+        "Sources & Appendix"
       ]
     },
     {
       "id": "text",
-      "name": "Text & Kernaussagen",
-      "rule": "Inhalte, die vor allem über Text wirken: Aufzählungen, Fließtext, Spalten und Karten mit Icons.",
+      "name": "Text & Key Messages",
+      "rule": "Bullet points, body text, columns, cards and text boxes",
       "subcategories": [
-        "Aufzählung",
-        "Fließtext",
-        "Spalten & Bereiche",
-        "Karten & Icons"
+        "Bullet Points",
+        "Body Text",
+        "Columns & Sections",
+        "Cards & Icons",
+        "Text Boxes"
       ]
     },
     {
       "id": "charts",
-      "name": "Diagramme",
-      "rule": "Datengetriebene Diagramme (editierbare Diagrammdaten): Linien, Säulen, Wasserfall, Blasen.",
+      "name": "Charts",
+      "rule": "Column, bar, line, waterfall, Mekko, pie, scatter and bubble charts incl. annotations",
       "subcategories": [
-        "Linien",
-        "Säulen",
-        "Wasserfall",
-        "Blasen"
+        "Column & Bar",
+        "Line & Area",
+        "Waterfall",
+        "Mekko",
+        "Pie & Doughnut",
+        "Scatter & Bubble",
+        "Annotations (CAGR & Differences)"
       ]
     },
     {
       "id": "figures",
-      "name": "Kennzahlen & Tabellen",
-      "rule": "Zahlen ohne Diagramm: Key-Facts-Kacheln und Status-/KPI-Tabellen.",
+      "name": "KPIs, Dashboards & Tables",
+      "rule": "Key facts, infographics, dashboards and tables",
       "subcategories": [
         "Key Facts",
-        "Tabellen"
+        "Infographics",
+        "Dashboards",
+        "Tables"
       ]
     },
     {
       "id": "frameworks",
-      "name": "Frameworks & Matrizen",
-      "rule": "Konzeptionelle Strukturen: Matrizen und Portfolios (auch als Blasendiagramm), Hub & Spoke, Issue Trees, Säulenmodelle.",
+      "name": "Frameworks & Matrices",
+      "rule": "Matrices, portfolios, SWOT, concepts, issue trees and pillar models",
       "subcategories": [
         "Matrix & Portfolio",
+        "SWOT",
+        "Concepts & Mental Models",
+        "Pros & Cons",
         "Hub & Spoke",
-        "Issue Tree",
-        "Säulen & Bausteine"
+        "Issue & Decision Trees",
+        "Pillars & Building Blocks"
       ]
     },
     {
       "id": "process",
-      "name": "Prozesse & Phasen",
-      "rule": "Abfolgen ohne Zeitachse: Phasenmodelle, Schrittfolgen, Treppen und Kaskaden.",
+      "name": "Processes & Phases",
+      "rule": "Phase overviews, step sequences, process flows, cycles, value chains and cause & effect",
       "subcategories": [
-        "Phasenübersicht",
-        "Phase im Detail",
-        "Schrittfolge",
-        "Treppe & Kaskade"
+        "Phase Overview",
+        "Phase Detail",
+        "Step by Step",
+        "Stairs & Cascades",
+        "Process Flows & Swim Lanes",
+        "Infographic Processes",
+        "Cycles",
+        "Value Chain & Customer Journey",
+        "Cause & Effect"
       ]
     },
     {
       "id": "timeline",
-      "name": "Zeitpläne & Roadmaps",
-      "rule": "Alles mit Zeitachse: Gantt-/Projektpläne, Phasen- und Wellen-Roadmaps mit Meilensteinen.",
+      "name": "Timelines & Roadmaps",
+      "rule": "Project plans, Gantt charts, roadmaps, timelines, milestones and schedules",
       "subcategories": [
-        "Projektplan & Gantt",
-        "Phasen-Roadmap"
+        "Project Plan & Gantt",
+        "Phase Roadmap",
+        "Timelines & Milestones",
+        "Schedules & Calendars"
       ]
     },
     {
       "id": "people",
-      "name": "Team & Organisation",
-      "rule": "Organigramme, Projektteams und Rollen.",
+      "name": "Team & Organization",
+      "rule": "Org charts, teams, roles and profiles",
       "subcategories": [
-        "Organigramm",
-        "Team & Rollen"
+        "Org Charts",
+        "Team & Roles",
+        "Profiles & Contacts"
+      ]
+    },
+    {
+      "id": "maps",
+      "name": "Maps",
+      "rule": "World, regional and country maps",
+      "subcategories": [
+        "World & Regions",
+        "Countries"
+      ]
+    },
+    {
+      "id": "el-diagrams",
+      "name": "Diagram Elements",
+      "rule": "Cubes, funnels, pyramids, Venn, circular elements, radars, phases and gauges",
+      "subcategories": [
+        "Cubes",
+        "Funnels",
+        "Pyramids & Core Elements",
+        "Venn Diagrams",
+        "Circular Elements",
+        "Sunbursts & Spiderwebs",
+        "Phases & Processes",
+        "Progress Bars & Gauges"
+      ]
+    },
+    {
+      "id": "el-arrows",
+      "name": "Arrows",
+      "rule": "Takeaway arrows and arrow symbols",
+      "subcategories": [
+        "Takeaway Arrows",
+        "Arrow Symbols"
+      ]
+    },
+    {
+      "id": "el-callouts",
+      "name": "Call-outs & Stickers",
+      "rule": "Call-outs, comments and slide-type stickers",
+      "subcategories": [
+        "Call-outs & Comments",
+        "Slide-Type Stickers"
+      ]
+    },
+    {
+      "id": "el-symbols",
+      "name": "Symbols & Icons",
+      "rule": "Currencies, mathematical symbols, numbers and general symbols",
+      "subcategories": [
+        "Currencies",
+        "Mathematical Symbols",
+        "Numbers",
+        "Symbols"
+      ]
+    },
+    {
+      "id": "el-ratings",
+      "name": "Ratings & Status",
+      "rule": "Star, heart and smiley ratings, traffic lights and thermometers",
+      "subcategories": [
+        "Ratings",
+        "Traffic Lights",
+        "Thermometers"
+      ]
+    },
+    {
+      "id": "el-shapes",
+      "name": "Shapes & Layout",
+      "rule": "Useful shapes, sections and table elements",
+      "subcategories": [
+        "Useful Shapes",
+        "Sections, Columns & Rows",
+        "Table Elements"
+      ]
+    },
+    {
+      "id": "el-handdrawn",
+      "name": "Hand-drawn Elements",
+      "rule": "Hand-drawn arrows, boxes, circles, brackets and call-outs",
+      "subcategories": [
+        "Arrows",
+        "Boxes & Circles",
+        "Brackets",
+        "Call-outs"
       ]
     }
   ],
@@ -108,7 +211,7 @@
       "pos": 1,
       "name": "Deckblatt",
       "category": "structure",
-      "sub": "Deckblatt",
+      "sub": "Cover",
       "layout": "Title Slide",
       "elements": [
         "cover-image",
@@ -132,7 +235,7 @@
       "pos": 2,
       "name": "Vorstellung mit Foto",
       "category": "structure",
-      "sub": "Einleitung & Vorstellung",
+      "sub": "Introduction",
       "layout": "Title and Content",
       "elements": [
         "photo",
@@ -206,7 +309,7 @@
       "pos": 5,
       "name": "Aufzählung mit Einleitungssatz",
       "category": "text",
-      "sub": "Aufzählung",
+      "sub": "Bullet Points",
       "layout": "Title and Content",
       "elements": [
         "intro-sentence",
@@ -229,7 +332,7 @@
       "pos": 6,
       "name": "Fließtext mit nummerierter Liste",
       "category": "text",
-      "sub": "Fließtext",
+      "sub": "Body Text",
       "layout": "Title Only",
       "elements": [
         "paragraphs"
@@ -252,7 +355,7 @@
       "pos": 7,
       "name": "Framework-Beschreibung mit 7 Elementen",
       "category": "text",
-      "sub": "Fließtext",
+      "sub": "Body Text",
       "layout": "Title and Subtitle",
       "elements": [
         "paragraphs",
@@ -276,7 +379,7 @@
       "pos": 8,
       "name": "Drei Bereiche mit Icons",
       "category": "text",
-      "sub": "Spalten & Bereiche",
+      "sub": "Columns & Sections",
       "layout": "Title and Subtitle",
       "elements": [
         "columns-3",
@@ -299,7 +402,7 @@
       "pos": 9,
       "name": "Drei Trends – Tabelle mit Beispielen",
       "category": "text",
-      "sub": "Spalten & Bereiche",
+      "sub": "Columns & Sections",
       "layout": "Title Only",
       "elements": [
         "columns-3"
@@ -323,7 +426,7 @@
       "pos": 10,
       "name": "Drei Trends – nummerierte Karten",
       "category": "text",
-      "sub": "Spalten & Bereiche",
+      "sub": "Columns & Sections",
       "layout": "Title and Subtitle",
       "elements": [
         "cards-3"
@@ -345,7 +448,7 @@
       "pos": 11,
       "name": "Fünf Kernbereiche mit Beschreibung",
       "category": "text",
-      "sub": "Spalten & Bereiche",
+      "sub": "Columns & Sections",
       "layout": "Title and Subtitle",
       "elements": [
         "areas-5",
@@ -370,7 +473,7 @@
       "pos": 12,
       "name": "Icon-Liste mit Zahlen",
       "category": "text",
-      "sub": "Karten & Icons",
+      "sub": "Cards & Icons",
       "layout": "Title Only",
       "elements": [
         "icon-rows-4"
@@ -393,7 +496,7 @@
       "pos": 13,
       "name": "3×3 Nutzen-Karten mit Icons",
       "category": "text",
-      "sub": "Karten & Icons",
+      "sub": "Cards & Icons",
       "layout": "Title Only",
       "elements": [
         "cards-9",
@@ -420,7 +523,7 @@
       "pos": 14,
       "name": "Phasenübersicht – 5 Phasen",
       "category": "process",
-      "sub": "Phasenübersicht",
+      "sub": "Phase Overview",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -449,7 +552,7 @@
       "pos": 15,
       "name": "Phase 1 im Detail mit Bildraster",
       "category": "process",
-      "sub": "Phase im Detail",
+      "sub": "Phase Detail",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -472,7 +575,7 @@
       "pos": 16,
       "name": "Phase 2 im Detail mit Bildraster",
       "category": "process",
-      "sub": "Phase im Detail",
+      "sub": "Phase Detail",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -495,7 +598,7 @@
       "pos": 17,
       "name": "Phase 3 im Detail mit Bildraster",
       "category": "process",
-      "sub": "Phase im Detail",
+      "sub": "Phase Detail",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -518,7 +621,7 @@
       "pos": 18,
       "name": "Phase 4 im Detail mit Bildraster",
       "category": "process",
-      "sub": "Phase im Detail",
+      "sub": "Phase Detail",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -541,7 +644,7 @@
       "pos": 19,
       "name": "Phase 5 im Detail mit Bildraster",
       "category": "process",
-      "sub": "Phase im Detail",
+      "sub": "Phase Detail",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -564,7 +667,7 @@
       "pos": 20,
       "name": "Phasenübersicht – Zusammenfassung",
       "category": "process",
-      "sub": "Phasenübersicht",
+      "sub": "Phase Overview",
       "layout": "Title Only",
       "elements": [
         "chevrons-5",
@@ -587,7 +690,7 @@
       "pos": 21,
       "name": "Schritt-für-Schritt-Anleitung (5 Schritte)",
       "category": "process",
-      "sub": "Schrittfolge",
+      "sub": "Step by Step",
       "layout": "Title and Subtitle",
       "elements": [
         "numbered-rows-5"
@@ -611,7 +714,7 @@
       "pos": 22,
       "name": "Treppe – 7 Stufen",
       "category": "process",
-      "sub": "Treppe & Kaskade",
+      "sub": "Stairs & Cascades",
       "layout": "Title and Subtitle",
       "elements": [
         "staircase-7",
@@ -635,7 +738,7 @@
       "pos": 23,
       "name": "Treppe – 7 Stufen mit Praxisbeispiel",
       "category": "process",
-      "sub": "Treppe & Kaskade",
+      "sub": "Stairs & Cascades",
       "layout": "Title and Subtitle",
       "elements": [
         "staircase-7",
@@ -659,7 +762,7 @@
       "pos": 24,
       "name": "Treppe – 7 Stufen, Ausfüllvorlage",
       "category": "process",
-      "sub": "Treppe & Kaskade",
+      "sub": "Stairs & Cascades",
       "layout": "Title and Subtitle",
       "elements": [
         "staircase-7",
@@ -681,7 +784,7 @@
       "pos": 25,
       "name": "Kaskade – 7 Schritte diagonal",
       "category": "process",
-      "sub": "Treppe & Kaskade",
+      "sub": "Stairs & Cascades",
       "layout": "Title and Subtitle",
       "elements": [
         "cascade-7"
@@ -841,7 +944,7 @@
       "pos": 31,
       "name": "Issue Tree (Treiberbaum)",
       "category": "frameworks",
-      "sub": "Issue Tree",
+      "sub": "Issue & Decision Trees",
       "layout": "Title and Subtitle",
       "elements": [
         "issue-tree"
@@ -868,7 +971,7 @@
       "pos": 32,
       "name": "Bereichsübersicht A–G (Säulenmodell)",
       "category": "frameworks",
-      "sub": "Säulen & Bausteine",
+      "sub": "Pillars & Building Blocks",
       "layout": "Title and Subtitle",
       "elements": [
         "area-boxes",
@@ -894,7 +997,7 @@
       "pos": 33,
       "name": "Vier Liniendiagramme (Small Multiples)",
       "category": "charts",
-      "sub": "Linien",
+      "sub": "Line & Area",
       "layout": "Title Only",
       "elements": [
         "chart-line-4"
@@ -920,7 +1023,7 @@
       "pos": 34,
       "name": "Säulendiagramm – Vergleich mit Takeaways",
       "category": "charts",
-      "sub": "Säulen",
+      "sub": "Column & Bar",
       "layout": "Title and Subtitle",
       "elements": [
         "chart-column",
@@ -948,7 +1051,7 @@
       "pos": 35,
       "name": "Säulendiagramm mit Wachstumspfeil (CAGR)",
       "category": "charts",
-      "sub": "Säulen",
+      "sub": "Column & Bar",
       "layout": "Title and Subtitle",
       "elements": [
         "chart-column",
@@ -979,7 +1082,7 @@
       "pos": 36,
       "name": "Säulendiagramm mit geteiltem Wachstum (2× CAGR)",
       "category": "charts",
-      "sub": "Säulen",
+      "sub": "Column & Bar",
       "layout": "Title and Subtitle",
       "elements": [
         "chart-column",
@@ -1008,7 +1111,7 @@
       "pos": 37,
       "name": "Säulendiagramm – Ist vs. Prognose",
       "category": "charts",
-      "sub": "Säulen",
+      "sub": "Column & Bar",
       "layout": "Title and Subtitle",
       "elements": [
         "chart-column",
@@ -1040,7 +1143,7 @@
       "pos": 38,
       "name": "Zwei Wasserfalldiagramme (Brücke)",
       "category": "charts",
-      "sub": "Wasserfall",
+      "sub": "Waterfall",
       "layout": "Title Only",
       "elements": [
         "chart-waterfall-2"
@@ -1094,7 +1197,7 @@
       "pos": 40,
       "name": "Blasendiagramm",
       "category": "charts",
-      "sub": "Blasen",
+      "sub": "Scatter & Bubble",
       "layout": "Title Only",
       "elements": [
         "chart-bubble",
@@ -1121,7 +1224,7 @@
       "pos": 41,
       "name": "Blasendiagramm mit Takeaways",
       "category": "charts",
-      "sub": "Blasen",
+      "sub": "Scatter & Bubble",
       "layout": "Title and Subtitle",
       "elements": [
         "chart-bubble",
@@ -1181,7 +1284,7 @@
       "pos": 43,
       "name": "Status- & KPI-Tabelle mit Ampeln",
       "category": "figures",
-      "sub": "Tabellen",
+      "sub": "Tables",
       "layout": "Title Only",
       "elements": [
         "table",
@@ -1214,7 +1317,7 @@
       "pos": 44,
       "name": "Organigramm",
       "category": "people",
-      "sub": "Organigramm",
+      "sub": "Org Charts",
       "layout": "Title Only",
       "elements": [
         "org-chart"
@@ -1239,7 +1342,7 @@
       "pos": 45,
       "name": "Projektteam mit Rollen und Icons",
       "category": "people",
-      "sub": "Team & Rollen",
+      "sub": "Team & Roles",
       "layout": "Title Only",
       "elements": [
         "role-cards",
@@ -1266,7 +1369,7 @@
       "pos": 46,
       "name": "Teamstruktur nach Funktionen",
       "category": "people",
-      "sub": "Team & Rollen",
+      "sub": "Team & Roles",
       "layout": "Title Only",
       "elements": [
         "team-chart",
@@ -1292,7 +1395,7 @@
       "pos": 47,
       "name": "Projektplan nach Wochen mit Deliverables",
       "category": "timeline",
-      "sub": "Projektplan & Gantt",
+      "sub": "Project Plan & Gantt",
       "layout": "Title Only",
       "elements": [
         "gantt",
@@ -1323,7 +1426,7 @@
       "pos": 48,
       "name": "Gantt-Zeitplan mit Stage-Gates",
       "category": "timeline",
-      "sub": "Projektplan & Gantt",
+      "sub": "Project Plan & Gantt",
       "layout": "Title and Subtitle",
       "elements": [
         "gantt-table",
@@ -1353,7 +1456,7 @@
       "pos": 49,
       "name": "Drei Phasen mit Deliverables und Team",
       "category": "timeline",
-      "sub": "Phasen-Roadmap",
+      "sub": "Phase Roadmap",
       "layout": "Title Only",
       "elements": [
         "phases-3",
@@ -1379,7 +1482,7 @@
       "pos": 50,
       "name": "Vier Phasen mit Key Meetings (SteerCo)",
       "category": "timeline",
-      "sub": "Phasen-Roadmap",
+      "sub": "Phase Roadmap",
       "layout": "Title and Subtitle",
       "elements": [
         "phases-4",
@@ -1408,7 +1511,7 @@
       "pos": 51,
       "name": "Vier Wellen (Umsetzungs-Roadmap)",
       "category": "timeline",
-      "sub": "Phasen-Roadmap",
+      "sub": "Phase Roadmap",
       "layout": "Title and Subtitle",
       "elements": [
         "waves-4"
@@ -1434,7 +1537,7 @@
       "pos": 52,
       "name": "Vier Phasen auf Zeitstrahl",
       "category": "timeline",
-      "sub": "Phasen-Roadmap",
+      "sub": "Phase Roadmap",
       "layout": "Title and Subtitle",
       "elements": [
         "phases-4",
@@ -1458,7 +1561,7 @@
       "pos": 53,
       "name": "Leitfrage mit Bildraster und Call-to-Action",
       "category": "structure",
-      "sub": "Abschluss & Call-to-Action",
+      "sub": "Closing & Call to Action",
       "layout": "Title Only",
       "elements": [
         "image-grid-6",
@@ -1489,7 +1592,7 @@
       "pos": 54,
       "name": "Literaturverzeichnis (APA 7)",
       "category": "structure",
-      "sub": "Quellen & Anhang",
+      "sub": "Sources & Appendix",
       "layout": "Title and Subtitle",
       "elements": [
         "reference-list",

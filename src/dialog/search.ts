@@ -1,6 +1,13 @@
 import "./search.css";
 import { assetUrl, categoryName, subcategoryName } from "../shared/library";
-import { buildFolderTree, findFolder, ROOT_ID, type FolderNode } from "../shared/folders";
+import {
+  AREA_LABELS,
+  buildFolderTree,
+  findFolder,
+  foldersByArea,
+  ROOT_ID,
+  type FolderNode,
+} from "../shared/folders";
 import { breadcrumb, folderList } from "../shared/folderView";
 import { buildIndex, search, type SearchIndex, SEARCH_SUGGESTIONS } from "../shared/search";
 import { loadLibrary, UserError } from "../shared/service";
@@ -236,15 +243,28 @@ function render(): void {
       if (recent.length)
         root.append(el("div", { class: "block-title" }, "Zuletzt verwendet"), grid(recent));
     }
-    if (node?.children.length) {
+    const opts = { url, onOpen: (n: FolderNode) => openFolder(n.id) };
+    if (node && isRoot) {
+      for (const { area, folders } of foldersByArea(node)) {
+        root.append(
+          el(
+            "div",
+            { class: "block-title" },
+            AREA_LABELS[area],
+            el("span", { class: "count" }, String(folders.reduce((s, f) => s + f.count, 0)))
+          ),
+          folderList(folders, opts)
+        );
+      }
+    } else if (node?.children.length) {
       root.append(
         el(
           "div",
           { class: "block-title" },
-          isRoot ? "Ordner" : node.name,
+          node.name,
           el("span", { class: "count" }, String(node.count))
         ),
-        folderList(node.children, { url, onOpen: (n) => openFolder(n.id) })
+        folderList(node.children, opts)
       );
     }
     const slides = node ? node.groups.reduce((s, g) => s + g.slides.length, 0) : 0;
@@ -253,7 +273,7 @@ function render(): void {
         el(
           "div",
           { class: "block-title", title: node.description ?? "" },
-          node.children.length ? "Folien in diesem Ordner" : node.name,
+          node.children.length ? "In this folder" : node.name,
           el("span", { class: "count" }, String(slides))
         )
       );

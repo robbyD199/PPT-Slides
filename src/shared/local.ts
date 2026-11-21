@@ -17,6 +17,11 @@ export interface LocalItem {
   subcategory: string;
   keywords: string[];
   text: string;
+  /** id of a library category (shared taxonomy, from catalog "TaxCategory"); the slide then appears in that
+   * category's folder instead of the folder of its local library */
+  categoryId?: string;
+  /** id of a subcategory of categoryId (catalog "TaxSubcategory") */
+  subcategoryId?: string;
 }
 
 export interface LocalLibraryMeta {
@@ -52,6 +57,13 @@ function baseName(path: string): string {
   return file.replace(/\.(pptx|potx)$/i, "");
 }
 
+/** Title for slides without title placeholder: "07 - Currencies" → "Currencies 7" (variants stay distinguishable). */
+export function untitledName(path: string): string {
+  const base = baseName(path);
+  const m = /^(\d{1,3})\s*-\s*(.+)$/.exec(base);
+  return m ? `${m[2].trim()} ${Number(m[1])}` : base;
+}
+
 const SLIDE_FILE = /\.(pptx|potx)$/i;
 
 /** Keywords from a catalog field ("a, b, c") or from a "Keywords: a, b, c" line in the slide text. */
@@ -79,6 +91,8 @@ interface CatalogRow {
   Text?: string;
   Source?: string;
   Design?: string;
+  TaxCategory?: string;
+  TaxSubcategory?: string;
 }
 
 /**
@@ -107,7 +121,7 @@ export function planImport(paths: string[], folderName: string, catalog?: unknow
       items.push({
         file,
         thumb: thumb && set.has(thumb) ? thumb : "",
-        title: (r.Title ?? "").trim() || stripIndex(baseName(file)),
+        title: (r.Title ?? "").trim() || untitledName(file),
         category: (r.Category ?? "").trim() || parts[parts.length > 2 ? 1 : 0] || folderName,
         subcategory: String(r.Subcategory ?? "")
           .split(/\s*\/\s*/)
@@ -116,6 +130,9 @@ export function planImport(paths: string[], folderName: string, catalog?: unknow
         keywords: parseKeywords(r.Keywords, String(r.Text ?? "")),
         // template body text is placeholder copy (lorem ipsum) – searching it only adds noise
         text: "",
+        ...(r.TaxCategory
+          ? { categoryId: r.TaxCategory, subcategoryId: r.TaxSubcategory || undefined }
+          : {}),
       });
     }
     const source = rows.find((r) => r?.Source)?.Source?.trim() ?? "";
@@ -177,14 +194,48 @@ export function parseLocalPath(p: string): { libId: string; path: string } | nul
   return i > 0 ? { libId: rest.slice(0, i), path: rest.slice(i + 1) } : null;
 }
 
-/** Converts a stored local library into categories and slide entries of the common Library model. */
-export function toLibraryParts(meta: LocalLibraryMeta): {
+/**
+ * Converts a stored local library into categories and slide entries of the common Library model.
+ * Items mapped to a category of the shared taxonomy (`known`) go into that category; all others get
+ * categories of their own (one folder per local library).
+ */
+export function toLibraryParts(
+  meta: LocalLibraryMeta,
+  known: Category[] = []
+): {
   categories: Category[];
   slides: SlideEntry[];
 } {
   const cats = new Map<string, Category>();
   const slides: SlideEntry[] = [];
+  const base = {
+    kind: "slide" as const,
+    description: `Aus „${meta.label}“ – lokal auf diesem PC gespeichert`,
+    layout: null,
+    placeholders: [],
+    hash: "",
+    lint: { level: "ok" as const, warnings: [] },
+  };
   meta.items.forEach((it, i) => {
+    const target = it.categoryId ? known.find((c) => c.id === it.categoryId) : undefined;
+    if (target) {
+      const sub = target.subcategories.find((s) => s.id === it.subcategoryId);
+      slides.push({
+        ...base,
+        key: localKey(meta.id, it.file),
+        position: i + 1,
+        title: it.title,
+        category: target.id,
+        subcategory: sub ? sub.id : null,
+        keywords: it.keywords,
+        order: 10000 + i + 1, // after own slides of the same subcategory
+        text: it.text,
+        thumb: it.thumb ? localKey(meta.id, it.thumb) : "",
+        preview: it.thumb ? localKey(meta.id, it.thumb) : "",
+        file: localKey(meta.id, it.file),
+      });
+      return;
+    }
     const catId = `${LOCAL_PREFIX}${meta.id}:${slug(it.category)}`;
     let cat = cats.get(catId);
     if (!cat) {
@@ -206,23 +257,18 @@ export function toLibraryParts(meta: LocalLibraryMeta): {
       }
     }
     slides.push({
+      ...base,
       key: localKey(meta.id, it.file),
-      kind: "slide",
       position: i + 1,
       title: it.title,
       category: catId,
       subcategory: subId,
       keywords: it.keywords,
-      description: "",
-      order: i + 1,
-      layout: null,
+      order: 10000 + i + 1,
       text: it.text,
       thumb: it.thumb ? localKey(meta.id, it.thumb) : "",
       preview: it.thumb ? localKey(meta.id, it.thumb) : "",
       file: localKey(meta.id, it.file),
-      placeholders: [],
-      hash: "",
-      lint: { level: "ok", warnings: [] },
     });
   });
   return { categories: [...cats.values()], slides };
@@ -235,7 +281,7 @@ export function mergeLocal(lib: Library, metas: LocalLibraryMeta[]): Library {
   const slides = [...lib.slides];
   const localLibs: LocalLibraryInfo[] = [];
   for (const m of metas) {
-    const parts = toLibraryParts(m);
+    const parts = toLibraryParts(m, lib.categories);
     categories.push(...parts.categories);
     slides.push(...parts.slides);
     localLibs.push({ id: m.id, label: m.label, count: parts.slides.length, imported: m.imported });

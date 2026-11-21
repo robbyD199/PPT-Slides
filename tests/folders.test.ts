@@ -1,5 +1,7 @@
 import {
+  AREA_LABELS,
   buildFolderTree,
+  foldersByArea,
   findFolder,
   folderMeta,
   folderOf,
@@ -86,7 +88,7 @@ const catalog = {
       Subcategory: "Waterfall",
       Source: "think-cell",
     },
-    { File: paths[2], Category: "think-cell Charts", Subcategory: "Mekko", Source: "think-cell" },
+    { File: paths[2], Category: "think-cell Charts", Subcategory: "Mekko 1", Source: "think-cell" },
     {
       File: paths[3],
       Category: "Useful Elements",
@@ -137,10 +139,10 @@ describe("folder tree", () => {
     // imported folders are sorted by visible name ("think-cell Charts" → "Charts")
     expect(tc.children.map((c) => c.name)).toEqual(["Charts", "Maps", "Useful Elements"]);
     const charts = tc.children[0];
-    expect(charts.children.map((c) => c.name)).toEqual(["Mekko", "Waterfall"]);
+    expect(charts.children.map((c) => c.name)).toEqual(["Mekko 1", "Waterfall"]);
     expect(charts.children[1].groups[0].slides.map((s) => s.title)).toEqual([
-      "Build-down",
-      "Build-up",
+      "Build-down 1",
+      "Build-up 2",
     ]);
     const useful = tc.children[2];
     expect(useful.children.map((c) => c.name)).toEqual(["Diagrams", "Ratings"]);
@@ -155,26 +157,105 @@ describe("folder tree", () => {
     expect(findFolder(root, cubes.id)).toBe(cubes);
     expect(findFolder(root, "nope")).toBeNull();
     expect(folderTrail(cubes).map((n) => n.name)).toEqual([
-      "Bibliothek",
+      "Library",
       "think-cell",
       "Useful Elements",
       "Diagrams",
       "Cubes",
     ]);
     expect(folderPathLabel(cubes)).toBe("think-cell › Useful Elements › Diagrams › Cubes");
-    expect(folderMeta(root.children[2])).toBe("6 Folien · 3 Ordner");
-    expect(folderMeta(cubes)).toBe("1 Folie");
+    expect(folderMeta(root.children[2])).toBe("6 slides · 3 folders");
+    expect(folderMeta(cubes)).toBe("1 slide");
     expect(folderSlides(root.children[2], 3).map((s) => s.title)).toEqual([
-      "Mekko",
-      "Build-down",
-      "Build-up",
+      "Mekko 1",
+      "Build-down 1",
+      "Build-up 2",
     ]);
-    const key = lib.slides.find((s) => s.title === "Star")!.key;
+    const key = lib.slides.find((s) => s.title === "Star 1")!.key;
     expect(folderOf(root, key)?.name).toBe("Ratings");
   });
 
   test("library without local folders", () => {
     const r = buildFolderTree(own);
     expect(r.children.map((c) => c.id)).toEqual(["c:struct", "c:charts"]);
+  });
+});
+
+describe("shared taxonomy (slides / elements)", () => {
+  const taxLib: Library = {
+    ...own,
+    categories: [
+      {
+        ...own.categories[1],
+        area: "slides",
+        subcategories: [...own.categories[1].subcategories, { id: "line", name: "Line" }],
+      }, // charts
+      {
+        id: "el-diagrams",
+        name: "Diagram Elements",
+        area: "elements",
+        subcategories: [
+          { id: "cubes", name: "Cubes" },
+          { id: "pyramids", name: "Pyramids & Core Elements" },
+        ],
+      },
+      { ...own.categories[0], area: "slides" }, // struct (listed after an element category on purpose)
+    ],
+  };
+  // 14 mapped chart slides (> SUBFOLDER_THRESHOLD with own c1) + 2 elements + 1 unmapped
+  const files = [
+    ...Array.from(
+      { length: 13 },
+      (_, i) => `tc/Charts/${String(i + 1).padStart(2, "0")} - Column ${i + 1}.pptx`
+    ),
+    "tc/Useful Elements/Cubes/01 - Cubes.pptx",
+    "tc/Diagrams/Pyramids/03 - Pyramid with four layers.pptx",
+    "tc/Other/01 - Unmapped.pptx",
+  ];
+  const tcCatalog = {
+    items: files.map((f, i) => ({
+      File: f,
+      Title: i === 13 ? "" : f.split(" - ")[1].replace(".pptx", ""),
+      Category: "x",
+      Source: "think-cell",
+      ...(i < 13 ? { TaxCategory: "charts", TaxSubcategory: i < 7 ? "bar" : "line" } : {}),
+      ...(i === 13 ? { TaxCategory: "el-diagrams", TaxSubcategory: "cubes" } : {}),
+      ...(i === 14 ? { TaxCategory: "el-diagrams", TaxSubcategory: "pyramids" } : {}),
+    })),
+  };
+  const tcMeta: LocalLibraryMeta = {
+    id: "l2",
+    label: "think-cell",
+    prefix: "think-cell",
+    folder: "library",
+    imported: "",
+    items: planImport(files, "library", tcCatalog).items,
+  };
+  const lib = mergeLocal(taxLib, [tcMeta]);
+  const root = buildFolderTree(lib);
+
+  test("mapped imports join the library categories; areas ordered slides, elements, local", () => {
+    expect(foldersByArea(root).map((a) => [a.area, a.folders.map((f) => f.name)])).toEqual([
+      ["slides", ["Diagramme", "Struktur & Storyline"]],
+      ["elements", ["Diagram Elements"]],
+      ["local", ["think-cell"]],
+    ]);
+    expect(AREA_LABELS.elements).toBe("Elements");
+  });
+
+  test("large categories get subfolders, own slides first; untitled elements get a variant number", () => {
+    const charts = root.children[0];
+    expect(charts.count).toBe(14);
+    expect(charts.children.map((c) => c.name)).toEqual(["Diagramme", "Line"]);
+    // own slide c1 sorts before the imported ones of the same subcategory
+    expect(charts.children[0].groups[0].slides[0].key).toBe("c1");
+    const el = root.children.find((c) => c.area === "elements")!;
+    expect(el.count).toBe(2); // small category: subheadings, no subfolders
+    expect(el.children).toEqual([]);
+    expect(el.groups.map((g) => [g.name, g.slides.map((s) => s.title)])).toEqual([
+      ["Cubes", ["Cubes 1"]],
+      ["Pyramids & Core Elements", ["Pyramid with four layers"]],
+    ]);
+    expect(findFolder(root, "c:charts/line")?.area).toBe("slides");
   });
 });

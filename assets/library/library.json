@@ -14,117 +14,167 @@
   "categories": [
     {
       "id": "layouts",
-      "name": "Grundlayouts",
+      "name": "Blank Layouts",
       "short": "Layouts",
-      "description": "Leere Folien mit den Master-Layouts der Vorlage – der schnellste Start für eigene Inhalte.",
+      "area": "slides",
+      "description": "Empty slides with the master layouts of the library",
       "subcategories": [
         {
           "id": "empty",
-          "name": "Leere Layouts"
+          "name": "Blank Layouts"
         }
       ]
     },
     {
       "id": "structure",
-      "name": "Struktur & Storyline",
-      "short": "Struktur",
-      "description": "Folien, die das Deck rahmen: Deckblatt, Einleitung, Executive Summary, Abschluss und Quellen.",
+      "name": "Structure & Storyline",
+      "short": "Structure",
+      "area": "slides",
+      "description": "Cover, agenda, introduction, executive summary, quotes, closing and appendix",
       "subcategories": [
         {
           "id": "cover",
-          "name": "Deckblatt"
+          "name": "Cover"
+        },
+        {
+          "id": "agenda",
+          "name": "Agenda & Contents"
         },
         {
           "id": "intro",
-          "name": "Einleitung & Vorstellung"
+          "name": "Introduction"
         },
         {
           "id": "summary",
           "name": "Executive Summary"
         },
         {
+          "id": "quotes",
+          "name": "Quotes & Key Messages"
+        },
+        {
           "id": "closing",
-          "name": "Abschluss & Call-to-Action"
+          "name": "Closing & Call to Action"
         },
         {
           "id": "references",
-          "name": "Quellen & Anhang"
+          "name": "Sources & Appendix"
         }
       ]
     },
     {
       "id": "text",
-      "name": "Text & Kernaussagen",
+      "name": "Text & Key Messages",
       "short": "Text",
-      "description": "Inhalte, die vor allem über Text wirken: Aufzählungen, Fließtext, Spalten und Karten mit Icons.",
+      "area": "slides",
+      "description": "Bullet points, body text, columns, cards and text boxes",
       "subcategories": [
         {
           "id": "bullets",
-          "name": "Aufzählung"
+          "name": "Bullet Points"
         },
         {
           "id": "longform",
-          "name": "Fließtext"
+          "name": "Body Text"
         },
         {
           "id": "columns",
-          "name": "Spalten & Bereiche"
+          "name": "Columns & Sections"
         },
         {
           "id": "cards",
-          "name": "Karten & Icons"
+          "name": "Cards & Icons"
+        },
+        {
+          "id": "textboxes",
+          "name": "Text Boxes"
         }
       ]
     },
     {
       "id": "charts",
-      "name": "Diagramme",
-      "short": "Diagramme",
-      "description": "Datengetriebene Diagramme (editierbare Diagrammdaten): Linien, Säulen, Wasserfall, Blasen.",
+      "name": "Charts",
+      "short": "Charts",
+      "area": "slides",
+      "description": "Column, bar, line, waterfall, Mekko, pie, scatter and bubble charts incl. annotations",
       "subcategories": [
         {
-          "id": "line",
-          "name": "Linien"
+          "id": "column",
+          "name": "Column & Bar"
         },
         {
-          "id": "column",
-          "name": "Säulen"
+          "id": "line",
+          "name": "Line & Area"
         },
         {
           "id": "waterfall",
-          "name": "Wasserfall"
+          "name": "Waterfall"
+        },
+        {
+          "id": "mekko",
+          "name": "Mekko"
+        },
+        {
+          "id": "pie",
+          "name": "Pie & Doughnut"
         },
         {
           "id": "bubble",
-          "name": "Blasen"
+          "name": "Scatter & Bubble"
+        },
+        {
+          "id": "annotations",
+          "name": "Annotations (CAGR & Differences)"
         }
       ]
     },
     {
       "id": "figures",
-      "name": "Kennzahlen & Tabellen",
-      "short": "Kennzahlen",
-      "description": "Zahlen ohne Diagramm: Key-Facts-Kacheln und Status-/KPI-Tabellen.",
+      "name": "KPIs, Dashboards & Tables",
+      "short": "KPIs",
+      "area": "slides",
+      "description": "Key facts, infographics, dashboards and tables",
       "subcategories": [
         {
           "id": "keyfacts",
           "name": "Key Facts"
         },
         {
+          "id": "infographics",
+          "name": "Infographics"
+        },
+        {
+          "id": "dashboards",
+          "name": "Dashboards"
+        },
+        {
           "id": "tables",
-          "name": "Tabellen"
+          "name": "Tables"
         }
       ]
     },
     {
       "id": "frameworks",
-      "name": "Frameworks & Matrizen",
+      "name": "Frameworks & Matrices",
       "short": "Frameworks",
-      "description": "Konzeptionelle Strukturen: Matrizen und Portfolios (auch als Blasendiagramm), Hub & Spoke, Issue Trees, Säulenmodelle.",
+      "area": "slides",
+      "description": "Matrices, portfolios, SWOT, concepts, issue trees and pillar models",
       "subcategories": [
         {
           "id": "matrix",
           "name": "Matrix & Portfolio"
+        },
+        {
+          "id": "swot",
+          "name": "SWOT"
+        },
+        {
+          "id": "concepts",
+          "name": "Concepts & Mental Models"
+        },
+        {
+          "id": "proscons",
+          "name": "Pros & Cons"
         },
         {
           "id": "hub",
@@ -132,67 +182,286 @@
         },
         {
           "id": "tree",
-          "name": "Issue Tree"
+          "name": "Issue & Decision Trees"
         },
         {
           "id": "pillars",
-          "name": "Säulen & Bausteine"
+          "name": "Pillars & Building Blocks"
         }
       ]
     },
     {
       "id": "process",
-      "name": "Prozesse & Phasen",
-      "short": "Prozesse",
-      "description": "Abfolgen ohne Zeitachse: Phasenmodelle, Schrittfolgen, Treppen und Kaskaden.",
+      "name": "Processes & Phases",
+      "short": "Processes",
+      "area": "slides",
+      "description": "Phase overviews, step sequences, process flows, cycles, value chains and cause & effect",
       "subcategories": [
         {
           "id": "overview",
-          "name": "Phasenübersicht"
+          "name": "Phase Overview"
         },
         {
           "id": "detail",
-          "name": "Phase im Detail"
+          "name": "Phase Detail"
         },
         {
           "id": "steps",
-          "name": "Schrittfolge"
+          "name": "Step by Step"
         },
         {
           "id": "stairs",
-          "name": "Treppe & Kaskade"
+          "name": "Stairs & Cascades"
+        },
+        {
+          "id": "flows",
+          "name": "Process Flows & Swim Lanes"
+        },
+        {
+          "id": "infographic",
+          "name": "Infographic Processes"
+        },
+        {
+          "id": "cycles",
+          "name": "Cycles"
+        },
+        {
+          "id": "valuechain",
+          "name": "Value Chain & Customer Journey"
+        },
+        {
+          "id": "causes",
+          "name": "Cause & Effect"
         }
       ]
     },
     {
       "id": "timeline",
-      "name": "Zeitpläne & Roadmaps",
-      "short": "Zeitpläne",
-      "description": "Alles mit Zeitachse: Gantt-/Projektpläne, Phasen- und Wellen-Roadmaps mit Meilensteinen.",
+      "name": "Timelines & Roadmaps",
+      "short": "Timelines",
+      "area": "slides",
+      "description": "Project plans, Gantt charts, roadmaps, timelines, milestones and schedules",
       "subcategories": [
         {
           "id": "plan",
-          "name": "Projektplan & Gantt"
+          "name": "Project Plan & Gantt"
         },
         {
           "id": "roadmap",
-          "name": "Phasen-Roadmap"
+          "name": "Phase Roadmap"
+        },
+        {
+          "id": "milestones",
+          "name": "Timelines & Milestones"
+        },
+        {
+          "id": "schedule",
+          "name": "Schedules & Calendars"
         }
       ]
     },
     {
       "id": "people",
-      "name": "Team & Organisation",
+      "name": "Team & Organization",
       "short": "Team",
-      "description": "Organigramme, Projektteams und Rollen.",
+      "area": "slides",
+      "description": "Org charts, teams, roles and profiles",
       "subcategories": [
         {
           "id": "org",
-          "name": "Organigramm"
+          "name": "Org Charts"
         },
         {
           "id": "team",
-          "name": "Team & Rollen"
+          "name": "Team & Roles"
+        },
+        {
+          "id": "profiles",
+          "name": "Profiles & Contacts"
+        }
+      ]
+    },
+    {
+      "id": "maps",
+      "name": "Maps",
+      "short": "Maps",
+      "area": "slides",
+      "description": "World, regional and country maps",
+      "subcategories": [
+        {
+          "id": "world",
+          "name": "World & Regions"
+        },
+        {
+          "id": "countries",
+          "name": "Countries"
+        }
+      ]
+    },
+    {
+      "id": "el-diagrams",
+      "name": "Diagram Elements",
+      "short": "Diagrams",
+      "area": "elements",
+      "description": "Cubes, funnels, pyramids, Venn, circular elements, radars, phases and gauges",
+      "subcategories": [
+        {
+          "id": "cubes",
+          "name": "Cubes"
+        },
+        {
+          "id": "funnels",
+          "name": "Funnels"
+        },
+        {
+          "id": "pyramids",
+          "name": "Pyramids & Core Elements"
+        },
+        {
+          "id": "venn",
+          "name": "Venn Diagrams"
+        },
+        {
+          "id": "circular",
+          "name": "Circular Elements"
+        },
+        {
+          "id": "radar",
+          "name": "Sunbursts & Spiderwebs"
+        },
+        {
+          "id": "phases",
+          "name": "Phases & Processes"
+        },
+        {
+          "id": "progress",
+          "name": "Progress Bars & Gauges"
+        }
+      ]
+    },
+    {
+      "id": "el-arrows",
+      "name": "Arrows",
+      "short": "Arrows",
+      "area": "elements",
+      "description": "Takeaway arrows and arrow symbols",
+      "subcategories": [
+        {
+          "id": "takeaway",
+          "name": "Takeaway Arrows"
+        },
+        {
+          "id": "symbols",
+          "name": "Arrow Symbols"
+        }
+      ]
+    },
+    {
+      "id": "el-callouts",
+      "name": "Call-outs & Stickers",
+      "short": "Call-outs",
+      "area": "elements",
+      "description": "Call-outs, comments and slide-type stickers",
+      "subcategories": [
+        {
+          "id": "callouts",
+          "name": "Call-outs & Comments"
+        },
+        {
+          "id": "stickers",
+          "name": "Slide-Type Stickers"
+        }
+      ]
+    },
+    {
+      "id": "el-symbols",
+      "name": "Symbols & Icons",
+      "short": "Symbols",
+      "area": "elements",
+      "description": "Currencies, mathematical symbols, numbers and general symbols",
+      "subcategories": [
+        {
+          "id": "currencies",
+          "name": "Currencies"
+        },
+        {
+          "id": "math",
+          "name": "Mathematical Symbols"
+        },
+        {
+          "id": "numbers",
+          "name": "Numbers"
+        },
+        {
+          "id": "symbols",
+          "name": "Symbols"
+        }
+      ]
+    },
+    {
+      "id": "el-ratings",
+      "name": "Ratings & Status",
+      "short": "Ratings",
+      "area": "elements",
+      "description": "Star, heart and smiley ratings, traffic lights and thermometers",
+      "subcategories": [
+        {
+          "id": "ratings",
+          "name": "Ratings"
+        },
+        {
+          "id": "traffic",
+          "name": "Traffic Lights"
+        },
+        {
+          "id": "thermometer",
+          "name": "Thermometers"
+        }
+      ]
+    },
+    {
+      "id": "el-shapes",
+      "name": "Shapes & Layout",
+      "short": "Shapes",
+      "area": "elements",
+      "description": "Useful shapes, sections and table elements",
+      "subcategories": [
+        {
+          "id": "shapes",
+          "name": "Useful Shapes"
+        },
+        {
+          "id": "sections",
+          "name": "Sections, Columns & Rows"
+        },
+        {
+          "id": "tables",
+          "name": "Table Elements"
+        }
+      ]
+    },
+    {
+      "id": "el-handdrawn",
+      "name": "Hand-drawn Elements",
+      "short": "Hand-drawn",
+      "area": "elements",
+      "description": "Hand-drawn arrows, boxes, circles, brackets and call-outs",
+      "subcategories": [
+        {
+          "id": "arrows",
+          "name": "Arrows"
+        },
+        {
+          "id": "boxes",
+          "name": "Boxes & Circles"
+        },
+        {
+          "id": "brackets",
+          "name": "Brackets"
+        },
+        {
+          "id": "callouts",
+          "name": "Call-outs"
         }
       ]
     }

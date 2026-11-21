@@ -53,6 +53,8 @@ export interface Category {
   name: string;
   short?: string;
   description?: string;
+  /** "slides" (whole slides) or "elements" (building blocks to copy); default "slides" */
+  area?: "slides" | "elements";
   subcategories: Subcategory[];
 }
 
