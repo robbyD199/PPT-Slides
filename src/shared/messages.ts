@@ -25,6 +25,15 @@ export const MSG = {
   foreignDesign: "Diese Präsentation nutzt ein fremdes Design.",
   foreignDesignHint:
     "Eingefügte Folien übernehmen dessen Farben und Schriften. Für das Aussehen der Vorlage: Menü ⋯ → „Format der Vorlage beibehalten“ oder „Neue Präsentation aus Vorlage“.",
+  localMissing:
+    "Die lokale Datei ist nicht mehr gespeichert (z. B. nach dem Leeren des Office-Caches). Bitte den Ordner über Menü ⋯ erneut hinzufügen.",
+  localImporting: (done: number, total: number) =>
+    `Lokaler Ordner wird gespeichert … ${done}/${total}`,
+  localImported: (label: string, count: number) =>
+    `„${label}“ hinzugefügt: ${count} Folien (nur auf diesem PC gespeichert).`,
+  localImportFailed: "Der Ordner konnte nicht hinzugefügt werden.",
+  localRemoved: (label: string) => `„${label}“ wurde aus der Bibliothek entfernt.`,
+  localRemoveFailed: "Der lokale Ordner konnte nicht entfernt werden.",
   lintHint:
     "Enthält feste Farben oder Schriften – passt sich evtl. nicht vollständig an das Design der Zielpräsentation an.",
 };

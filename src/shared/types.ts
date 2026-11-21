@@ -75,6 +75,15 @@ export interface Library {
   categories: Category[];
   templates: TemplateInfo[];
   slides: SlideEntry[];
+  /** libraries imported from a local folder (stored only on this PC, see shared/local.ts) */
+  localLibs?: LocalLibraryInfo[];
+}
+
+export interface LocalLibraryInfo {
+  id: string;
+  label: string;
+  count: number;
+  imported: string;
 }
 
 export interface SubGroup {

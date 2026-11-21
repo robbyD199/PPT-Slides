@@ -1,5 +1,6 @@
 import "./search.css";
 import { assetUrl, categoryName, groupLibrary, subcategoryName } from "../shared/library";
+import { chipList, matchesChip } from "../shared/local";
 import { buildIndex, search, type SearchIndex, SEARCH_SUGGESTIONS } from "../shared/search";
 import { loadLibrary, UserError } from "../shared/service";
 import { appendAll, applyOfficeTheme, debounce, el, icon, ICON } from "../shared/dom";
@@ -187,7 +188,7 @@ function render(): void {
 
   if (query.trim()) {
     const res = search(index, query);
-    const hits = res.hits.filter((h) => chip === "all" || h.entry.category === chip);
+    const hits = res.hits.filter((h) => matchesChip(h.entry.category, chip));
     const best = res.complete ? hits.filter((h) => h.matched === res.groups.length) : [];
     const more = res.complete ? hits.filter((h) => h.matched !== res.groups.length) : hits;
     const head = el(
@@ -232,7 +233,7 @@ function render(): void {
         root.append(el("div", { class: "block-title" }, "Zuletzt verwendet"), grid(recent));
     }
     for (const g of groupLibrary(lib)) {
-      if (chip !== "all" && g.category.id !== chip) continue;
+      if (!matchesChip(g.category.id, chip)) continue;
       root.append(
         el(
           "div",
@@ -309,8 +310,17 @@ function renderChips(): void {
     return b;
   };
   c.append(make("all", "Alle"));
-  for (const cat of lib.categories)
-    if (lib.slides.some((s) => s.category === cat.id)) c.append(make(cat.id, cat.name));
+  for (const ci of chipList(lib)) {
+    const b = make(
+      ci.id,
+      ci.id.startsWith("lib:")
+        ? ci.label
+        : (lib.categories.find((x) => x.id === ci.id)?.name ?? ci.label)
+    );
+    b.title = ci.title;
+    if (ci.id.startsWith("lib:")) b.classList.add("chip-local");
+    c.append(b);
+  }
 }
 
 const setQuery = debounce((q: string) => {

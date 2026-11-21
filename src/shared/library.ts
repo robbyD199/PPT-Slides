@@ -1,6 +1,10 @@
+import { isLocalPath, localUrl } from "./local";
 import type { Category, Group, Library, SlideEntry, SubGroup } from "./types";
 
 export class LibraryError extends Error {}
+
+/** transparent 1x1 GIF for local slides without thumbnail */
+const EMPTY_IMAGE = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 
 const FALLBACK_CATEGORY: Category = {
   id: "_uncategorized",
@@ -127,6 +131,7 @@ export function formatGermanDate(iso: string): string {
 
 /** Builds an asset URL relative to the add-in page, with cache-busting version query. */
 export function assetUrl(path: string, version: string, base?: string): string {
+  if (isLocalPath(path)) return localUrl(path) || EMPTY_IMAGE;
   const rel = `assets/library/${path}`;
   const url = base ? new URL(rel, base).toString() : rel;
   return version ? `${url}?v=${encodeURIComponent(version)}` : url;

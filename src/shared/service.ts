@@ -8,6 +8,8 @@ import {
   resolveFormatting,
 } from "./insert";
 import { arrayBufferToBase64 } from "./base64";
+import { isLocalPath, mergeLocal } from "./local";
+import { getLocalFile, loadLocalLibraries } from "./localStore";
 import { describeError, MSG } from "./messages";
 import type { Formatting, FormattingPref, Library, SlideEntry, TemplateInfo } from "./types";
 
@@ -50,14 +52,17 @@ export async function loadLibrary(base?: string): Promise<Library> {
   }
   if (!res.ok)
     throw new UserError(MSG.libLoadFailed, `HTTP ${res.status} beim Laden von library.json`);
+  let lib: Library;
   try {
-    return parseLibrary(await res.json());
+    lib = parseLibrary(await res.json());
   } catch (e) {
     throw new UserError(
       MSG.libLoadFailed,
       e instanceof LibraryError ? e.message : describeError(e)
     );
   }
+  // folders imported from this PC (never fail the main library because of them)
+  return mergeLocal(lib, await loadLocalLibraries());
 }
 
 export interface InsertOutcome extends InsertResult {
@@ -97,6 +102,16 @@ export class SlideLibraryService {
     let p = this.cache.get(path);
     if (!p) {
       p = (async () => {
+        if (isLocalPath(path)) {
+          let blob: Blob | undefined;
+          try {
+            blob = await getLocalFile(path);
+          } catch (e) {
+            throw new UserError(MSG.localMissing, describeError(e));
+          }
+          if (!blob) throw new UserError(MSG.localMissing, path);
+          return arrayBufferToBase64(await blob.arrayBuffer());
+        }
         let res: Response;
         try {
           res = await fetch(this.url(path));

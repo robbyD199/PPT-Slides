@@ -13,6 +13,8 @@ import { setCardState, slideCard } from "../shared/cards";
 import { describeError, MSG } from "../shared/messages";
 import { prefs } from "../shared/prefs";
 import { openSearchDialog } from "../shared/dialogHost";
+import { chipList, matchesChip } from "../shared/local";
+import { deleteLocalLibrary, importFolder } from "../shared/localStore";
 import { destinationLayouts, hasLibraryMaster } from "../shared/insert";
 import type { FormattingPref, Group, Library, SlideEntry } from "../shared/types";
 
@@ -39,7 +41,12 @@ let servicePromise: Promise<SlideLibraryService> | null = null;
 
 /* ------------------------------------------------------------------ toasts & banners */
 
-function toast(kind: "success" | "error" | "info", message: string, detail = "", ms = 3200): void {
+function toast(
+  kind: "success" | "error" | "info",
+  message: string,
+  detail = "",
+  ms = 3200
+): HTMLElement {
   const area = $("toasts");
   const t = el(
     "div",
@@ -68,6 +75,7 @@ function toast(kind: "success" | "error" | "info", message: string, detail = "",
     },
     kind === "error" ? Math.max(ms, 9000) : ms
   );
+  return t;
 }
 
 function banner(kind: "error" | "info", message: string, dismissible = false): void {
@@ -287,7 +295,7 @@ function renderBrowse(lib: Library): void {
   content.innerHTML = "";
   if (state.chip === "all") renderRecent();
   for (const g of groupLibrary(lib)) {
-    if (state.chip !== "all" && g.category.id !== state.chip) continue;
+    if (!matchesChip(g.category.id, state.chip)) continue;
     const body = el("div", { class: "section-body" });
     if (isSparse(g)) {
       // many subcategories with 1-2 slides: one compact grid, subcategory as caption on each card
@@ -323,7 +331,7 @@ function renderSearch(lib: Library, index: SearchIndex): void {
   content.innerHTML = "";
   const res = search(index, state.query);
   let hits = res.hits;
-  if (state.chip !== "all") hits = hits.filter((h) => h.entry.category === state.chip);
+  if (state.chip !== "all") hits = hits.filter((h) => matchesChip(h.entry.category, state.chip));
   if (!hits.length) {
     content.append(
       el(
@@ -396,8 +404,8 @@ function render(): void {
 function renderChips(lib: Library): void {
   const chips = $("chips");
   chips.innerHTML = "";
-  const counts = new Map<string, number>();
-  for (const s of lib.slides) counts.set(s.category ?? "", (counts.get(s.category ?? "") ?? 0) + 1);
+  const list = chipList(lib);
+  if (state.chip !== "all" && !list.some((c) => c.id === state.chip)) state.chip = "all";
   const make = (id: string, label: string, title: string) => {
     const b = el(
       "button",
@@ -418,9 +426,11 @@ function renderChips(lib: Library): void {
     return b;
   };
   chips.append(make("all", "Alle", "Alle Kategorien"));
-  for (const c of lib.categories)
-    if (counts.get(c.id))
-      chips.append(make(c.id, c.short ?? c.name, `${c.name} (${counts.get(c.id)})`));
+  for (const c of list) {
+    const b = make(c.id, c.label, c.title);
+    if (c.id.startsWith("lib:")) b.classList.add("chip-local");
+    chips.append(b);
+  }
 }
 
 function renderFooter(lib: Library): void {
@@ -583,6 +593,35 @@ function openMenu(): void {
   }
   m.append(
     el("div", { class: "menu-sep" }),
+    el("div", { class: "menu-label" }, "Lokale Ordner (nur dieser PC)"),
+    el(
+      "button",
+      {
+        class: "menu-item",
+        type: "button",
+        role: "menuitem",
+        title:
+          "Ordner mit PowerPoint-Dateien wählen (z. B. TC-Library\\library-own). Die Dateien werden nur im Speicher dieses PCs abgelegt, nicht hochgeladen.",
+        onclick: () => (closeMenu(), pickLocalFolder()),
+      },
+      icon("plus", "icon menu-icon"),
+      el("span", { class: "menu-text" }, "Lokalen Ordner hinzufügen …")
+    ),
+    ...(svc?.lib.localLibs ?? []).map((l) =>
+      el(
+        "button",
+        {
+          class: "menu-item",
+          type: "button",
+          role: "menuitem",
+          title: `${l.count} Folien, hinzugefügt am ${formatGermanDate(l.imported)}. Entfernt nur die gespeicherte Kopie in PowerPoint, nicht den Ordner auf der Festplatte.`,
+          onclick: () => (closeMenu(), void removeLocal(l.id, l.label)),
+        },
+        icon("close", "icon menu-icon"),
+        el("span", { class: "menu-text" }, `„${l.label}“ entfernen`)
+      )
+    ),
+    el("div", { class: "menu-sep" }),
     el(
       "button",
       {
@@ -620,6 +659,54 @@ function openMenu(): void {
   const r = $("btn-menu").getBoundingClientRect();
   m.style.top = `${r.bottom + 4}px`;
   m.style.right = `${Math.max(8, window.innerWidth - r.right)}px`;
+}
+
+/* ------------------------------------------------------------------ local folders */
+
+function pickLocalFolder(): void {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.multiple = true;
+  input.setAttribute("webkitdirectory", "");
+  input.addEventListener("change", () => {
+    const files = Array.from(input.files ?? []);
+    if (files.length) void runImport(files);
+  });
+  input.click();
+}
+
+async function runImport(files: File[]): Promise<void> {
+  const progress = toast("info", MSG.localImporting(0, files.length), "", 600000);
+  const msg = progress.querySelector(".toast-msg");
+  try {
+    const res = await importFolder(files, (done, total) => {
+      if (msg) msg.textContent = MSG.localImporting(done, total);
+    });
+    progress.remove();
+    await reload();
+    state.chip = `lib:${res.meta.id}`;
+    if (state.svc) renderChips(state.svc.lib);
+    render();
+    toast(
+      "success",
+      MSG.localImported(res.meta.label, res.meta.items.length),
+      res.missing ? `${res.missing} Einträge des Katalogs fehlten im Ordner.` : "",
+      5000
+    );
+  } catch (e) {
+    progress.remove();
+    toast("error", MSG.localImportFailed, describeError(e));
+  }
+}
+
+async function removeLocal(id: string, label: string): Promise<void> {
+  try {
+    await deleteLocalLibrary(id);
+    await reload();
+    toast("success", MSG.localRemoved(label), "", 3000);
+  } catch (e) {
+    toast("error", MSG.localRemoveFailed, describeError(e));
+  }
 }
 
 function openDialog(): void {

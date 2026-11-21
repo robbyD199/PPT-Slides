@@ -97,3 +97,14 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
 ## Änderung 20.11.2026: Standard-Einfügemodus "Automatisch"
 - Wunsch: Master und Farbcode der Bibliothek ohne Umstellen im Menü. Test zeigte: "Immer Vorlagenformat" fügt in Decks auf Basis der eigenen Vorlage einen **zweiten Master** (JP-Morgan-Farben) hinzu.
 - Daher Standard **Automatisch**: eigenes Deck -> eigener Master im Deck-Farbset (Designs 1 -> 1), fremdes/leeres Deck -> Bibliotheks-Master + Farben (Designs 1 -> 2, alle eingefügten Folien teilen **einen** Master; kein Master je Folie). Selbsttest uto-vorlage, uto-fremd, keep-* in 	est-results/report.md.
+
+## Änderung 21.11.2026: Lokale Ordner (nur dieser PC)
+- Menü ⋯ → *Lokalen Ordner hinzufügen …*: Ordner per Dateiauswahl (`webkitdirectory`) wählen; Dateien + Vorschaubilder
+  landen in IndexedDB der Office-WebView (pro PC/Benutzer), **kein Upload**, nichts im Repo/auf GitHub Pages.
+- Mit `catalog.json` (TC-Library, `tc-split.ps1`): Titel, Kategorie/Unterkategorie, Stichwörter (`Keywords`), Thumbnails;
+  sonst Ordner = Kategorie, Dateiname = Titel, `_thumbs/<pfad>.png` = Vorschau. Platzhaltertext wird nicht indexiert.
+- Ein Chip pro lokalem Ordner (gestrichelt), Abschnitte „<Label> · <Kategorie>“, Suche/Suchfenster/Zuletzt verwendet
+  funktionieren gleich; Einfügen über `insertSlidesFromBase64` (Einzelfolien-PPTX, Modus wie eingestellt).
+- Code: `src/shared/local.ts` (rein, getestet in `tests/local.test.ts`), `src/shared/localStore.ts` (IndexedDB).
+- **Ungetestet in PowerPoint**: Ordnerauswahl/Import und ob think-cell-Objekte beim Einfügen per Office.js aktiv
+  bleiben (manuelle Checkliste im Chat).

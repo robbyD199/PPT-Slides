@@ -180,6 +180,10 @@ button {
 body.theme-dark .chip.is-active {
   color: #10202e;
 }
+/* local libraries (stored only on this PC) */
+.chip.chip-local:not(.is-active) {
+  border-style: dashed;
+}
 
 /* ---------- cards ---------- */
 .grid {

@@ -34,6 +34,12 @@ Diese Variante muss nach Office-Updates manchmal wiederholt werden; die Registry
   - *An Präsentation anpassen*: Folie übernimmt Master, Farben und Schriften der geöffneten Präsentation.
   - *Platzhalter-Layout der Vorlage schützen* (Standard an): Beim Anpassen an fremde Master bleiben Titel/Text an Position und Größe der Vorlage.
   - *Neue Präsentation aus Vorlage*: öffnet eine neue Präsentation mit dem Master der Vorlage in einem der 5 Farbsets.
+  - *Lokalen Ordner hinzufügen …*: Ordner mit eigenen PowerPoint-Dateien wählen (z. B. `TC-Library\library-own`).
+    Die Dateien werden **nur im Speicher dieses PCs** abgelegt (Office-WebView, IndexedDB), nie hochgeladen; sie
+    erscheinen als eigener Chip (gestrichelt) mit Kategorien = Ordner. Enthält der Ordner eine `catalog.json`
+    (von `TC-Library\scripts\tc-split.ps1`), kommen Titel, Kategorien, Stichwörter und Vorschaubilder daraus.
+    Erneut hinzufügen ersetzt den Ordner gleichen Namens; *„…“ entfernen* löscht nur die gespeicherte Kopie.
+    Nach `clear-cache.ps1` muss der Ordner neu hinzugefügt werden.
 - Gelbes Dreieck auf einer Vorschau: Die Folie enthält feste Farben/Schriften (Theme-Lint) und passt sich nicht vollständig an.
 
 **Deinstallieren**
