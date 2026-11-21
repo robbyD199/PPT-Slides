@@ -140,3 +140,7 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
 - End-to-End in Headless-Edge gegen lokalen Worker (40-Folien-Teilmenge): falscher Schlüssel → Meldung, Liste, Download
   80 Dateien in 10 s, Ordner „Slides/Elements“, Menü aktualisieren/entfernen.
 - **Offen:** Deploy zu Cloudflare (Konto + `npx wrangler login` durch Nutzer), echter Download der vollen Bibliothek.
+- **Live 21.11.2026:** Worker unter `https://slidelib-private.slidelib-private.workers.dev`. Live geprüft: ohne/falscher
+  Schlüssel 401, fremde Bibliothek 403, voller Download 994/994 Dateien byte-identisch (61,3 MB in 24,5 s), CORS nur
+  für GitHub Pages, Sperren (Schlüssel aus der Liste entfernt). Dateinamen mit `%`/`×` werden auf dem Server bereinigt
+  (`Href`). Add-in wiederholt kurze Netzfehler beim Download. Offen: Test im echten PowerPoint durch den Nutzer.
