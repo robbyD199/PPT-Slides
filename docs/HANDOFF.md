@@ -1,5 +1,10 @@
 # Übergabe – Stand 20.11.2026 (für die nächste Claude-Sitzung)
 
+> **Entscheidung 21.11.2026:** Die Folienbibliothek wird künftig nur noch im **PPT-Toolkit** (COM-Add-in, lädt bei
+> jedem Start automatisch) weiterentwickelt – das Web-Add-in muss nach jedem Start neu aktiviert werden. Dieses Repo
+> bleibt Quelle der eigenen Vorlagen und GitHub Pages die Datenquelle für das Toolkit; der Web-Add-in-Code ist
+> eingefroren (Rückfallebene). Abmelden des Web-Add-ins erst nach Abnahme im Toolkit und mit Dorians Zustimmung.
+
 ## Was existiert (fertig, live)
 - **Folienbibliothek** = Office Web Add-in für PowerPoint Desktop (Windows, M365), TypeScript, XML-Manifest.
 - Live: https://robbyd199.github.io/PPT-Slides/ · Repo: https://github.com/robbyD199/PPT-Slides (öffentlich, Branch `main`).
