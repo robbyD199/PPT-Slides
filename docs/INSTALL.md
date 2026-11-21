@@ -24,6 +24,10 @@ Alle Wege gelten **pro Windows-Benutzer und Office-Installation**, nicht pro Mic
 Diese Variante muss nach Office-Updates manchmal wiederholt werden; die Registry-Variante bleibt bestehen.
 
 **Bedienung**
+- **Ordner wie in der think-cell-Bibliothek:** oben „Zuletzt verwendet“ und die Ordner (eigene Kategorien, darunter je
+  ein Ordner pro lokal hinzugefügtem Ordner, z. B. *think-cell (eigenes Design)* mit derselben Ordnerstruktur wie
+  think-cell). Klick öffnet den Ordner, Pfadleiste („Bibliothek › think-cell › Charts › Waterfall“) bzw. `‹` oder die
+  **Rücktaste** gehen zurück. Die Suche durchsucht immer die ganze Bibliothek. Der zuletzt geöffnete Ordner bleibt gemerkt.
 - Klick auf eine Vorschau fügt die Folie **direkt hinter der ausgewählten Folie** ein (ohne Folien: als erste Folie) und wählt sie aus.
 - Suchfeld oben: deutsch/englisch, z. B. „bar chart“, „Säulendiagramm“, „company overview“, „Wasserfall“, „Gantt“.
 - `⤢` oder Menüband **Folie suchen**: großes Suchfenster mit Vorschau. `↑↓←→` auswählen, `Enter` einfügen, `Esc` schließen.

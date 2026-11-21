@@ -108,3 +108,12 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
 - Code: `src/shared/local.ts` (rein, getestet in `tests/local.test.ts`), `src/shared/localStore.ts` (IndexedDB).
 - **Ungetestet in PowerPoint**: Ordnerauswahl/Import und ob think-cell-Objekte beim Einfügen per Office.js aktiv
   bleiben (manuelle Checkliste im Chat).
+
+## Änderung 21.11.2026: Ordner-Navigation wie in der think-cell-Bibliothek
+- Seitenbereich und Suchfenster zeigen statt Kategorie-Chips/-Abschnitten **Ordner**: oben eigene Kategorien
+  (Unterkategorien bleiben Zwischenüberschriften), je lokalem Ordner ein Ordner mit derselben Struktur wie think-cell
+  (Kategorie › Unterordner, alphabetisch nach sichtbarem Namen). Ordnerzeile = kleiner Stapel aus 3 Vorschaubildern,
+  Name, „n Folien · m Ordner“. Pfadleiste + `‹` + Rücktaste; letzter Ordner pro Pane/Dialog gemerkt; Suche global.
+- Code: `src/shared/folders.ts` (rein, `tests/folders.test.ts`), `src/shared/folderView.ts`; `cdp.js` wartet auf Ordner.
+- Visuell geprüft (Headless-Edge + CDP, 497 Folien aus `library-own`): Wurzel, think-cell, Charts, Waterfall, Suche
+  „gantt“, Suchfenster.

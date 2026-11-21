@@ -185,6 +185,176 @@ body.theme-dark .chip.is-active {
   border-style: dashed;
 }
 
+/* ---------- folders (like the think-cell library) ---------- */
+.crumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1px 2px;
+  min-height: 26px;
+  padding: 8px 0 2px;
+  font-size: 12px;
+}
+.crumbs[hidden] {
+  display: none;
+}
+.crumb {
+  border: 0;
+  background: none;
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--accent-2);
+  font: inherit;
+  cursor: pointer;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.crumb:hover {
+  background: var(--accent-soft);
+  text-decoration: underline;
+}
+.crumb.is-current {
+  color: var(--text);
+  font-weight: 600;
+  cursor: default;
+}
+.crumb.is-current:hover {
+  background: none;
+  text-decoration: none;
+}
+.crumb-sep {
+  color: var(--faint);
+  padding: 0 1px;
+}
+.crumb-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+}
+.crumb-back svg {
+  transform: rotate(180deg);
+}
+.crumb-back:hover {
+  border-color: var(--accent-2);
+  color: var(--accent);
+}
+.folders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px;
+  margin: 6px 0 14px;
+}
+.folder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 7px 8px 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow-1);
+  transition: border-color 0.12s, box-shadow 0.15s;
+}
+.folder:hover,
+.folder:focus-visible {
+  border-color: var(--accent-2);
+  box-shadow: var(--shadow-2);
+  outline: none;
+}
+.folder-local {
+  border-style: dashed;
+}
+.folder-stack {
+  position: relative;
+  flex: none;
+  width: 62px;
+  height: 38px;
+}
+.folder-stack .fs {
+  position: absolute;
+  width: 52px;
+  height: 29px;
+  object-fit: cover;
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  box-shadow: var(--shadow-1);
+}
+.folder-stack .fs-0 {
+  left: 0;
+  top: 9px;
+  z-index: 3;
+}
+.folder-stack .fs-1 {
+  left: 5px;
+  top: 4.5px;
+  z-index: 2;
+}
+.folder-stack .fs-2 {
+  left: 10px;
+  top: 0;
+  z-index: 1;
+}
+.folder-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+.folder-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  font-weight: 600;
+}
+.folder-icon {
+  display: inline-flex;
+  flex: none;
+  color: var(--accent-2);
+}
+.folder-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.folder-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+.folder-chev {
+  display: inline-flex;
+  flex: none;
+  color: var(--faint);
+}
+.folder:hover .folder-chev {
+  color: var(--accent);
+}
+.folder-heading {
+  margin: 4px 0 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
 /* ---------- cards ---------- */
 .grid {
   display: grid;

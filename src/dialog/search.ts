@@ -1,6 +1,7 @@
 import "./search.css";
-import { assetUrl, categoryName, groupLibrary, subcategoryName } from "../shared/library";
-import { chipList, matchesChip } from "../shared/local";
+import { assetUrl, categoryName, subcategoryName } from "../shared/library";
+import { buildFolderTree, findFolder, ROOT_ID, type FolderNode } from "../shared/folders";
+import { breadcrumb, folderList } from "../shared/folderView";
 import { buildIndex, search, type SearchIndex, SEARCH_SUGGESTIONS } from "../shared/search";
 import { loadLibrary, UserError } from "../shared/service";
 import { appendAll, applyOfficeTheme, debounce, el, icon, ICON } from "../shared/dom";
@@ -15,7 +16,8 @@ const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as 
 let lib: Library | null = null;
 let index: SearchIndex | null = null;
 let query = "";
-let chip = "all";
+let folder = prefs.folder("dialog");
+let tree: FolderNode | null = null;
 let cards: HTMLButtonElement[] = [];
 let selected = -1;
 let pending: string | null = null;
@@ -188,7 +190,7 @@ function render(): void {
 
   if (query.trim()) {
     const res = search(index, query);
-    const hits = res.hits.filter((h) => matchesChip(h.entry.category, chip));
+    const hits = res.hits; // search covers the whole library
     const best = res.complete ? hits.filter((h) => h.matched === res.groups.length) : [];
     const more = res.complete ? hits.filter((h) => h.matched !== res.groups.length) : hits;
     const head = el(
@@ -219,7 +221,9 @@ function render(): void {
     if (!hits.length)
       root.append(el("div", { class: "suggest-row" }, ...SEARCH_SUGGESTIONS.map(suggestion)));
   } else {
-    if (chip === "all") {
+    const node = currentFolder();
+    const isRoot = !node || node.id === ROOT_ID;
+    if (isRoot) {
       root.append(
         el("div", { class: "block-title" }, "Schnellsuche"),
         el("div", { class: "suggest-row" }, ...SEARCH_SUGGESTIONS.map(suggestion))
@@ -232,30 +236,42 @@ function render(): void {
       if (recent.length)
         root.append(el("div", { class: "block-title" }, "Zuletzt verwendet"), grid(recent));
     }
-    for (const g of groupLibrary(lib)) {
-      if (!matchesChip(g.category.id, chip)) continue;
+    if (node?.children.length) {
       root.append(
         el(
           "div",
-          { class: "block-title", title: g.category.description ?? "" },
-          g.category.name,
-          el("span", { class: "count" }, String(g.count))
+          { class: "block-title" },
+          isRoot ? "Ordner" : node.name,
+          el("span", { class: "count" }, String(node.count))
+        ),
+        folderList(node.children, { url, onOpen: (n) => openFolder(n.id) })
+      );
+    }
+    const slides = node ? node.groups.reduce((s, g) => s + g.slides.length, 0) : 0;
+    if (node && slides) {
+      root.append(
+        el(
+          "div",
+          { class: "block-title", title: node.description ?? "" },
+          node.children.length ? "Folien in diesem Ordner" : node.name,
+          el("span", { class: "count" }, String(slides))
         )
       );
-      if (g.subgroups.length > 1 && g.count / g.subgroups.length < 2) {
-        // sparse category: one grid, subcategory shown as caption on each card
+      const named = node.groups.filter((g) => g.name);
+      if (named.length > 1 && slides / node.groups.length < 2) {
+        // many small subgroups: one grid, subgroup shown as caption on each card
         root.append(
           grid(
-            g.subgroups.flatMap((sg) => sg.slides),
+            node.groups.flatMap((g) => g.slides),
             true,
             true
           )
         );
       } else {
-        for (const sg of g.subgroups) {
-          if (sg.subcategory && g.subgroups.length > 1)
-            root.append(el("div", { class: "block-sub" }, sg.subcategory.name));
-          root.append(grid(sg.slides));
+        for (const g of node.groups) {
+          if (g.name && node.groups.length > 1)
+            root.append(el("div", { class: "block-sub" }, g.name));
+          root.append(grid(g.slides));
         }
       }
     }
@@ -287,45 +303,35 @@ function suggestion(text: string): HTMLButtonElement {
   );
 }
 
-function renderChips(): void {
-  if (!lib) return;
-  const c = $("chips");
-  c.innerHTML = "";
-  const make = (id: string, label: string) => {
-    const b = el(
-      "button",
-      {
-        class: `chip${chip === id ? " is-active" : ""}`,
-        type: "button",
-        role: "tab",
-        "aria-selected": String(chip === id),
-      },
-      label
-    );
-    b.addEventListener("click", () => {
-      chip = id;
-      renderChips();
-      render();
-    });
-    return b;
-  };
-  c.append(make("all", "Alle"));
-  for (const ci of chipList(lib)) {
-    const b = make(
-      ci.id,
-      ci.id.startsWith("lib:")
-        ? ci.label
-        : (lib.categories.find((x) => x.id === ci.id)?.name ?? ci.label)
-    );
-    b.title = ci.title;
-    if (ci.id.startsWith("lib:")) b.classList.add("chip-local");
-    c.append(b);
+function currentFolder(): FolderNode | null {
+  if (!tree) return null;
+  return findFolder(tree, folder) ?? tree;
+}
+
+function openFolder(id: string): void {
+  folder = id;
+  prefs.setFolder("dialog", id);
+  if (query) {
+    query = "";
+    $<HTMLInputElement>("q").value = "";
+    $("q-clear").hidden = true;
   }
+  renderCrumbs();
+  render();
+}
+
+function renderCrumbs(): void {
+  const nav = $("crumbs");
+  nav.innerHTML = "";
+  const node = currentFolder();
+  nav.hidden = !node || !!query.trim();
+  if (node) nav.append(...breadcrumb(node, (n) => openFolder(n.id)));
 }
 
 const setQuery = debounce((q: string) => {
   query = q;
   $("q-clear").hidden = !q;
+  renderCrumbs();
   render();
 }, 80);
 
@@ -344,6 +350,15 @@ function onKey(ev: KeyboardEvent): void {
       setQuery("");
     } else {
       send({ type: "close" });
+    }
+    return;
+  }
+  if (ev.key === "Backspace" && !query) {
+    // empty search box: Backspace goes one folder up
+    const parent = currentFolder()?.parent;
+    if (parent) {
+      ev.preventDefault();
+      openFolder(parent.id);
     }
     return;
   }
@@ -374,7 +389,9 @@ async function boot(): Promise<void> {
   try {
     lib = await loadLibrary();
     index = buildIndex(lib);
-    renderChips();
+    tree = buildFolderTree(lib);
+    if (!findFolder(tree, folder)) folder = ROOT_ID;
+    renderCrumbs();
     render();
   } catch (e) {
     $("results").append(

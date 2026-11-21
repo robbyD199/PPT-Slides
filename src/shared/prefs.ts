@@ -53,6 +53,14 @@ export const prefs = {
   setCollapsed(ids: string[]) {
     write("slidelib.collapsed", ids);
   },
+  /** last opened folder ("" = top level), separately for task pane and search dialog */
+  folder(where: "pane" | "dialog"): string {
+    const v = read<string>(`slidelib.folder.${where}`, "");
+    return typeof v === "string" ? v : "";
+  },
+  setFolder(where: "pane" | "dialog", id: string) {
+    write(`slidelib.folder.${where}`, id);
+  },
   keepDialogOpen(): boolean {
     return read<boolean>("slidelib.keepDialogOpen", false) === true;
   },

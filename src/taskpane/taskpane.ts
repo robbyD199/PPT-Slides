@@ -1,5 +1,5 @@
 import "./taskpane.css";
-import { categoryName, formatGermanDate, groupLibrary, subcategoryName } from "../shared/library";
+import { categoryName, formatGermanDate, subcategoryName } from "../shared/library";
 import { buildIndex, search, type SearchIndex, SEARCH_SUGGESTIONS } from "../shared/search";
 import {
   detectCapabilities,
@@ -13,10 +13,11 @@ import { setCardState, slideCard } from "../shared/cards";
 import { describeError, MSG } from "../shared/messages";
 import { prefs } from "../shared/prefs";
 import { openSearchDialog } from "../shared/dialogHost";
-import { chipList, matchesChip } from "../shared/local";
+import { buildFolderTree, findFolder, ROOT_ID, type FolderNode } from "../shared/folders";
+import { breadcrumb, folderList } from "../shared/folderView";
 import { deleteLocalLibrary, importFolder } from "../shared/localStore";
 import { destinationLayouts, hasLibraryMaster } from "../shared/insert";
-import type { FormattingPref, Group, Library, SlideEntry } from "../shared/types";
+import type { FormattingPref, Library, SlideEntry } from "../shared/types";
 
 declare const __SELFTEST__: boolean;
 
@@ -26,7 +27,9 @@ interface State {
   svc: SlideLibraryService | null;
   index: SearchIndex | null;
   query: string;
-  chip: string; // "all" or category id
+  /** current folder id (ROOT_ID = top level) */
+  folder: string;
+  tree: FolderNode | null;
   collapsed: Set<string>;
 }
 
@@ -34,7 +37,8 @@ const state: State = {
   svc: null,
   index: null,
   query: "",
-  chip: "all",
+  folder: prefs.folder("pane"),
+  tree: null,
   collapsed: new Set(prefs.collapsed()),
 };
 let servicePromise: Promise<SlideLibraryService> | null = null;
@@ -195,7 +199,7 @@ async function activate(entry: SlideEntry, card: HTMLElement): Promise<void> {
     if (!out) return;
     setCardState(card, "done");
     onInserted(out);
-    if (state.chip === "all" && !state.query) renderRecent();
+    if (state.folder === ROOT_ID && !state.query) renderRecent();
   } catch (e) {
     setCardState(card, "error");
     const message = e instanceof UserError ? e.message : MSG.insertFailed;
@@ -285,44 +289,66 @@ function renderRecent(): void {
   else $("content").prepend(sec);
 }
 
-/** A category is "sparse" if its subcategories hold fewer than 2 slides on average. */
-function isSparse(g: Group): boolean {
-  return g.subgroups.length > 1 && g.count / g.subgroups.length < 2;
+function currentFolder(): FolderNode | null {
+  if (!state.tree) return null;
+  return findFolder(state.tree, state.folder) ?? state.tree;
 }
 
-function renderBrowse(lib: Library): void {
+function openFolder(id: string): void {
+  state.folder = id;
+  prefs.setFolder("pane", id);
+  if (state.query) {
+    state.query = "";
+    $<HTMLInputElement>("search-input").value = "";
+    $("search-clear").hidden = true;
+  }
+  renderCrumbs();
+  render();
+}
+
+function renderCrumbs(): void {
+  const nav = $("crumbs");
+  nav.innerHTML = "";
+  const node = currentFolder();
+  nav.hidden = !node || !!state.query.trim();
+  if (node) nav.append(...breadcrumb(node, (n) => openFolder(n.id)));
+}
+
+/** Folder view like the think-cell library: subfolders first, then the slides of this folder. */
+function renderBrowse(): void {
   const content = $("content");
   content.innerHTML = "";
-  if (state.chip === "all") renderRecent();
-  for (const g of groupLibrary(lib)) {
-    if (!matchesChip(g.category.id, state.chip)) continue;
-    const body = el("div", { class: "section-body" });
-    if (isSparse(g)) {
-      // many subcategories with 1-2 slides: one compact grid, subcategory as caption on each card
-      body.append(
-        el(
-          "div",
-          { class: "grid" },
-          ...g.subgroups.flatMap((sg) =>
-            sg.slides.map((s) =>
-              cardFor(s, sg.subcategory?.name !== s.title ? sg.subcategory?.name : undefined)
-            )
-          )
-        )
-      );
-    } else {
-      for (const sg of g.subgroups) {
-        if (sg.subcategory && (g.subgroups.length > 1 || sg.subcategory.name !== g.category.name)) {
-          body.append(el("div", { class: "subhead" }, sg.subcategory.name));
-        }
-        body.append(el("div", { class: "grid" }, ...sg.slides.map((s) => cardFor(s))));
-      }
-    }
+  const node = currentFolder();
+  const svc = state.svc;
+  if (!node || !svc) return;
+  const isRoot = node.id === ROOT_ID;
+  if (isRoot) renderRecent();
+  if (node.children.length) {
+    if (isRoot) content.append(el("div", { class: "folder-heading" }, "Ordner"));
     content.append(
-      section(g.category.id, g.category.name, g.count, body, {
-        description: g.category.description,
-      })
+      folderList(node.children, { url: (p) => svc.url(p), onOpen: (n) => openFolder(n.id) })
     );
+  }
+  const slides = node.groups.reduce((s, g) => s + g.slides.length, 0);
+  if (!slides) return;
+  if (node.children.length) content.append(el("div", { class: "folder-heading" }, "Folien"));
+  const named = node.groups.filter((g) => g.name);
+  if (named.length > 1 && slides / node.groups.length < 2) {
+    // many small subgroups: one compact grid, subgroup name as caption on each card
+    content.append(
+      el(
+        "div",
+        { class: "grid" },
+        ...node.groups.flatMap((g) =>
+          g.slides.map((s) => cardFor(s, g.name && g.name !== s.title ? g.name : undefined))
+        )
+      )
+    );
+    return;
+  }
+  for (const g of node.groups) {
+    if (g.name) content.append(el("div", { class: "subhead" }, g.name));
+    content.append(el("div", { class: "grid" }, ...g.slides.map((s) => cardFor(s))));
   }
 }
 
@@ -330,8 +356,7 @@ function renderSearch(lib: Library, index: SearchIndex): void {
   const content = $("content");
   content.innerHTML = "";
   const res = search(index, state.query);
-  let hits = res.hits;
-  if (state.chip !== "all") hits = hits.filter((h) => matchesChip(h.entry.category, state.chip));
+  const hits = res.hits; // search always covers the whole library, like the think-cell library
   if (!hits.length) {
     content.append(
       el(
@@ -397,40 +422,8 @@ function render(): void {
   if (!svc || !state.index) return;
   preview.hide();
   if (state.query.trim()) renderSearch(svc.lib, state.index);
-  else renderBrowse(svc.lib);
+  else renderBrowse();
   $("content").scrollTop = 0;
-}
-
-function renderChips(lib: Library): void {
-  const chips = $("chips");
-  chips.innerHTML = "";
-  const list = chipList(lib);
-  if (state.chip !== "all" && !list.some((c) => c.id === state.chip)) state.chip = "all";
-  const make = (id: string, label: string, title: string) => {
-    const b = el(
-      "button",
-      {
-        class: `chip${state.chip === id ? " is-active" : ""}`,
-        type: "button",
-        role: "tab",
-        "aria-selected": String(state.chip === id),
-        title,
-      },
-      label
-    );
-    b.addEventListener("click", () => {
-      state.chip = id;
-      renderChips(lib);
-      render();
-    });
-    return b;
-  };
-  chips.append(make("all", "Alle", "Alle Kategorien"));
-  for (const c of list) {
-    const b = make(c.id, c.label, c.title);
-    if (c.id.startsWith("lib:")) b.classList.add("chip-local");
-    chips.append(b);
-  }
 }
 
 function renderFooter(lib: Library): void {
@@ -453,6 +446,7 @@ function renderFooter(lib: Library): void {
 const setQuery = debounce((q: string) => {
   state.query = q;
   $("search-clear").hidden = !q;
+  renderCrumbs();
   render();
 }, 90);
 
@@ -684,9 +678,7 @@ async function runImport(files: File[]): Promise<void> {
     });
     progress.remove();
     await reload();
-    state.chip = `lib:${res.meta.id}`;
-    if (state.svc) renderChips(state.svc.lib);
-    render();
+    openFolder(`l:${res.meta.id}`);
     toast(
       "success",
       MSG.localImported(res.meta.label, res.meta.items.length),
@@ -715,7 +707,7 @@ function openDialog(): void {
     onInserted: (out) => toast("success", MSG.inserted(out.entry.title, out.position, out.atEnd)),
     onError: (message, detail) => toast("error", message, detail),
     onClosed: () => {
-      if (state.chip === "all" && !state.query) renderRecent();
+      if (state.folder === ROOT_ID && !state.query) renderRecent();
     },
   });
 }
@@ -741,7 +733,9 @@ async function boot(isReload = false): Promise<void> {
     state.index = buildIndex(svc.lib);
     if (!svc.lib.slides.length) throw new UserError(MSG.libEmpty);
     if (!caps.canInsert) document.body.classList.add("cannot-insert");
-    renderChips(svc.lib);
+    state.tree = buildFolderTree(svc.lib);
+    if (!findFolder(state.tree, state.folder)) state.folder = ROOT_ID;
+    renderCrumbs();
     renderFooter(svc.lib);
     render();
   } catch (e) {
@@ -798,6 +792,14 @@ function wireUi(): void {
   });
   document.addEventListener("keydown", (ev) => {
     if (ev.key === "Escape") closeMenu();
+    // Backspace outside the search box: one folder up (like Explorer / think-cell library)
+    if (ev.key === "Backspace" && document.activeElement !== input && !state.query) {
+      const parent = currentFolder()?.parent;
+      if (parent) {
+        ev.preventDefault();
+        openFolder(parent.id);
+      }
+    }
     if (
       (ev.ctrlKey && ev.key.toLowerCase() === "f") ||
       (ev.key === "/" && document.activeElement !== input)

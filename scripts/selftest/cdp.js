@@ -73,12 +73,12 @@ async function evaluate(c, expr) {
     if (cmd === "wait") {
       out.wait = await evaluate(
         c,
-        `new Promise(r => { const t0 = Date.now(); const f = () => { const n = document.querySelectorAll('#content .card').length; if (n || Date.now() - t0 > 20000) r(n); else setTimeout(f, 300); }; f(); })`
+        `new Promise(r => { const t0 = Date.now(); const f = () => { const n = document.querySelectorAll('#content .card, #content .folder').length; if (n || Date.now() - t0 > 20000) r(n); else setTimeout(f, 300); }; f(); })`
       );
     } else if (cmd === "info") {
       out.info = await evaluate(
         c,
-        `({ title: document.title, cards: document.querySelectorAll('#content .card').length, sections: [...document.querySelectorAll('.section-title')].map(e => e.textContent), banners: [...document.querySelectorAll('.banner')].map(e => e.textContent), footer: document.getElementById('footer').textContent, chips: [...document.querySelectorAll('.chip')].map(e => e.textContent), width: innerWidth })`
+        `({ title: document.title, cards: document.querySelectorAll('#content .card').length, sections: [...document.querySelectorAll('.section-title')].map(e => e.textContent), banners: [...document.querySelectorAll('.banner')].map(e => e.textContent), footer: document.getElementById('footer').textContent, folders: [...document.querySelectorAll('.folder .folder-label')].map(e => e.textContent), crumbs: (document.getElementById('crumbs') || {}).textContent, width: innerWidth })`
       );
     } else if (cmd === "shot") {
       const r = await c.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
