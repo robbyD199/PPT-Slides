@@ -1,4 +1,5 @@
 import {
+  catalogHrefs,
   catalogPaths,
   chipList,
   encodeAssetPath,
@@ -139,6 +140,19 @@ describe("local libraries: import plan", () => {
       "think-cell/Maps/01 - World.pptx",
     ]);
     expect(catalogPaths(null)).toEqual([]);
+    const hrefs = catalogHrefs({
+      items: [
+        {
+          File: "tc\\Bar\\02 - Stacked 100% column.pptx",
+          Href: "tc/Bar/02 - Stacked 100_ column.pptx",
+        },
+        { File: "tc\\x.pptx" },
+      ],
+    });
+    expect(hrefs.get("tc/Bar/02 - Stacked 100% column.pptx")).toBe(
+      "tc/Bar/02 - Stacked 100_ column.pptx"
+    );
+    expect(hrefs.has("tc/x.pptx")).toBe(false);
   });
 
   test("helpers", () => {

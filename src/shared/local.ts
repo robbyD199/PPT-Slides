@@ -49,6 +49,25 @@ export function encodeAssetPath(p: string): string {
   return normalizePath(p).split("/").map(encodeURIComponent).join("/");
 }
 
+/**
+ * Download paths on the server: catalog "Href"/"ThumbHref" (URL-safe copies made by the Worker build) by
+ * original path. Paths without an entry are downloaded under their own name.
+ */
+export function catalogHrefs(catalog: unknown): Map<string, string> {
+  const out = new Map<string, string>();
+  const items =
+    catalog && typeof catalog === "object" && Array.isArray((catalog as { items?: unknown }).items)
+      ? (catalog as { items: Record<string, unknown>[] }).items
+      : [];
+  for (const it of items) {
+    if (typeof it?.File === "string" && typeof it.Href === "string")
+      out.set(normalizePath(it.File), normalizePath(it.Href));
+    if (typeof it?.Thumb === "string" && typeof it.ThumbHref === "string")
+      out.set(normalizePath(it.Thumb), normalizePath(it.ThumbHref));
+  }
+  return out;
+}
+
 /** All files a catalog references (slides and thumbnails), normalized. */
 export function catalogPaths(catalog: unknown): string[] {
   const items =

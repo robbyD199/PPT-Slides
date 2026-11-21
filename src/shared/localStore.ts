@@ -3,6 +3,7 @@
  * (WebView2 profile of Office); nothing is uploaded. Office cache clearing removes it as well.
  */
 import {
+  catalogHrefs,
   catalogPaths,
   encodeAssetPath,
   localKey,
@@ -235,10 +236,11 @@ export async function importRemote(
   const plan = planImport(catalogPaths(catalog), lib.label, catalog);
   if (!plan.items.length) throw new Error("Die Online-Bibliothek enthält keine Folien.");
   plan.label = lib.label;
+  const hrefs = catalogHrefs(catalog);
   return storePlan(
     plan,
     lib.id,
-    async (p) => (await remoteFetch(`${base}/${encodeAssetPath(p)}`, key)).blob(),
+    async (p) => (await remoteFetch(`${base}/${encodeAssetPath(hrefs.get(p) ?? p)}`, key)).blob(),
     { url: normalizeBaseUrl(baseUrl), lib: lib.id, key },
     onProgress
   );
