@@ -61,6 +61,14 @@ export const prefs = {
   setFolder(where: "pane" | "dialog", id: string) {
     write(`slidelib.folder.${where}`, id);
   },
+  /** address of the key-protected online library (the key itself is stored with the downloaded library) */
+  remoteUrl(): string {
+    const v = read<string>("slidelib.remoteUrl", "");
+    return typeof v === "string" ? v : "";
+  },
+  setRemoteUrl(url: string) {
+    write("slidelib.remoteUrl", url);
+  },
   keepDialogOpen(): boolean {
     return read<boolean>("slidelib.keepDialogOpen", false) === true;
   },

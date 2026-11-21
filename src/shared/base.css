@@ -104,7 +104,9 @@ button {
   background: var(--surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
-  transition: border-color 0.12s, box-shadow 0.12s;
+  transition:
+    border-color 0.12s,
+    box-shadow 0.12s;
 }
 .search:focus-within {
   border-color: var(--accent-2);
@@ -165,7 +167,10 @@ button {
   font-size: 11.5px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.12s, color 0.12s, border-color 0.12s;
+  transition:
+    background 0.12s,
+    color 0.12s,
+    border-color 0.12s;
 }
 .chip:hover,
 .suggestion:hover {
@@ -268,7 +273,9 @@ body.theme-dark .chip.is-active {
   text-align: left;
   cursor: pointer;
   box-shadow: var(--shadow-1);
-  transition: border-color 0.12s, box-shadow 0.15s;
+  transition:
+    border-color 0.12s,
+    box-shadow 0.15s;
 }
 .folder:hover,
 .folder:focus-visible {
@@ -382,13 +389,21 @@ body.theme-dark .chip.is-active {
   border-radius: var(--radius-sm);
   overflow: hidden;
   box-shadow: var(--shadow-1);
-  transition: border-color 0.12s, box-shadow 0.15s, transform 0.15s;
+  transition:
+    border-color 0.12s,
+    box-shadow 0.15s,
+    transform 0.15s;
 }
 .card-thumb::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface) 50%, var(--surface-2) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 0%,
+    var(--surface) 50%,
+    var(--surface-2) 100%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.2s linear infinite;
 }
@@ -513,7 +528,9 @@ body.cannot-insert .card {
   box-shadow: var(--shadow-3);
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
 }
 .toast.is-visible {
   opacity: 1;
@@ -572,6 +589,109 @@ body.cannot-insert .card {
 .btn:hover {
   background: var(--accent-2);
   border-color: var(--accent-2);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.btn.btn-ghost {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+.btn.btn-ghost:hover {
+  border-color: var(--accent-2);
+  color: var(--accent);
+}
+
+/* ---------- modal (online library) ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 10px 10px;
+  background: rgba(16, 24, 40, 0.38);
+}
+.modal {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-3);
+}
+.modal-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.modal-hint {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.field {
+  padding: 6px 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+}
+.field:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: -1px;
+}
+.modal-actions {
+  display: flex;
+  gap: 6px;
+}
+.modal-status {
+  font-size: 12px;
+  color: var(--muted);
+}
+.modal-status.is-error {
+  color: var(--danger);
+}
+.modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.modal-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.modal-row-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.modal-row-title {
+  font-weight: 600;
+}
+.modal-row-meta {
+  font-size: 11px;
+  color: var(--muted);
 }
 
 @keyframes spin {

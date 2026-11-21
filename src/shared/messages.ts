@@ -34,6 +34,11 @@ export const MSG = {
   localImportFailed: "Der Ordner konnte nicht hinzugefügt werden.",
   localRemoved: (label: string) => `„${label}“ wurde aus der Bibliothek entfernt.`,
   localRemoveFailed: "Der lokale Ordner konnte nicht entfernt werden.",
+  remoteLoading: (label: string, done: number, total: number) =>
+    total ? `„${label}“ wird geladen … ${done}/${total} Dateien` : `„${label}“ wird verbunden …`,
+  remoteImported: (label: string, count: number) =>
+    `„${label}“ geladen: ${count} Folien (auf diesem PC gespeichert, auch offline nutzbar).`,
+  remoteFailed: "Die Online-Bibliothek konnte nicht geladen werden.",
   lintHint:
     "Enthält feste Farben oder Schriften – passt sich evtl. nicht vollständig an das Design der Zielpräsentation an.",
 };

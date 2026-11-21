@@ -47,6 +47,11 @@ Diese Variante muss nach Office-Updates manchmal wiederholt werden; die Registry
     (von `TC-Library\scripts\tc-split.ps1`), kommen Titel, Kategorien, Stichwörter und Vorschaubilder daraus.
     Erneut hinzufügen ersetzt den Ordner gleichen Namens; *„…“ entfernen* löscht nur die gespeicherte Kopie.
     Nach `clear-cache.ps1` muss der Ordner neu hinzugefügt werden.
+  - *Online-Bibliothek mit Schlüssel …*: Adresse des eigenen Cloudflare Workers (`https://slidelib-private.<name>.workers.dev`)
+    und Zugangsschlüssel eingeben → *Verbinden* → *Laden*. Die freigegebene Bibliothek wird einmal heruntergeladen,
+    **nur auf diesem PC** gespeichert (danach auch offline) und erscheint in denselben Ordnern. *„…“ aktualisieren*
+    lädt die neueste Version, *„…“ entfernen* löscht die Kopie. Ein gesperrter Schlüssel kann nichts mehr laden;
+    bereits heruntergeladene Kopien bleiben auf dem jeweiligen PC.
 - Gelbes Dreieck auf einer Vorschau: Die Folie enthält feste Farben/Schriften (Theme-Lint) und passt sich nicht vollständig an.
 
 **Deinstallieren**

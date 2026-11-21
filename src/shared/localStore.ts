@@ -3,10 +3,14 @@
  * (WebView2 profile of Office); nothing is uploaded. Office cache clearing removes it as well.
  */
 import {
+  catalogPaths,
+  encodeAssetPath,
   localKey,
+  normalizeBaseUrl,
   normalizePath,
   planImport,
   registerLocalUrl,
+  type ImportPlan,
   type LocalLibraryMeta,
 } from "./local";
 
@@ -127,10 +131,21 @@ export async function importFolder(
   const plan = planImport([...byPath.keys()], folder, catalog);
   if (!plan.items.length)
     throw new Error("Im gewählten Ordner wurden keine PowerPoint-Dateien gefunden.");
+  return storePlan(plan, folder, async (p) => byPath.get(p), undefined, onProgress);
+}
 
+/**
+ * Stores a planned library: files in batches (fetched in parallel, written in one transaction each), then the
+ * metadata. An older library with the same label is removed only after the new one is complete.
+ */
+async function storePlan(
+  plan: ImportPlan,
+  folder: string,
+  getBlob: (path: string) => Promise<Blob | undefined>,
+  remote: LocalLibraryMeta["remote"],
+  onProgress?: (done: number, total: number) => void
+): Promise<ImportResult> {
   const existing = (await loadLocalLibraries()).find((m) => m.label === plan.label);
-  if (existing) await deleteLocalLibrary(existing.id);
-
   const id = `l${Date.now().toString(36)}`;
   const meta: LocalLibraryMeta = {
     id,
@@ -139,27 +154,92 @@ export async function importFolder(
     folder,
     imported: new Date().toISOString(),
     items: plan.items,
+    ...(remote ? { remote } : {}),
   };
   const paths = plan.items.flatMap((it) => (it.thumb ? [it.file, it.thumb] : [it.file]));
   const db = await openDb();
-  const BATCH = 20;
-  for (let i = 0; i < paths.length; i += BATCH) {
-    const tx = db.transaction(FILES, "readwrite");
-    const store = tx.objectStore(FILES);
-    for (const p of paths.slice(i, i + BATCH)) {
-      const f = byPath.get(p);
-      if (f) store.put(f, localKey(id, p));
+  const BATCH = 8;
+  try {
+    for (let i = 0; i < paths.length; i += BATCH) {
+      const batch = paths.slice(i, i + BATCH);
+      const blobs = await Promise.all(batch.map((p) => getBlob(p)));
+      const tx = db.transaction(FILES, "readwrite");
+      const store = tx.objectStore(FILES);
+      batch.forEach((p, j) => {
+        const b = blobs[j];
+        if (b) store.put(b, localKey(id, p));
+      });
+      await done(tx);
+      onProgress?.(Math.min(i + BATCH, paths.length), paths.length);
     }
+    const tx = db.transaction(LIBS, "readwrite");
+    tx.objectStore(LIBS).put(meta);
     await done(tx);
-    onProgress?.(Math.min(i + BATCH, paths.length), paths.length);
+  } catch (e) {
+    await deleteLocalLibrary(id).catch(() => undefined); // drop the incomplete copy, keep the old one
+    throw e;
   }
-  const tx = db.transaction(LIBS, "readwrite");
-  tx.objectStore(LIBS).put(meta);
-  await done(tx);
+  if (existing) await deleteLocalLibrary(existing.id);
   try {
     await navigator.storage?.persist?.();
   } catch {
     /* best effort: ask the browser not to evict the data */
   }
   return { meta, missing: plan.missing, replaced: !!existing };
+}
+
+/* ------------------------------------------------------------------ online library (key protected) */
+
+export interface RemoteLibraryInfo {
+  id: string;
+  label: string;
+  count: number;
+  bytes: number;
+  updated: string;
+}
+
+async function remoteFetch(url: string, key: string): Promise<Response> {
+  let res: Response;
+  try {
+    res = await fetch(url, { headers: { "X-Library-Key": key }, cache: "no-store" });
+  } catch {
+    throw new Error("Server nicht erreichbar. Adresse und Internetverbindung prüfen.");
+  }
+  if (res.status === 401) throw new Error("Der Schlüssel ist ungültig oder wurde gesperrt.");
+  if (res.status === 403)
+    throw new Error("Dieser Schlüssel hat keinen Zugriff auf diese Bibliothek.");
+  if (!res.ok) throw new Error(`Der Server meldet Fehler ${res.status}.`);
+  return res;
+}
+
+/** Libraries the key may open (GET /libs). */
+export async function listRemoteLibraries(
+  baseUrl: string,
+  key: string
+): Promise<{ name: string; libs: RemoteLibraryInfo[] }> {
+  const res = await remoteFetch(`${normalizeBaseUrl(baseUrl)}/libs`, key);
+  return (await res.json()) as { name: string; libs: RemoteLibraryInfo[] };
+}
+
+/** Downloads one online library completely (catalog, slides, thumbnails) into the local storage of this PC. */
+export async function importRemote(
+  baseUrl: string,
+  key: string,
+  lib: Pick<RemoteLibraryInfo, "id" | "label">,
+  onProgress?: (done: number, total: number) => void
+): Promise<ImportResult> {
+  const base = `${normalizeBaseUrl(baseUrl)}/${encodeURIComponent(lib.id)}`;
+  const catalog = JSON.parse(
+    (await (await remoteFetch(`${base}/catalog.json`, key)).text()).replace(/^\uFEFF/, "")
+  ) as unknown;
+  const plan = planImport(catalogPaths(catalog), lib.label, catalog);
+  if (!plan.items.length) throw new Error("Die Online-Bibliothek enthält keine Folien.");
+  plan.label = lib.label;
+  return storePlan(
+    plan,
+    lib.id,
+    async (p) => (await remoteFetch(`${base}/${encodeAssetPath(p)}`, key)).blob(),
+    { url: normalizeBaseUrl(baseUrl), lib: lib.id, key },
+    onProgress
+  );
 }

@@ -1,5 +1,8 @@
 import {
+  catalogPaths,
   chipList,
+  encodeAssetPath,
+  normalizeBaseUrl,
   displayCategory,
   matchesChip,
   mergeLocal,
@@ -118,6 +121,24 @@ describe("local libraries: import plan", () => {
         text: "",
       },
     ]);
+  });
+
+  test("online library helpers", () => {
+    expect(normalizeBaseUrl(" slidelib.example.workers.dev/ ")).toBe(
+      "https://slidelib.example.workers.dev"
+    );
+    expect(normalizeBaseUrl("http://127.0.0.1:8787//")).toBe("http://127.0.0.1:8787");
+    expect(encodeAssetPath("think-cell\\Text Boxes\\11 - Matrix 2×2.pptx")).toBe(
+      "think-cell/Text%20Boxes/11%20-%20Matrix%202%C3%972.pptx"
+    );
+    expect(catalogPaths(catalog)).toEqual([
+      "think-cell/think-cell Charts/Waterfall/02 - Build-up waterfall.pptx",
+      "_thumbs/think-cell/think-cell Charts/Waterfall/02 - Build-up waterfall.png",
+      "think-cell/Useful Elements/Useful Shapes/Devices/01 - Devices.pptx",
+      "_thumbs/think-cell/Useful Elements/Useful Shapes/Devices/01 - Devices.png",
+      "think-cell/Maps/01 - World.pptx",
+    ]);
+    expect(catalogPaths(null)).toEqual([]);
   });
 
   test("helpers", () => {

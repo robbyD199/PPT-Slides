@@ -22,7 +22,14 @@ import {
   type FolderNode,
 } from "../shared/folders";
 import { breadcrumb, folderList } from "../shared/folderView";
-import { deleteLocalLibrary, importFolder } from "../shared/localStore";
+import {
+  deleteLocalLibrary,
+  importFolder,
+  importRemote,
+  listRemoteLibraries,
+  loadLocalLibraries,
+} from "../shared/localStore";
+import { normalizeBaseUrl } from "../shared/local";
 import { destinationLayouts, hasLibraryMaster } from "../shared/insert";
 import type { FormattingPref, Library, SlideEntry } from "../shared/types";
 
@@ -600,7 +607,7 @@ function openMenu(): void {
   }
   m.append(
     el("div", { class: "menu-sep" }),
-    el("div", { class: "menu-label" }, "Lokale Ordner (nur dieser PC)"),
+    el("div", { class: "menu-label" }, "Weitere Bibliotheken (gespeichert auf diesem PC)"),
     el(
       "button",
       {
@@ -614,20 +621,49 @@ function openMenu(): void {
       icon("plus", "icon menu-icon"),
       el("span", { class: "menu-text" }, "Lokalen Ordner hinzufügen …")
     ),
-    ...(svc?.lib.localLibs ?? []).map((l) =>
+    el(
+      "button",
+      {
+        class: "menu-item",
+        type: "button",
+        role: "menuitem",
+        title:
+          "Geschützte Bibliothek von deinem Server (Cloudflare Worker) mit Zugangsschlüssel laden. Sie wird auf diesem PC gespeichert und ist danach auch offline nutzbar.",
+        onclick: () => (closeMenu(), openRemoteDialog()),
+      },
+      icon("folder", "icon menu-icon"),
+      el("span", { class: "menu-text" }, "Online-Bibliothek mit Schlüssel …")
+    ),
+    ...(svc?.lib.localLibs ?? []).flatMap((l) => [
+      ...(l.remote
+        ? [
+            el(
+              "button",
+              {
+                class: "menu-item",
+                type: "button",
+                role: "menuitem",
+                title: `Neueste Version vom Server laden (zuletzt am ${formatGermanDate(l.imported)}).`,
+                onclick: () => (closeMenu(), void updateRemote(l.id)),
+              },
+              icon("refresh", "icon menu-icon"),
+              el("span", { class: "menu-text" }, `„${l.label}“ aktualisieren`)
+            ),
+          ]
+        : []),
       el(
         "button",
         {
           class: "menu-item",
           type: "button",
           role: "menuitem",
-          title: `${l.count} Folien, hinzugefügt am ${formatGermanDate(l.imported)}. Entfernt nur die gespeicherte Kopie in PowerPoint, nicht den Ordner auf der Festplatte.`,
+          title: `${l.count} Folien, gespeichert am ${formatGermanDate(l.imported)}. Entfernt nur die gespeicherte Kopie in PowerPoint, nicht die Quelle.`,
           onclick: () => (closeMenu(), void removeLocal(l.id, l.label)),
         },
         icon("close", "icon menu-icon"),
         el("span", { class: "menu-text" }, `„${l.label}“ entfernen`)
-      )
-    ),
+      ),
+    ]),
     el("div", { class: "menu-sep" }),
     el(
       "button",
@@ -691,7 +727,7 @@ async function runImport(files: File[]): Promise<void> {
     });
     progress.remove();
     await reload();
-    openFolder(`l:${res.meta.id}`);
+    showImported(res.meta.id);
     toast(
       "success",
       MSG.localImported(res.meta.label, res.meta.items.length),
@@ -702,6 +738,151 @@ async function runImport(files: File[]): Promise<void> {
     progress.remove();
     toast("error", MSG.localImportFailed, describeError(e));
   }
+}
+
+/** After an import: open its own folder if it has one (unmapped), otherwise the start page. */
+function showImported(libId: string): void {
+  const id = `l:${libId}`;
+  openFolder(state.tree && findFolder(state.tree, id) ? id : ROOT_ID);
+}
+
+/* ------------------------------------------------------------------ online library (key protected) */
+
+function openRemoteDialog(): void {
+  document.querySelector(".modal-backdrop")?.remove();
+  const url = el("input", {
+    class: "field",
+    type: "url",
+    value: prefs.remoteUrl(),
+    placeholder: "https://slidelib-private.<name>.workers.dev",
+    spellcheck: "false",
+    autocomplete: "off",
+  });
+  const key = el("input", {
+    class: "field",
+    type: "password",
+    placeholder: "slk_…",
+    spellcheck: "false",
+    autocomplete: "off",
+  });
+  const status = el("div", { class: "modal-status", role: "status" });
+  const list = el("div", { class: "modal-list" });
+  const connect = el("button", { class: "btn btn-primary", type: "button" }, "Verbinden");
+  const backdrop = el("div", { class: "modal-backdrop" });
+  const close = () => backdrop.remove();
+  const run = async () => {
+    status.className = "modal-status";
+    status.textContent = "Verbinde …";
+    list.innerHTML = "";
+    connect.disabled = true;
+    try {
+      const res = await listRemoteLibraries(url.value, key.value.trim());
+      prefs.setRemoteUrl(normalizeBaseUrl(url.value));
+      if (!res.libs.length) {
+        status.textContent = "Mit diesem Schlüssel sind keine Bibliotheken freigegeben.";
+        return;
+      }
+      status.textContent = `Schlüssel „${res.name}“ – verfügbare Bibliotheken:`;
+      for (const l of res.libs) {
+        list.append(
+          el(
+            "div",
+            { class: "modal-row" },
+            el(
+              "span",
+              { class: "modal-row-text" },
+              el("span", { class: "modal-row-title" }, l.label),
+              el(
+                "span",
+                { class: "modal-row-meta" },
+                `${l.count} Folien · ${(l.bytes / 1048576).toFixed(0)} MB`
+              )
+            ),
+            el(
+              "button",
+              {
+                class: "btn",
+                type: "button",
+                onclick: () => {
+                  close();
+                  void runRemoteImport(url.value, key.value.trim(), l);
+                },
+              },
+              "Laden"
+            )
+          )
+        );
+      }
+    } catch (e) {
+      status.classList.add("is-error");
+      status.textContent = e instanceof Error ? e.message : describeError(e);
+    } finally {
+      connect.disabled = false;
+    }
+  };
+  connect.addEventListener("click", () => void run());
+  for (const input of [url, key])
+    input.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter") void run();
+      if (ev.key === "Escape") close();
+    });
+  backdrop.addEventListener("click", (ev) => {
+    if (ev.target === backdrop) close();
+  });
+  backdrop.append(
+    el(
+      "div",
+      { class: "modal", role: "dialog", "aria-modal": "true", "aria-label": "Online-Bibliothek" },
+      el("div", { class: "modal-title" }, "Online-Bibliothek mit Schlüssel"),
+      el(
+        "div",
+        { class: "modal-hint" },
+        "Lädt eine geschützte Bibliothek einmal herunter und speichert sie nur auf diesem PC. Der Schlüssel bleibt auf diesem PC (für „aktualisieren“)."
+      ),
+      el("label", { class: "modal-label" }, "Adresse", url),
+      el("label", { class: "modal-label" }, "Schlüssel", key),
+      el(
+        "div",
+        { class: "modal-actions" },
+        connect,
+        el("button", { class: "btn btn-ghost", type: "button", onclick: close }, "Schließen")
+      ),
+      status,
+      list
+    )
+  );
+  document.body.append(backdrop);
+  (url.value ? key : url).focus();
+}
+
+async function runRemoteImport(
+  url: string,
+  key: string,
+  lib: { id: string; label: string }
+): Promise<void> {
+  const progress = toast("info", MSG.remoteLoading(lib.label, 0, 0), "", 3600000);
+  const msg = progress.querySelector(".toast-msg");
+  try {
+    const res = await importRemote(url, key, lib, (done, total) => {
+      if (msg) msg.textContent = MSG.remoteLoading(lib.label, done, total);
+    });
+    progress.remove();
+    await reload();
+    showImported(res.meta.id);
+    toast("success", MSG.remoteImported(res.meta.label, res.meta.items.length), "", 6000);
+  } catch (e) {
+    progress.remove();
+    toast("error", MSG.remoteFailed, e instanceof Error ? e.message : describeError(e));
+  }
+}
+
+async function updateRemote(libId: string): Promise<void> {
+  const meta = (await loadLocalLibraries()).find((m) => m.id === libId);
+  if (!meta?.remote) return;
+  await runRemoteImport(meta.remote.url, meta.remote.key, {
+    id: meta.remote.lib,
+    label: meta.label,
+  });
 }
 
 async function removeLocal(id: string, label: string): Promise<void> {

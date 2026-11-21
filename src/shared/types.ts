@@ -86,6 +86,8 @@ export interface LocalLibraryInfo {
   label: string;
   count: number;
   imported: string;
+  /** downloaded from a key-protected online library (can be updated) */
+  remote?: boolean;
 }
 
 export interface SubGroup {

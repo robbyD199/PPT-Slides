@@ -128,3 +128,15 @@ _Stand: 20.11.2026, ~04:30 Uhr_ · Live: <https://robbyd199.github.io/PPT-Slides
   Unterordnern; Navigationstexte englisch (Library, slides · folders). Titel ohne Platzhalter: „Currencies 7“.
 - Tests: 64 grün (Regel „5–10 Kategorien“ gilt jetzt für Kategorien mit eigenen Folien). Visuell geprüft (Headless-Edge).
 - **Nötig beim Nutzer:** Ordner `library-own` (und ggf. `library`) in der Folienbibliothek **neu hinzufügen**.
+
+## Änderung 21.11.2026: Online-Bibliothek mit Schlüssel (Cloudflare Worker)
+- Worker (privat, `TC-Library\worker`): statische Dateien nur mit gültigem Schlüssel (`X-Library-Key`), Schlüssel als
+  SHA-256-Hash im Secret `KEYS`, Freigabe pro Bibliothek, CORS nur für GitHub Pages. Getestet lokal mit `wrangler dev`:
+  ohne/falscher Schlüssel 401, fremde Bibliothek/`libs.json`/`../` 403, POST 405, Dateien byte-identisch.
+- Add-in: Menü ⋯ → *Online-Bibliothek mit Schlüssel …* (Adresse + Schlüssel → Liste → *Laden*); Download in IndexedDB
+  wie „Lokaler Ordner“ (inkl. Taxonomie), *aktualisieren*/*entfernen*; alte Kopie wird erst nach vollständigem
+  Download ersetzt. Code: `localStore.ts` (`listRemoteLibraries`, `importRemote`, `storePlan`), Hilfsfunktionen in
+  `local.ts` (getestet). 65 Tests grün.
+- End-to-End in Headless-Edge gegen lokalen Worker (40-Folien-Teilmenge): falscher Schlüssel → Meldung, Liste, Download
+  80 Dateien in 10 s, Ordner „Slides/Elements“, Menü aktualisieren/entfernen.
+- **Offen:** Deploy zu Cloudflare (Konto + `npx wrangler login` durch Nutzer), echter Download der vollen Bibliothek.

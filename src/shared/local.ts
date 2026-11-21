@@ -33,6 +33,34 @@ export interface LocalLibraryMeta {
   folder: string;
   imported: string;
   items: LocalItem[];
+  /** set when the library was downloaded from a key-protected server (kept only on this PC, for updates) */
+  remote?: { url: string; lib: string; key: string };
+}
+
+/** "https://x.workers.dev/" → "https://x.workers.dev" (https added when missing). */
+export function normalizeBaseUrl(url: string): string {
+  let u = url.trim().replace(/\/+$/, "");
+  if (u && !/^https?:\/\//i.test(u)) u = `https://${u}`;
+  return u;
+}
+
+/** URL path for a catalog path: each segment encoded ("a b/2×2.pptx" → "a%20b/2%C3%972.pptx"). */
+export function encodeAssetPath(p: string): string {
+  return normalizePath(p).split("/").map(encodeURIComponent).join("/");
+}
+
+/** All files a catalog references (slides and thumbnails), normalized. */
+export function catalogPaths(catalog: unknown): string[] {
+  const items =
+    catalog && typeof catalog === "object" && Array.isArray((catalog as { items?: unknown }).items)
+      ? (catalog as { items: { File?: unknown; Thumb?: unknown }[] }).items
+      : [];
+  const out: string[] = [];
+  for (const it of items) {
+    if (typeof it?.File === "string") out.push(normalizePath(it.File));
+    if (typeof it?.Thumb === "string" && it.Thumb) out.push(normalizePath(it.Thumb));
+  }
+  return out;
 }
 
 export interface ImportPlan {
@@ -284,7 +312,13 @@ export function mergeLocal(lib: Library, metas: LocalLibraryMeta[]): Library {
     const parts = toLibraryParts(m, lib.categories);
     categories.push(...parts.categories);
     slides.push(...parts.slides);
-    localLibs.push({ id: m.id, label: m.label, count: parts.slides.length, imported: m.imported });
+    localLibs.push({
+      id: m.id,
+      label: m.label,
+      count: parts.slides.length,
+      imported: m.imported,
+      ...(m.remote ? { remote: true } : {}),
+    });
   }
   return { ...lib, categories, slides, localLibs };
 }
