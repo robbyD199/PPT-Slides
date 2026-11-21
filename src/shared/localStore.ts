@@ -200,12 +200,19 @@ export interface RemoteLibraryInfo {
 }
 
 async function remoteFetch(url: string, key: string): Promise<Response> {
-  let res: Response;
-  try {
-    res = await fetch(url, { headers: { "X-Library-Key": key }, cache: "no-store" });
-  } catch {
-    throw new Error("Server nicht erreichbar. Adresse und Internetverbindung prüfen.");
+  let res: Response | undefined;
+  // a library has ~1000 files: retry short network hiccups (connection reset, 5xx) instead of failing the import
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    try {
+      res = await fetch(url, { headers: { "X-Library-Key": key }, cache: "no-store" });
+      if (res.status < 500 || attempt === 4) break;
+    } catch {
+      if (attempt === 4)
+        throw new Error("Server nicht erreichbar. Adresse und Internetverbindung prüfen.");
+    }
+    await new Promise((r) => setTimeout(r, 500 * attempt));
   }
+  if (!res) throw new Error("Server nicht erreichbar. Adresse und Internetverbindung prüfen.");
   if (res.status === 401) throw new Error("Der Schlüssel ist ungültig oder wurde gesperrt.");
   if (res.status === 403)
     throw new Error("Dieser Schlüssel hat keinen Zugriff auf diese Bibliothek.");
